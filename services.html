@@ -6,45 +6,83 @@
 
   <title>HR Consulting & Recruitment Services in Nigeria | AgileTalent Associates</title>
   <meta name="description" content="Explore AgileTalent Associates' recruitment outsourcing, HR consulting, payroll, performance management, learning and development, and business advisory services in Nigeria.">
-  <meta name="robots" content="noindex, follow">
+  <meta name="robots" content="index, follow">
 
   <link rel="icon" type="image/png" href="favicon.png">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <meta property="og:title" content="Our Services | AgileTalent Associates Limited">
   <meta property="og:description" content="Practical recruitment, HR and workforce solutions for organisations in Nigeria.">
   <meta property="og:type" content="website">
 
   <link rel="stylesheet" href="style.css">
+
+  <style>
+    :root {
+      --f-head: 'Inter', sans-serif;
+      --f-body: 'Inter', sans-serif;
+    }
+
+    @media (min-width: 1201px) {
+      header .bar {
+        width: 100%;
+        max-width: none;
+        flex-wrap: nowrap;
+        gap: 16px;
+      }
+
+      header .brand {
+        flex-shrink: 0;
+      }
+
+      header #nav {
+        margin-left: auto;
+        flex-shrink: 0;
+      }
+
+      header #nav > ul {
+        display: flex;
+        flex-wrap: nowrap;
+        align-items: center;
+        white-space: nowrap;
+        gap: 2px;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      header #nav > ul > li {
+        flex: 0 0 auto;
+        white-space: nowrap;
+        list-style: none;
+      }
+
+      header #nav > ul > li > a {
+        white-space: nowrap;
+      }
+
+      header #nav > ul > li > a.btn {
+        flex-shrink: 0;
+        white-space: nowrap;
+      }
+    }
+  </style>
 </head>
 
 <body>
-
   <a class="skip" href="#main">Skip to main content</a>
 
-  <!-- HEADER AND MAIN NAVIGATION -->
   <header>
     <div class="wrap bar">
-
       <a class="brand" href="index.html" aria-label="AgileTalent Associates home">
-        <img
-          class="mark"
-          src="Artboard 4@4x.png"
-          alt="AgileTalent Associates"
+        <img class="mark" src="Artboard 4@4x.png" alt="AgileTalent Associates"
           onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'wm',textContent:'AgileTalent Associates'}))">
       </a>
 
-      <button
-        class="menu"
-        id="menu"
-        type="button"
-        aria-expanded="false"
-        aria-controls="nav">
-        Menu
-      </button>
+      <button class="menu" id="menu" type="button" aria-expanded="false" aria-controls="nav">Menu</button>
 
       <nav id="nav" aria-label="Main navigation">
         <ul>
@@ -55,19 +93,16 @@
           <li><a href="industries.html">Who We Serve</a></li>
           <li><a href="insights.html">Insights</a></li>
           <li><a href="contact.html">Contact</a></li>
-          <li><a class="btn" href="contact.html?s=general">Request a Service</a></li>
+          <li><a class="btn" href="contact.html?s=general">Let's Talk</a></li>
         </ul>
       </nav>
-
     </div>
   </header>
 
   <main id="main" tabindex="-1">
 
-    <!-- PAGE INTRODUCTION -->
     <section class="hero">
       <div class="wrap">
-
         <div class="kicker">What we do</div>
 
         <h1>People solutions that move your business forward.</h1>
@@ -79,31 +114,25 @@
         </p>
 
         <div class="hero-actions">
-          <a class="btn" href="contact.html?s=general">Discuss Your Needs</a>
+          <a class="btn" href="contact.html?s=general">Let's Talk About Your Needs</a>
           <a class="btn secondary" href="recruitment.html">Explore Recruitment</a>
         </div>
-
       </div>
     </section>
 
-    <!-- SERVICES OVERVIEW -->
     <section class="section">
       <div class="wrap">
-
         <div class="section-heading">
           <div class="kicker">Our capabilities</div>
-
           <h2>Practical solutions for your workforce and business.</h2>
-
           <p>
-            Our services are designed to address real operational challenges,
-            whether you are building a team, improving existing HR processes
-            or seeking more structured workforce management.
+            Our services address real operational challenges, whether you are
+            building a team, improving existing HR processes or seeking more
+            structured workforce management.
           </p>
         </div>
 
         <div class="grid">
-
           <article class="card">
             <div class="card-number">01</div>
             <h3>Recruitment & Recruitment Outsourcing</h3>
@@ -170,74 +199,53 @@
             </p>
             <a href="contact.html?s=business-advisory" class="text-link">Discuss Advisory Support</a>
           </article>
-
         </div>
       </div>
     </section>
 
-    <!-- WHY AGILETALENT -->
     <section class="section section-alt">
       <div class="wrap split">
-
         <div>
           <div class="kicker">Why AgileTalent</div>
-
           <h2>Solutions built around your business needs.</h2>
-
           <p>
-            We recognise that organisations have different workforce
-            challenges. Our approach focuses on understanding your
-            requirements and delivering practical, structured support.
+            Every organisation faces different workforce challenges. We focus
+            on understanding your requirements and delivering practical,
+            structured support that fits your priorities.
           </p>
         </div>
 
         <div class="feature-list">
-
           <div class="feature">
             <h3>Access to talent</h3>
-            <p>
-              Recruitment support backed by a database of 4,000+
-              pre-screened candidates.
-            </p>
+            <p>Recruitment support backed by a database of 4,000+ pre-screened candidates.</p>
           </div>
 
           <div class="feature">
             <h3>Practical implementation</h3>
-            <p>
-              Recommendations and processes designed to work in real
-              organisational settings.
-            </p>
+            <p>Recommendations and processes designed to work in real organisational settings.</p>
           </div>
 
           <div class="feature">
             <h3>Flexible engagement</h3>
-            <p>
-              Support tailored to your organisation's needs, priorities
-              and operational requirements.
-            </p>
+            <p>Support tailored to your organisation's needs, priorities and operational requirements.</p>
           </div>
-
         </div>
       </div>
     </section>
 
-    <!-- HOW WE WORK -->
     <section class="section">
       <div class="wrap">
-
         <div class="section-heading">
           <div class="kicker">How we work</div>
-
           <h2>A clear process from discussion to delivery.</h2>
-
           <p>
-            We begin by understanding the challenge, agree on the required
+            We begin by understanding your challenge, agree on the required
             scope and work towards an appropriate solution.
           </p>
         </div>
 
         <div class="steps">
-
           <div class="step">
             <span class="step-number">01</span>
             <h3>Understand</h3>
@@ -255,42 +263,29 @@
             <h3>Deliver</h3>
             <p>We implement the agreed solution and provide relevant support.</p>
           </div>
-
         </div>
       </div>
     </section>
 
-    <!-- CALL TO ACTION -->
     <section class="cta">
       <div class="wrap">
-
         <div class="kicker">Let's work together</div>
-
         <h2>What workforce challenge are you looking to solve?</h2>
-
         <p>
-          Tell us what your organisation needs, and we can discuss
-          an appropriate way forward.
+          Tell us what your organisation needs, and let's discuss
+          a practical way forward.
         </p>
-
-        <a class="btn" href="contact.html?s=general">Request a Service</a>
-
+        <a class="btn" href="contact.html?s=general">Tell Us How We Can Help</a>
       </div>
     </section>
 
   </main>
 
-  <!-- FOOTER -->
   <footer class="footer">
-
     <div class="wrap footer-grid">
-
       <div>
         <a class="brand" href="index.html" aria-label="AgileTalent Associates home">
-          <img
-            class="mark"
-            src="Artboard 4@4x.png"
-            alt="AgileTalent Associates"
+          <img class="mark" src="Artboard 4@4x.png" alt="AgileTalent Associates"
             onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'wm',textContent:'AgileTalent Associates'}))">
         </a>
 
@@ -298,6 +293,9 @@
           Practical people and workforce solutions for organisations
           seeking to build stronger teams and operate more effectively.
         </p>
+        <p><a href="mailto:agiletalents@outlook.com">agiletalents@outlook.com</a></p>
+        <p><a href="tel:+2347036783875">+234 703 678 3875</a></p>
+        <p><a href="https://wa.me/2348152866467" target="_blank" rel="noopener noreferrer">Chat with us on WhatsApp</a></p>
       </div>
 
       <div>
@@ -314,82 +312,23 @@
       </div>
 
       <div>
-        <h2>Get in Touch</h2>
+        <h2>Connect with AgileTalent</h2>
         <ul>
-          <li>
-            <a href="mailto:agiletalents@outlook.com">agiletalents@outlook.com</a>
-          </li>
-          <li>
-            <a href="https://wa.me/message/MUER4X6V7QM7H1" target="_blank" rel="noopener noreferrer">WhatsApp Business</a>
-          </li>
-          <li>
-            <a href="https://www.linkedin.com/company/agiletalent-associates" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-          </li>
-          <li>
-            <a href="https://x.com/agiletalents_ng" target="_blank" rel="noopener noreferrer">X</a>
-          </li>
+          <li><a href="https://www.linkedin.com/company/agiletalent-associates" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+          <li><a href="https://x.com/agiletalents_ng" target="_blank" rel="noopener noreferrer">X</a></li>
+          <li><a href="contact.html">Contact us</a></li>
         </ul>
+        <p style="margin-top:1em">Advisory support is not legal advice.</p>
       </div>
-
     </div>
 
     <div class="wrap footer-bottom">
-      <p>
-        &copy; <span id="year">2026</span> AgileTalent Associates Limited.
-        All rights reserved.
-      </p>
+      <p>&copy; 2026 AgileTalent Associates Limited. All rights reserved.</p>
     </div>
-
   </footer>
 
+  <a class="btn sticky" id="sticky" href="contact.html?s=general">Let's Talk</a>
+
   <script src="main.js"></script>
-
-  <!-- DESKTOP NAVIGATION: PREVENT LABEL WRAPPING -->
-  <style>
-    @media (min-width: 1201px) {
-      header .bar {
-        width: 100%;
-        max-width: none;
-        flex-wrap: nowrap;
-        gap: 16px;
-      }
-
-      header .brand {
-        flex-shrink: 0;
-      }
-
-      header #nav {
-        margin-left: auto;
-        flex-shrink: 0;
-      }
-
-      header #nav > ul {
-        display: flex;
-        flex-wrap: nowrap;
-        align-items: center;
-        white-space: nowrap;
-        gap: 2px;
-        margin: 0;
-        padding: 0;
-        list-style: none;
-      }
-
-      header #nav > ul > li {
-        flex: 0 0 auto;
-        white-space: nowrap;
-        list-style: none;
-      }
-
-      header #nav > ul > li > a {
-        white-space: nowrap;
-      }
-
-      header #nav > ul > li > a.btn {
-        flex-shrink: 0;
-        white-space: nowrap;
-      }
-    }
-  </style>
-
 </body>
 </html>
