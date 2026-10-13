@@ -3,38 +3,399 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Request a Service | Contact AgileTalent Associates</title>
-<meta name="description" content="Send an enquiry to AgileTalent Associates about recruitment, HR consulting, payroll, performance management or learning and development.">
-<meta property="og:title" content="Request a Service | Contact AgileTalent Associates">
-<meta property="og:description" content="Send an enquiry to AgileTalent Associates about recruitment, HR consulting, payroll, performance management or learning and development.">
+
+<title>Let’s Talk | Contact AgileTalent Associates</title>
+<meta name="description" content="Have a recruitment, HR or workforce challenge? Talk to AgileTalent Associates about recruitment, HR consulting, payroll, performance management and learning solutions for your business.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://agiletalentassociates.com/contact.html">
+
+<meta property="og:title" content="Let’s Talk | AgileTalent Associates">
+<meta property="og:description" content="Tell us what your business needs. Let's explore how AgileTalent Associates can help you build a stronger workforce.">
 <meta property="og:type" content="website">
-<link rel="icon" type="image/png" href="favicon.png">
+<meta property="og:url" content="https://agiletalentassociates.com/contact.html">
+
+<link rel="icon" type="image/png" href="/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"AgileTalent Associates Limited","foundingDate":"2022","email":"agiletalents@outlook.com","areaServed":"NG","description":"Human resources consulting, recruitment and workforce solutions.","sameAs":["https://x.com/agiletalents_ng","https://www.linkedin.com/company/agiletalent-associates"]}</script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "AgileTalent Associates Limited",
+  "url": "https://agiletalentassociates.com/",
+  "foundingDate": "2022",
+  "email": "agiletalents@outlook.com",
+  "telephone": "+2347036783875",
+  "areaServed": "NG",
+  "description": "Human resources consulting, recruitment and workforce solutions.",
+  "sameAs": [
+    "https://x.com/agiletalents_ng",
+    "https://www.linkedin.com/company/agiletalent-associates"
+  ]
+}
+</script>
+
+<style>
+:root {
+  --f-head: 'Inter', sans-serif;
+  --f-body: 'Inter', sans-serif;
+}
+
+.contact-intro {
+  max-width: 760px;
+}
+
+.contact-layout {
+  display: grid;
+  grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr);
+  gap: clamp(32px, 5vw, 64px);
+  align-items: start;
+}
+
+.contact-panel {
+  padding: clamp(22px, 3vw, 32px);
+  border: 1px solid var(--line, #DAD7CE);
+  border-radius: 14px;
+  background: #fff;
+  min-width: 0;
+}
+
+.contact-panel h2 {
+  margin-top: 0;
+}
+
+.contact-steps {
+  padding-left: 0;
+  list-style: none;
+  counter-reset: contact-step;
+}
+
+.contact-steps li {
+  position: relative;
+  padding: 0 0 22px 48px;
+  counter-increment: contact-step;
+}
+
+.contact-steps li::before {
+  content: counter(contact-step);
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--gold, #F2B705);
+  color: var(--ink, #0B1426);
+  font-weight: 800;
+}
+
+.contact-steps li strong {
+  display: block;
+  margin-bottom: 4px;
+}
+
+.contact-options {
+  display: grid;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.contact-option {
+  display: block;
+  padding: 15px 16px;
+  border: 1px solid var(--line, #DAD7CE);
+  border-radius: 10px;
+  text-decoration: none;
+  overflow-wrap: anywhere;
+}
+
+.contact-option strong {
+  display: block;
+  margin-bottom: 4px;
+}
+
+.contact-option:hover {
+  border-color: var(--gold, #F2B705);
+}
+
+.contact-note {
+  margin-top: 22px;
+  padding: 16px;
+  border-left: 4px solid var(--gold, #F2B705);
+  background: var(--paper, #FAF8F3);
+  border-radius: 4px;
+  font-size: .92rem;
+  line-height: 1.7;
+}
+
+.contact-promise {
+  margin-top: 30px;
+  padding: 22px;
+  border-radius: 12px;
+  background: var(--paper, #FAF8F3);
+}
+
+.contact-promise p:last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width: 760px) {
+  .contact-layout {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
 </head>
+
 <body>
 <a class="skip" href="#main">Skip to main content</a>
-<header><div class="wrap bar">
-<a class="brand" href="index.html" aria-label="AgileTalent Associates, home"><img class="mark" src="Artboard 4@4x.png" alt="AgileTalent Associates" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'wm',textContent:'AgileTalent Associates'}))"></a>
-<button class="menu" id="menu" aria-expanded="false" aria-controls="nav">Menu</button>
-<nav id="nav" aria-label="Main"><ul><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="services.html">Services</a></li><li><a href="recruitment.html">Recruitment</a></li><li><a href="industries.html">Who we serve</a></li><li><a href="insights.html">Insights</a></li><li><a href="contact.html" aria-current="page">Contact</a></li><li><a class="btn" href="contact.html">Request a Service</a></li></ul></nav>
-</div></header>
+
+<header>
+  <div class="wrap bar">
+    <a class="brand" href="index.html" aria-label="AgileTalent Associates, home">
+      <img class="mark" src="Artboard 4@4x.png" alt="AgileTalent Associates"
+        onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'wm',textContent:'AgileTalent Associates'}))">
+    </a>
+
+    <button class="menu" id="menu" aria-expanded="false" aria-controls="nav">Menu</button>
+
+    <nav id="nav" aria-label="Main">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="recruitment.html">Recruitment</a></li>
+        <li><a href="industries.html">Who We Serve</a></li>
+        <li><a href="insights.html">Insights</a></li>
+        <li><a href="contact.html" aria-current="page">Contact</a></li>
+        <li><a class="btn" href="#enquiry">Let’s Talk</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
 <main id="main" tabindex="-1">
-<section class="sec dark"><div class="wrap"><h1 style="font-size:clamp(2.2rem,5vw,3.6rem)">Request a service</h1><p class="lead">Tell us what you need. We will reply by email to arrange a conversation.</p></div></section>
-<section class="sec"><div class="wrap split"><div><h2>What happens next</h2><ul class="tick"><li>You send a short enquiry.</li><li>We reply by email to the address you provide.</li><li>We arrange a call to understand your needs.</li><li>If we can help, we send a written proposal.</li></ul><p>Email: <a href="mailto:agiletalents@outlook.com">agiletalents@outlook.com</a></p><p class="note">Please do not send CVs, identity documents or employee records through this form.</p></div><div id="formbox"></div></div></section></main>
-<a style="display:none" class="btn sticky" id="sticky" href="contact.html">Request a Service</a>
-<footer><div class="wrap cols">
-<div><p style="color:#fff;font:700 1.2rem var(--f-head);margin-bottom:.4em">AgileTalent Associates Limited</p><p>Human resources consulting, recruitment and workforce solutions for Nigerian organisations. Established 2022.</p><p><a href="mailto:agiletalents@outlook.com">agiletalents@outlook.com</a></p></div>
-<div><h2>Explore</h2><ul><li><a href="about.html">About us</a></li><li><a href="services.html">Services</a></li><li><a href="industries.html">Who we serve</a></li><li><a href="insights.html">Insights</a></li><li><a href="contact.html">Contact</a></li></ul></div>
-<div><h2>Notices</h2><ul><li><a href="contact.html">Privacy notice</a></li></ul><p style="margin-top:1em">Advisory support is not legal advice.</p></div>
-</div>
-<div class="wrap social-area"><h2 class="social-heading">Connect with AgileTalent</h2><div class="social-links">
-<a href="https://x.com/agiletalents_ng" target="_blank" rel="noopener noreferrer" aria-label="Follow AgileTalent Associates on X"><svg class="social-icon" viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="32" fill="#000"/><path d="M18.9 15h8.2l7.4 10 8.8-10h3.1L36 27.1 47.5 49h-8.2l-8.1-11.7L20.9 49h-3.2l12-13.8L18.9 15zm4.5 2.7 17.2 28.6h3.1L26.5 17.7h-3.1z" fill="#fff"/></svg><span>X</span></a>
-<a href="https://www.linkedin.com/company/agiletalent-associates" target="_blank" rel="noopener noreferrer" aria-label="Follow AgileTalent Associates on LinkedIn"><svg class="social-icon" viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="32" fill="#0A66C2"/><g fill="#fff" transform="translate(14 14) scale(1.55)"><path d="M3.5 6.5A2.25 2.25 0 1 0 3.5 2a2.25 2.25 0 0 0 0 4.5zM1.5 8h4v14h-4zM8 8h3.8v1.9h.1C12.4 8.8 13.8 7.6 16 7.6c4.1 0 4.9 2.7 4.9 6.2V22h-4v-7.3c0-1.8 0-4-2.4-4s-2.8 1.9-2.8 3.9V22H8z"/></g></svg><span>LinkedIn</span></a>
-</div></div><div class="wrap"><p style="margin-top:32px;font-size:.85rem">&copy; 2026 AgileTalent Associates Limited. All rights reserved.</p></div></footer>
+
+  <!-- WELCOMING INTRODUCTION -->
+  <section class="sec dark">
+    <div class="wrap contact-intro">
+      <p style="color:var(--gold);font-weight:700;letter-spacing:.08em;text-transform:uppercase">
+        Your next step starts here
+      </p>
+
+      <h1 style="font-size:clamp(2.2rem,5vw,3.6rem)">
+        Let’s Talk About Your Business
+      </h1>
+
+      <p class="lead">
+        Every business has people challenges. Whether you are looking to find
+        great talent, strengthen your HR processes or build a more effective
+        workforce, we would like to hear from you.
+      </p>
+
+      <p>
+        Tell us what you are working on, what is not working as it should,
+        or where you would like to grow. We will take it from there.
+      </p>
+    </div>
+  </section>
+
+  <!-- ENQUIRY JOURNEY -->
+  <section class="sec">
+    <div class="wrap contact-layout">
+
+      <div>
+        <h2>How can we help you move forward?</h2>
+
+        <p>
+          You do not need to have everything figured out before contacting us.
+          Start with what you need, and we can explore the right approach together.
+        </p>
+
+        <ul class="tick">
+          <li>Recruitment and recruitment outsourcing</li>
+          <li>HR consulting, policies and employee relations</li>
+          <li>Payroll administration and workforce support</li>
+          <li>Performance management and HR processes</li>
+          <li>Learning, development and management training</li>
+          <li>Business and people advisory services</li>
+        </ul>
+
+        <div class="contact-promise">
+          <h3>What happens after you reach out?</h3>
+
+          <ol class="contact-steps">
+            <li>
+              <strong>We listen.</strong>
+              You share a little about your business and what you need.
+            </li>
+            <li>
+              <strong>We understand the details.</strong>
+              We may arrange a conversation to clarify your priorities.
+            </li>
+            <li>
+              <strong>We recommend a way forward.</strong>
+              Where there is a fit, we outline the proposed scope, approach
+              and next steps.
+            </li>
+          </ol>
+        </div>
+
+        <h3 style="margin-top:28px">Prefer to contact us directly?</h3>
+
+        <div class="contact-options">
+          <a class="contact-option" href="mailto:agiletalents@outlook.com">
+            <strong>Send us an email</strong>
+            agiletalents@outlook.com
+          </a>
+
+          <a class="contact-option" href="tel:+2347036783875">
+            <strong>Give us a call</strong>
+            +234 703 678 3875
+          </a>
+
+          <a class="contact-option" href="https://wa.me/2348152866467"
+             target="_blank" rel="noopener noreferrer">
+            <strong>Chat with us on WhatsApp</strong>
+            Start a conversation at your convenience.
+          </a>
+        </div>
+
+        <div class="contact-note">
+          <strong>A quick privacy note:</strong> Please do not submit CVs,
+          identity documents, bank details or confidential employee records
+          through this general enquiry form.
+        </div>
+      </div>
+
+      <!-- KEEP THIS ID: MAIN.JS USES IT TO LOAD THE ENQUIRY FORM -->
+      <div class="contact-panel" id="enquiry">
+        <h2>Tell Us How We Can Help</h2>
+
+        <p>
+          A few details will help us understand your enquiry and direct it
+          appropriately. We look forward to learning more about your business.
+        </p>
+
+        <div id="formbox"></div>
+
+        <p style="font-size:.85rem;color:var(--grey,#5B6475);margin-top:18px">
+          By submitting an enquiry, you agree that AgileTalent Associates
+          Limited may use the details provided to respond to your request.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CLOSING MESSAGE -->
+  <section class="sec dark">
+    <div class="wrap">
+      <h2>Good people decisions start with a conversation.</h2>
+
+      <p class="lead">
+        Whether you need support with one recruitment exercise or a broader
+        people strategy, AgileTalent Associates is ready to explore how we
+        can support your goals.
+      </p>
+
+      <p>
+        <a class="btn" href="#enquiry">Let’s Talk About Your Needs</a>
+      </p>
+    </div>
+  </section>
+
+</main>
+
+<a class="btn sticky" id="sticky" href="#enquiry">Let’s Talk</a>
+
+<footer>
+  <div class="wrap cols">
+    <div>
+      <p style="color:#fff;font:700 1.2rem var(--f-head);margin-bottom:.4em">
+        AgileTalent Associates Limited
+      </p>
+
+      <p>
+        Human resources consulting, recruitment and workforce solutions
+        for Nigerian organisations. Established 2022.
+      </p>
+
+      <p>
+        <a href="mailto:agiletalents@outlook.com">agiletalents@outlook.com</a>
+      </p>
+
+      <p><a href="tel:+2347036783875">+234 703 678 3875</a></p>
+
+      <p>
+        <a href="https://wa.me/2348152866467"
+           target="_blank" rel="noopener noreferrer">
+          Chat with us on WhatsApp
+        </a>
+      </p>
+    </div>
+
+    <div>
+      <h2>Explore</h2>
+      <ul>
+        <li><a href="about.html">About us</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="recruitment.html">Recruitment</a></li>
+        <li><a href="industries.html">Who we serve</a></li>
+        <li><a href="insights.html">Insights</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h2>Notices</h2>
+      <ul>
+        <li><a href="contact.html">Privacy notice</a></li>
+      </ul>
+      <p style="margin-top:1em">Advisory support is not legal advice.</p>
+    </div>
+  </div>
+
+  <div class="wrap social-area">
+    <h2 class="social-heading">Connect with AgileTalent</h2>
+
+    <div class="social-links">
+      <a href="https://x.com/agiletalents_ng"
+         target="_blank" rel="noopener noreferrer"
+         aria-label="Follow AgileTalent Associates on X">
+        <svg class="social-icon" viewBox="0 0 64 64" aria-hidden="true">
+          <circle cx="32" cy="32" r="32" fill="#000"/>
+          <path d="M18.9 15h8.2l7.4 10 8.8-10h3.1L36 27.1 47.5 49h-8.2l-8.1-11.7L20.9 49h-3.2l12-13.8L18.9 15zm4.5 2.7 17.2 28.6h3.1L26.5 17.7h-3.1z" fill="#fff"/>
+        </svg>
+        <span>X</span>
+      </a>
+
+      <a href="https://www.linkedin.com/company/agiletalent-associates"
+         target="_blank" rel="noopener noreferrer"
+         aria-label="Follow AgileTalent Associates on LinkedIn">
+        <svg class="social-icon" viewBox="0 0 64 64" aria-hidden="true">
+          <circle cx="32" cy="32" r="32" fill="#0A66C2"/>
+          <g fill="#fff" transform="translate(14 14) scale(1.55)">
+            <path d="M3.5 6.5A2.25 2.25 0 1 0 3.5 2a2.25 2.25 0 0 0 0 4.5zM1.5 8h4v14h-4zM8 8h3.8v1.9h.1C12.4 8.8 13.8 7.6 16 7.6c4.1 0 4.9 2.7 4.9 6.2V22h-4v-7.3c0-1.8 0-4-2.4-4s-2.8 1.9-2.8 3.9V22H8z"/>
+          </g>
+        </svg>
+        <span>LinkedIn</span>
+      </a>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <p style="margin-top:32px;font-size:.85rem">
+      &copy; 2026 AgileTalent Associates Limited. All rights reserved.
+    </p>
+  </div>
+</footer>
+
 <script src="main.js"></script>
 </body>
 </html>
