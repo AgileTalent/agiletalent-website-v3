@@ -94,9 +94,11 @@ function initContactForm() {
         <div class="row">
           <div>
             <label for="name">Your name</label>
-            <input id="name" name="name" autocomplete="name" required>
+            <input id="name" name="name"
+                   autocomplete="name" required>
             <div class="err" id="e-name"></div>
           </div>
+
           <div>
             <label for="company">Company name</label>
             <input id="company" name="company"
@@ -112,6 +114,7 @@ function initContactForm() {
                    autocomplete="email" required>
             <div class="err" id="e-email"></div>
           </div>
+
           <div>
             <label for="phone">Telephone</label>
             <input id="phone" name="phone" type="tel"
@@ -157,7 +160,7 @@ function initContactForm() {
                    name="consent" required>
             <span>
               ${CONSENT_TEXT}
-              <a href="contact.html">href="privacy.html"</a>.
+              <a href="privacy.html">Read our privacy notice</a>.
             </span>
           </label>
           <div class="err" id="e-consent"></div>
@@ -177,7 +180,9 @@ function initContactForm() {
     `;
 
     const form = document.getElementById("agiletalent-enquiry-form");
-    if (!form) throw new Error("The enquiry form could not be created.");
+    if (!form) {
+      throw new Error("The enquiry form could not be created.");
+    }
 
     const getField = id => form.querySelector(`#${id}`);
     const value = id => getField(id).value.trim();
@@ -237,6 +242,7 @@ function initContactForm() {
 
     Object.keys(rules).forEach(key => {
       const field = getField(key);
+
       const eventName =
         field.type === "checkbox" || field.tagName === "SELECT"
           ? "change"
@@ -312,10 +318,12 @@ function initContactForm() {
       if (!GOOGLE_FORM.action || !allEntriesPresent) {
         button.disabled = false;
         button.textContent = "Send enquiry";
+
         sendError.hidden = false;
         sendError.textContent =
           "The enquiry form is not configured correctly. Please email " +
           SITE.email + " directly.";
+
         return;
       }
 
@@ -343,6 +351,7 @@ function initContactForm() {
       } catch (error) {
         button.disabled = false;
         button.textContent = "Send enquiry";
+
         sendError.hidden = false;
         sendError.textContent =
           "We could not submit your request. Please try again or email " +
@@ -350,7 +359,10 @@ function initContactForm() {
       }
     });
   } catch (error) {
-    console.error("AgileTalent enquiry form initialisation failed:", error);
+    console.error(
+      "AgileTalent enquiry form initialisation failed:",
+      error
+    );
 
     box.innerHTML = `
       <div class="ok" role="alert">
