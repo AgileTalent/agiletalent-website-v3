@@ -157,7 +157,7 @@ function initContactForm() {
                    name="consent" required>
             <span>
               ${CONSENT_TEXT}
-              <a href="contact.html">Read our privacy notice</a>.
+              <a href="contact.html">href="privacy.html"</a>.
             </span>
           </label>
           <div class="err" id="e-consent"></div>
@@ -334,7 +334,7 @@ function initContactForm() {
 
         showMessage(
           "Request Form Sent",
-          "Your submission request has been sent.  If you do not receive a response from us within 12 hours, please contact us directly using alternative channels.",
+          "Thank you for contacting AgileTalent Associates Limited. If you do not receive a response within 12 hours, please call us on +234 703 678 3875 or contact us via WhatsApp.",
           "mailto:" + SITE.email +
             "?subject=" +
             encodeURIComponent("Service enquiry: " + values.company),
