@@ -1,41 +1,466 @@
-<!-- RECRUITMENT ADVANTAGE -->
-<section class="sec dark">
-  <div class="wrap split">
+```html
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 
-    <div>
-      <p class="lab" style="color:var(--gold);font-weight:600;letter-spacing:.08em;text-transform:uppercase">
-        A stronger talent pipeline
-      </p>
+  <title>Industries We Serve | AgileTalent Associates Limited</title>
+  <meta name="description" content="AgileTalent Associates supports Nigerian businesses across multiple industries with recruitment, HR consulting, payroll, workforce solutions and talent development.">
 
-      <h2>Access to 4,000+ Pre-Screened Candidates</h2>
+  <meta property="og:title" content="Industries We Serve | AgileTalent Associates">
+  <meta property="og:description" content="People solutions designed around your industry, workforce and business objectives.">
+  <meta property="og:type" content="website">
 
-      <p class="lead">
-        Finding the right people should not slow down your business.
-        Our database of 4,000+ pre-screened candidates gives AgileTalent
-        a valuable starting point when supporting your recruitment needs.
-      </p>
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+
+  <style>
+    :root {
+      --f-head: 'Inter', sans-serif;
+      --f-body: 'Inter', sans-serif;
+    }
+
+    body {
+      font-family: var(--f-body);
+    }
+
+    h1, h2, h3, h4, .brand, .btn {
+      font-family: var(--f-head);
+    }
+
+    .industry-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 22px;
+      margin-top: 32px;
+    }
+
+    .industry-card {
+      padding: 26px;
+      border: 1px solid rgba(11, 20, 38, 0.12);
+      border-radius: 14px;
+      background: #fff;
+      height: 100%;
+      box-sizing: border-box;
+    }
+
+    .industry-card h3 {
+      margin-top: 0;
+      margin-bottom: 12px;
+    }
+
+    .industry-card p {
+      margin-bottom: 0;
+    }
+
+    .industry-intro {
+      max-width: 780px;
+    }
+
+    .industry-contact {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px 24px;
+      margin-top: 18px;
+    }
+
+    .industry-contact a {
+      overflow-wrap: anywhere;
+    }
+
+    .industry-contact p {
+      margin: 0;
+    }
+
+    .industry-advantage {
+      align-items: start;
+    }
+
+    .industry-advantage .lead {
+      max-width: 650px;
+    }
+
+    .industry-cta {
+      margin-top: 22px;
+    }
+
+    .industry-note {
+      font-size: 0.9rem;
+      opacity: 0.85;
+    }
+
+    @media (max-width: 800px) {
+      .industry-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 560px) {
+      .industry-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .industry-card {
+        padding: 22px;
+      }
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "AgileTalent Associates Limited",
+    "foundingDate": "2022",
+    "email": "agiletalents@outlook.com",
+    "telephone": "+2347036783875",
+    "areaServed": "NG",
+    "description": "Human resources consulting, recruitment and workforce solutions.",
+    "sameAs": [
+      "https://x.com/agiletalents_ng",
+      "https://www.linkedin.com/company/agiletalent-associates"
+    ]
+  }
+  </script>
+</head>
+
+<body>
+  <a class="skip" href="#main">Skip to main content</a>
+
+  <header>
+    <div class="wrap bar">
+      <a class="brand" href="index.html" aria-label="AgileTalent Associates, home">
+        <img
+          class="mark"
+          src="Artboard 4@4x.png"
+          alt="AgileTalent Associates"
+          onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'wm',textContent:'AgileTalent Associates'}))"
+        >
+      </a>
+
+      <button class="menu" id="menu" aria-expanded="false" aria-controls="nav">
+        Menu
+      </button>
+
+      <nav id="nav" aria-label="Main">
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="recruitment.html">Recruitment</a></li>
+          <li><a href="industries.html" aria-current="page">Who we serve</a></li>
+          <li><a href="insights.html">Insights</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a class="btn" href="contact.html">Let’s Talk</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" tabindex="-1">
+
+    <!-- PAGE INTRODUCTION -->
+    <section class="sec dark">
+      <div class="wrap">
+        <p class="lab" style="color:var(--gold);font-weight:600;letter-spacing:.08em;text-transform:uppercase">
+          Who we serve
+        </p>
+
+        <h1 style="font-size:clamp(2.2rem,5vw,3.6rem);max-width:850px">
+          People Solutions for Businesses at Every Stage
+        </h1>
+
+        <p class="lead industry-intro">
+          Every organisation has different workforce demands. AgileTalent
+          Associates works with businesses to strengthen their people
+          practices, attract suitable talent and build the workforce
+          capabilities needed to achieve their objectives.
+        </p>
+
+        <p style="margin-top:28px">
+          <a class="btn" href="contact.html">Tell Us How We Can Help</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- INDUSTRIES -->
+    <section class="sec">
+      <div class="wrap">
+        <p class="lab">Our approach</p>
+        <h2>Support That Reflects Your Business</h2>
+
+        <p class="industry-intro">
+          Whether you are building your first team, expanding operations or
+          improving established HR processes, our services can be tailored
+          to your organisation's size, structure and priorities.
+        </p>
+
+        <div class="industry-grid">
+
+          <article class="industry-card">
+            <h3>Financial Services and Fintech</h3>
+            <p>
+              Recruitment and people support for organisations operating
+              in fast-moving, regulated and customer-focused environments,
+              with attention to role requirements and operational needs.
+            </p>
+          </article>
+
+          <article class="industry-card">
+            <h3>Technology and Telecommunications</h3>
+            <p>
+              Support for businesses seeking specialist talent, stronger
+              people processes and workforce capabilities that can keep
+              pace with evolving products and services.
+            </p>
+          </article>
+
+          <article class="industry-card">
+            <h3>Professional Services</h3>
+            <p>
+              Recruitment, HR advisory and people management support for
+              organisations where professional capability, service quality
+              and employee performance are central to delivery.
+            </p>
+          </article>
+
+          <article class="industry-card">
+            <h3>Retail and Consumer Businesses</h3>
+            <p>
+              Practical workforce solutions for businesses managing
+              customer-facing teams, changing staffing requirements and
+              the need for consistent employee performance.
+            </p>
+          </article>
+
+          <article class="industry-card">
+            <h3>Healthcare and Related Services</h3>
+            <p>
+              Recruitment and HR support shaped around role-specific
+              requirements, workforce coordination and the people practices
+              that help service organisations operate effectively.
+            </p>
+          </article>
+
+          <article class="industry-card">
+            <h3>SMEs and Growing Businesses</h3>
+            <p>
+              Flexible HR consulting, recruitment, payroll and policy
+              support for businesses that need practical people solutions
+              as their teams and operations grow.
+            </p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- HOW WE HELP -->
+    <section class="sec" style="background:var(--off-white,#FAF8F3)">
+      <div class="wrap split">
+        <div>
+          <p class="lab">How we support organisations</p>
+          <h2>Practical Solutions. Clear Business Priorities.</h2>
+        </div>
+
+        <div>
+          <p>
+            We begin by understanding your business, the people challenge
+            you need to address and the outcome you want to achieve.
+            We then agree the scope of support that fits your needs.
+          </p>
+
+          <ul class="tick">
+            <li>Recruitment and recruitment outsourcing</li>
+            <li>HR consulting, policies and process improvement</li>
+            <li>Payroll support for SMEs</li>
+            <li>Performance management and employee relations</li>
+            <li>Learning, development and workforce capability</li>
+          </ul>
+
+          <p>
+            <a class="btn" href="services.html">Explore Our Services</a>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- RECRUITMENT ADVANTAGE -->
+    <section class="sec dark">
+      <div class="wrap split industry-advantage">
+
+        <div>
+          <p class="lab" style="color:var(--gold);font-weight:600;letter-spacing:.08em;text-transform:uppercase">
+            A stronger talent pipeline
+          </p>
+
+          <h2>Access to 4,000+ Pre-Screened Candidates</h2>
+
+          <p class="lead">
+            Finding the right people should not slow down your business.
+            Our database of 4,000+ pre-screened candidates gives AgileTalent
+            a valuable starting point when supporting your recruitment needs.
+          </p>
+        </div>
+
+        <div>
+          <p>
+            Whether you are a growing business filling a critical vacancy,
+            a start-up building your team or an established organisation
+            recruiting across multiple roles, we can draw on this talent
+            database as part of an agreed recruitment approach.
+          </p>
+
+          <p>
+            Candidate suitability is assessed against the requirements of
+            each role. Screening, shortlisting and other recruitment
+            activities are tailored to your hiring objectives and the
+            scope agreed with you.
+          </p>
+
+          <p class="industry-cta">
+            <a class="btn" href="contact.html?s=recruitment">
+              Let’s Talk About Your Hiring Needs
+            </a>
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section class="sec">
+      <div class="wrap">
+        <h2>Let's Discuss Your Workforce Needs</h2>
+
+        <p class="lead industry-intro">
+          Tell us about your organisation, your current people priorities
+          and the support you are looking for. We will respond by email
+          to arrange a conversation.
+        </p>
+
+        <p style="margin-top:24px">
+          <a class="btn" href="contact.html">Let’s Talk</a>
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="wrap cols">
+
+      <div>
+        <p style="color:#fff;font:700 1.2rem var(--f-head);margin-bottom:.4em">
+          AgileTalent Associates Limited
+        </p>
+
+        <p>
+          Human resources consulting, recruitment and workforce solutions
+          for Nigerian organisations. Established 2022.
+        </p>
+
+        <div class="industry-contact">
+          <p>
+            <strong>Email:</strong>
+            <a href="mailto:agiletalents@outlook.com">agiletalents@outlook.com</a>
+          </p>
+
+          <p>
+            <strong>Phone:</strong>
+            <a href="tel:+2347036783875">+234 703 678 3875</a>
+          </p>
+
+          <p>
+            <strong>WhatsApp:</strong>
+            <a href="https://wa.me/2348152866467" target="_blank" rel="noopener noreferrer">
+              Chat with us
+            </a>
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Explore</h2>
+        <ul>
+          <li><a href="about.html">About us</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="recruitment.html">Recruitment</a></li>
+          <li><a href="industries.html">Who we serve</a></li>
+          <li><a href="insights.html">Insights</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h2>Connect</h2>
+        <ul>
+          <li>
+            <a href="https://x.com/agiletalents_ng" target="_blank" rel="noopener noreferrer">
+              X
+            </a>
+          </li>
+          <li>
+            <a href="https://www.linkedin.com/company/agiletalent-associates" target="_blank" rel="noopener noreferrer">
+              LinkedIn
+            </a>
+          </li>
+          <li><a href="contact.html">Privacy notice</a></li>
+        </ul>
+
+        <p class="industry-note" style="margin-top:1em">
+          Advisory support is not legal advice.
+        </p>
+      </div>
+
     </div>
 
-    <div>
-      <p>
-        Whether you are a growing business filling a critical vacancy,
-        a start-up building your team or an established organisation
-        recruiting across multiple roles, we can draw on this talent
-        database as part of an agreed recruitment approach.
-      </p>
+    <div class="wrap social-area">
+      <h2 class="social-heading">Connect with AgileTalent</h2>
 
-      <p>
-        Candidate suitability is assessed against the requirements of
-        each role. Screening, shortlisting and other recruitment activities
-        are tailored to your hiring objectives and the scope agreed with you.
-      </p>
-
-      <p>
-        <a class="btn" href="contact.html?s=recruitment">
-          Let’s Talk About Your Hiring Needs
+      <div class="social-links">
+        <a href="https://x.com/agiletalents_ng"
+           target="_blank"
+           rel="noopener noreferrer"
+           aria-label="Follow AgileTalent Associates on X">
+          <svg class="social-icon" viewBox="0 0 64 64" aria-hidden="true">
+            <circle cx="32" cy="32" r="32" fill="#000"/>
+            <path d="M18.9 15h8.2l7.4 10 8.8-10h3.1L36 27.1 47.5 49h-8.2l-8.1-11.7L20.9 49h-3.2l12-13.8L18.9 15zm4.5 2.7 17.2 28.6h3.1L26.5 17.7h-3.1z" fill="#fff"/>
+          </svg>
+          <span>X</span>
         </a>
-      </p>
+
+        <a href="https://www.linkedin.com/company/agiletalent-associates"
+           target="_blank"
+           rel="noopener noreferrer"
+           aria-label="Follow AgileTalent Associates on LinkedIn">
+          <svg class="social-icon" viewBox="0 0 64 64" aria-hidden="true">
+            <circle cx="32" cy="32" r="32" fill="#0A66C2"/>
+            <g fill="#fff" transform="translate(14 14) scale(1.55)">
+              <path d="M3.5 6.5A2.25 2.25 0 1 0 3.5 2a2.25 2.25 0 0 0 0 4.5zM1.5 8h4v14h-4zM8 8h3.8v1.9h.1C12.4 8.8 13.8 7.6 16 7.6c4.1 0 4.9 2.7 4.9 6.2V22h-4v-7.3c0-1.8 0-4-2.4-4s-2.8 1.9-2.8 3.9V22H8z"/>
+            </g>
+          </svg>
+          <span>LinkedIn</span>
+        </a>
+      </div>
     </div>
 
-  </div>
-</section>
+    <div class="wrap">
+      <p style="margin-top:32px;font-size:.85rem">
+        &copy; 2026 AgileTalent Associates Limited. All rights reserved.
+      </p>
+    </div>
+  </footer>
+
+  <a style="display:none" class="btn sticky" id="sticky" href="contact.html">
+    Let’s Talk
+  </a>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
+```
