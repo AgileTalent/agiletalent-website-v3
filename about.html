@@ -4,13 +4,16 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 
-<title>About AgileTalent Associates | HR and Recruitment Services in Nigeria</title>
-<meta name="description" content="Learn about AgileTalent Associates, a Nigerian HR consulting and recruitment firm helping businesses find talent, strengthen people operations and grow.">
-<meta name="robots" content="noindex, follow">
+<title>About AgileTalent Associates Limited | HR Consulting in Nigeria</title>
+<meta name="description" content="AgileTalent Associates Limited helps Nigerian businesses recruit the right talent, strengthen HR operations and build effective teams through practical people solutions.">
+<meta name="robots" content="index, follow">
 
-<meta property="og:title" content="About AgileTalent Associates | HR and Recruitment Services in Nigeria">
-<meta property="og:description" content="Discover how AgileTalent Associates helps Nigerian businesses recruit effectively and manage their people better.">
+<link rel="canonical" href="https://agiletalentassociates.com/about.html">
+
+<meta property="og:title" content="About AgileTalent Associates Limited">
+<meta property="og:description" content="Practical HR consulting, recruitment and workforce solutions that help Nigerian businesses build stronger teams.">
 <meta property="og:type" content="website">
+<meta property="og:url" content="https://agiletalentassociates.com/about.html">
 
 <link rel="icon" type="image/png" href="favicon.png">
 
@@ -23,10 +26,14 @@
   "@context": "https://schema.org",
   "@type": "Organization",
   "name": "AgileTalent Associates Limited",
+  "url": "https://agiletalentassociates.com",
   "foundingDate": "2022",
   "email": "agiletalents@outlook.com",
-  "areaServed": "NG",
-  "description": "Human resources consulting, recruitment and workforce solutions.",
+  "areaServed": {
+    "@type": "Country",
+    "name": "Nigeria"
+  },
+  "description": "Human resources consulting, recruitment, recruitment outsourcing and workforce solutions.",
   "sameAs": [
     "https://x.com/agiletalents_ng",
     "https://www.linkedin.com/company/agiletalent-associates"
@@ -40,6 +47,326 @@
 :root {
   --f-head: 'Inter', sans-serif;
   --f-body: 'Inter', sans-serif;
+  --about-ink: #0B1426;
+  --about-gold: #F2B705;
+  --about-paper: #FAF8F3;
+}
+
+body {
+  font-family: var(--f-body);
+}
+
+.about-hero {
+  position: relative;
+  overflow: hidden;
+  background: var(--about-ink);
+  color: #fff;
+  padding: clamp(76px, 11vw, 145px) 0;
+}
+
+.about-hero::after {
+  content: "";
+  position: absolute;
+  width: 420px;
+  height: 420px;
+  border: 1px solid rgba(242,183,5,.24);
+  border-radius: 50%;
+  right: -150px;
+  top: -150px;
+  box-shadow:
+    0 0 0 45px rgba(242,183,5,.035),
+    0 0 0 90px rgba(242,183,5,.025);
+  pointer-events: none;
+}
+
+.about-hero .wrap {
+  position: relative;
+  z-index: 1;
+}
+
+.about-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--about-gold);
+  font-size: .78rem;
+  font-weight: 700;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  margin-bottom: 22px;
+}
+
+.about-kicker::before {
+  content: "";
+  width: 26px;
+  height: 2px;
+  background: var(--about-gold);
+}
+
+.about-hero h1 {
+  max-width: 900px;
+  margin: 0 0 25px;
+  font-size: clamp(2.7rem, 6.4vw, 5.4rem);
+  line-height: 1.04;
+  letter-spacing: -.065em;
+  font-weight: 700;
+}
+
+.about-hero h1 span {
+  color: var(--about-gold);
+}
+
+.about-hero .hero-copy {
+  max-width: 690px;
+  color: rgba(255,255,255,.78);
+  font-size: clamp(1.02rem, 1.6vw, 1.2rem);
+  line-height: 1.85;
+}
+
+.about-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px;
+  margin-top: 32px;
+}
+
+.about-hero .text-link {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 12px 6px;
+}
+
+.about-hero .text-link:hover {
+  color: var(--about-gold);
+}
+
+.about-proof {
+  background: var(--about-gold);
+  color: var(--about-ink);
+  padding: 27px 0;
+}
+
+.about-proof-inner {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.about-proof-item {
+  padding-left: 20px;
+  border-left: 1px solid rgba(11,20,38,.3);
+}
+
+.about-proof-item strong {
+  display: block;
+  font-size: clamp(1.15rem, 2vw, 1.5rem);
+  line-height: 1.3;
+  font-weight: 800;
+}
+
+.about-proof-item span {
+  display: block;
+  margin-top: 5px;
+  font-size: .9rem;
+  line-height: 1.5;
+}
+
+.about-intro {
+  background: var(--about-paper);
+}
+
+.about-intro-grid {
+  display: grid;
+  grid-template-columns: .8fr 1.2fr;
+  gap: clamp(32px, 7vw, 100px);
+  align-items: start;
+}
+
+.about-eyebrow {
+  color: #8B6900;
+  font-size: .77rem;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+}
+
+.about-intro h2,
+.about-section-heading h2 {
+  font-size: clamp(2rem, 4vw, 3.35rem);
+  line-height: 1.12;
+  letter-spacing: -.045em;
+  margin: 0;
+}
+
+.about-intro-copy p,
+.about-section-heading p {
+  font-size: 1rem;
+  line-height: 1.9;
+}
+
+.about-intro-copy p:first-child {
+  margin-top: 0;
+}
+
+.about-intro-copy p:last-child {
+  margin-bottom: 0;
+}
+
+.about-principles {
+  background: #fff;
+}
+
+.about-section-heading {
+  max-width: 760px;
+  margin-bottom: 38px;
+}
+
+.about-section-heading p {
+  max-width: 650px;
+  color: #555D6A;
+  margin-top: 18px;
+}
+
+.about-principle-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1px;
+  background: #DDE0E5;
+  border: 1px solid #DDE0E5;
+}
+
+.about-principle {
+  background: #fff;
+  padding: clamp(24px, 4vw, 40px);
+}
+
+.about-principle .number {
+  display: block;
+  color: #997500;
+  font-size: .78rem;
+  font-weight: 700;
+  letter-spacing: .1em;
+  margin-bottom: 23px;
+}
+
+.about-principle h3 {
+  font-size: 1.25rem;
+  letter-spacing: -.025em;
+  margin: 0 0 12px;
+}
+
+.about-principle p {
+  color: #555D6A;
+  line-height: 1.8;
+  margin: 0;
+}
+
+.about-purpose {
+  background: var(--about-ink);
+  color: #fff;
+}
+
+.about-purpose .about-section-heading p {
+  color: rgba(255,255,255,.7);
+}
+
+.about-purpose-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.about-purpose-card {
+  border-top: 2px solid var(--about-gold);
+  padding: 27px 23px 30px;
+  background: rgba(255,255,255,.045);
+}
+
+.about-purpose-card .purpose-label {
+  color: var(--about-gold);
+  font-size: .75rem;
+  text-transform: uppercase;
+  letter-spacing: .12em;
+  font-weight: 700;
+}
+
+.about-purpose-card h3 {
+  font-size: 1.35rem;
+  margin: 16px 0 12px;
+}
+
+.about-purpose-card p {
+  color: rgba(255,255,255,.75);
+  line-height: 1.85;
+  margin-bottom: 0;
+}
+
+.about-clients {
+  background: var(--about-paper);
+}
+
+.about-client-heading {
+  max-width: 740px;
+  margin-bottom: 28px;
+}
+
+.about-client-heading h2 {
+  font-size: clamp(1.8rem, 3.5vw, 2.7rem);
+  letter-spacing: -.04em;
+  margin: 0 0 14px;
+}
+
+.about-client-heading p {
+  color: #555D6A;
+  line-height: 1.8;
+}
+
+.about-client-note {
+  color: #555D6A;
+  font-size: .88rem;
+  line-height: 1.7;
+  margin-top: 20px;
+}
+
+.about-final-cta {
+  background: var(--about-gold);
+  color: var(--about-ink);
+  padding: clamp(48px, 7vw, 82px) 0;
+}
+
+.about-final-cta .cta-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+}
+
+.about-final-cta h2 {
+  max-width: 690px;
+  font-size: clamp(2rem, 4.5vw, 3.5rem);
+  line-height: 1.1;
+  letter-spacing: -.05em;
+  margin: 0 0 15px;
+}
+
+.about-final-cta p {
+  max-width: 620px;
+  line-height: 1.8;
+  margin: 0;
+}
+
+.about-final-cta .btn {
+  flex-shrink: 0;
+  background: var(--about-ink);
+  color: #fff;
+  border-color: var(--about-ink);
+}
+
+.about-final-cta .btn:hover {
+  background: #192945;
 }
 
 @media (min-width: 1201px) {
@@ -85,6 +412,42 @@
     white-space: nowrap;
   }
 }
+
+@media (max-width: 760px) {
+  .about-hero {
+    padding: 76px 0 82px;
+  }
+
+  .about-proof-inner {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .about-proof-item {
+    padding: 0 0 0 16px;
+  }
+
+  .about-intro-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .about-principle-grid,
+  .about-purpose-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-final-cta .cta-inner {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marq-track {
+    animation: none !important;
+  }
+}
 </style>
 </head>
 
@@ -117,82 +480,180 @@
 
 <main id="main" tabindex="-1">
 
-  <section class="sec dark">
+  <section class="about-hero">
     <div class="wrap">
-      <h1 style="font-size:clamp(2.2rem,5vw,3.6rem)">About AgileTalent</h1>
-      <p class="lead">A Nigerian HR and business consulting firm, established in 2022, helping organisations find the right people, strengthen their HR operations and build for growth.</p>
-      <p style="margin-top:24px">
-        <a class="btn" href="contact.html">Let's Talk About Your Needs</a>
+      <p class="about-kicker">Who we are · Established 2022</p>
+
+      <h1>Better people decisions.<br><span>Stronger businesses.</span></h1>
+
+      <p class="hero-copy">
+        AgileTalent Associates Limited helps organisations find the right people,
+        improve their HR operations and build the capabilities they need to grow.
+        We turn people challenges into practical business solutions.
       </p>
+
+      <div class="about-hero-actions">
+        <a class="btn" href="contact.html">Let's Talk</a>
+        <a class="text-link" href="services.html">Explore Our Services &rarr;</a>
+      </div>
     </div>
   </section>
 
-  <section class="sec">
-    <div class="wrap split">
+  <section class="about-proof" aria-label="Our experience and capabilities">
+    <div class="wrap about-proof-inner">
+      <div class="about-proof-item">
+        <strong>Established 2022</strong>
+        <span>Built to support organisations with practical people solutions</span>
+      </div>
+
+      <div class="about-proof-item">
+        <strong>4,000+ candidates</strong>
+        <span>A database of pre-screened candidates to support recruitment needs</span>
+      </div>
+
+      <div class="about-proof-item">
+        <strong>Integrated support</strong>
+        <span>Recruitment, HR consulting and workforce solutions</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec about-intro">
+    <div class="wrap about-intro-grid">
       <div>
-        <h2>Our approach</h2>
+        <p class="about-eyebrow">Our perspective</p>
+        <h2>HR should move the business forward.</h2>
       </div>
-      <div>
-        <p>Many Nigerian businesses face the same pressures: scarce talent, stretched managers, payroll complexity, compliance questions and the cost of a poor hire. We treat these as business problems, not HR theory.</p>
-        <p>We begin by understanding how your organisation works, then recommend the practical changes that can make a real difference. Where it helps, we do the work for you. Where it does not, we say so.</p>
-      </div>
-    </div>
-  </section>
 
-  <section class="sec dark">
-    <div class="wrap">
-      <h2>Vision, mission and quality</h2>
+      <div class="about-intro-copy">
+        <p>
+          Hiring the wrong person, managing people processes inefficiently or
+          operating without clear HR policies can cost an organisation time,
+          money and momentum. These are business issues that require more than
+          generic advice.
+        </p>
 
-      <div class="grid g3" style="margin-top:24px">
-        <div class="cell big">
-          <span class="lab">Our vision</span>
-          <p>To be a leading HR solution provider, transforming organisations through exceptional people strategies.</p>
-        </div>
+        <p>
+          We work with businesses to understand their objectives, identify the
+          people-related challenges affecting performance and deliver support
+          suited to their needs. Our work spans recruitment, HR systems and
+          policies, payroll support, performance management, learning and
+          development, and business advisory.
+        </p>
 
-        <div class="cell big">
-          <span class="lab">Our mission</span>
-          <p>Empowering businesses with strategic HR solutions that drive growth, optimise talent and foster excellence.</p>
-        </div>
-
-        <div class="cell big">
-          <span class="lab">Our quality statement</span>
-          <p>We deliver tailored, quality HR services with integrity, efficiency and a commitment to excellence.</p>
-        </div>
+        <p>
+          Whether an organisation needs help filling a critical vacancy or
+          improving the way it manages its workforce, our focus is on practical
+          solutions that serve a clear purpose.
+        </p>
       </div>
     </div>
   </section>
 
-  <section class="sec">
+  <section class="sec about-principles">
     <div class="wrap">
-      <h2>How we work</h2>
+      <div class="about-section-heading">
+        <p class="about-eyebrow">How we create value</p>
+        <h2>Support built around your business.</h2>
+        <p>
+          Every organisation has different priorities. Our approach is to
+          understand what matters, agree the scope of work and provide support
+          that fits the challenge.
+        </p>
+      </div>
 
-      <div class="grid g2" style="margin-top:24px">
-        <div class="cell">
-          <h3>Professional</h3>
-          <p>Clear scopes, written agreements and consistent standards.</p>
-        </div>
+      <div class="about-principle-grid">
+        <article class="about-principle">
+          <span class="number">01 / UNDERSTAND</span>
+          <h3>Start with the real challenge</h3>
+          <p>
+            We clarify your business objectives, workforce needs and existing
+            processes before recommending a course of action.
+          </p>
+        </article>
 
-        <div class="cell">
-          <h3>Responsive</h3>
-          <p>We aim to reply promptly and keep work moving. Timelines are agreed for each engagement.</p>
-        </div>
+        <article class="about-principle">
+          <span class="number">02 / SOLVE</span>
+          <h3>Make the solution practical</h3>
+          <p>
+            We focus on fit-for-purpose recruitment and people processes,
+            with recommendations grounded in the organisation's needs.
+          </p>
+        </article>
 
-        <div class="cell">
-          <h3>Confidential</h3>
-          <p>People and business information is handled with discretion.</p>
-        </div>
+        <article class="about-principle">
+          <span class="number">03 / DELIVER</span>
+          <h3>Agree clear expectations</h3>
+          <p>
+            We establish responsibilities, deliverables and timelines so
+            clients understand what the engagement is intended to achieve.
+          </p>
+        </article>
 
-        <div class="cell">
-          <h3>Practical</h3>
-          <p>Recommendations your team can apply, not documents that sit on a shelf.</p>
-        </div>
+        <article class="about-principle">
+          <span class="number">04 / IMPROVE</span>
+          <h3>Build for the longer term</h3>
+          <p>
+            Where appropriate, we help strengthen the processes and capabilities
+            that allow teams to operate more effectively beyond the immediate task.
+          </p>
+        </article>
       </div>
     </div>
   </section>
 
-  <section class="sec" style="padding-top:0">
+  <section class="sec about-purpose">
     <div class="wrap">
-      <h2>Organisations we have worked with</h2>
+      <div class="about-section-heading">
+        <p class="about-eyebrow">Our direction</p>
+        <h2>What guides our work.</h2>
+        <p>
+          Our purpose is to help organisations make better people decisions
+          through dependable, tailored and practical support.
+        </p>
+      </div>
+
+      <div class="about-purpose-grid">
+        <article class="about-purpose-card">
+          <span class="purpose-label">Our vision</span>
+          <h3>Transforming organisations through people.</h3>
+          <p>
+            To be a leading HR solutions provider, transforming organisations
+            through exceptional people strategies.
+          </p>
+        </article>
+
+        <article class="about-purpose-card">
+          <span class="purpose-label">Our mission</span>
+          <h3>Making people strategy work.</h3>
+          <p>
+            To empower businesses with strategic HR solutions that drive growth,
+            optimise talent and foster excellence.
+          </p>
+        </article>
+
+        <article class="about-purpose-card">
+          <span class="purpose-label">Our commitment</span>
+          <h3>Quality with integrity.</h3>
+          <p>
+            To deliver tailored, quality HR services with integrity, efficiency
+            and a commitment to excellence.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec about-clients">
+    <div class="wrap">
+      <div class="about-client-heading">
+        <p class="about-eyebrow">Our experience</p>
+        <h2>Organisations we have worked with.</h2>
+        <p>
+          Our experience includes supporting organisations across different
+          sectors and business needs.
+        </p>
+      </div>
 
       <div class="marq-wrap">
         <div class="marq" role="group" aria-label="Organisations we have worked with: Eric Kayser, Autochek, Novatrack, Rytegate Technologies, Shine Shine Cosmetics">
@@ -228,9 +689,24 @@
         <button type="button" class="pm" onclick="const m=this.closest('.marq-wrap').querySelector('.marq');m.classList.toggle('paused');this.textContent=m.classList.contains('paused')?'Play scrolling':'Pause scrolling'">Pause scrolling</button>
       </div>
 
-      <p style="margin-top:32px">
-        <a class="btn" href="contact.html">Tell Us How We Can Help</a>
+      <p class="about-client-note">
+        Client names and logos are presented to reflect the organisations
+        AgileTalent has worked with.
       </p>
+    </div>
+  </section>
+
+  <section class="about-final-cta">
+    <div class="wrap cta-inner">
+      <div>
+        <h2>Let's solve your people challenges.</h2>
+        <p>
+          Tell us what your organisation needs. We will discuss the challenge
+          and the most suitable way to support you.
+        </p>
+      </div>
+
+      <a class="btn" href="contact.html">Tell Us How We Can Help</a>
     </div>
   </section>
 
@@ -252,7 +728,7 @@
       <h2>Explore</h2>
       <ul>
         <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About us</a></li>
+        <li><a href="about.html" aria-current="page">About us</a></li>
         <li><a href="services.html">Services</a></li>
         <li><a href="recruitment.html">Recruitment</a></li>
         <li><a href="industries.html">Who we serve</a></li>
