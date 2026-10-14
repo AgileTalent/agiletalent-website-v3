@@ -333,8 +333,8 @@ function initContactForm() {
         });
 
         showMessage(
-          "Enquiry submission attempted",
-          "Your submission request has been sent. This website cannot verify that Google Forms recorded it. If you do not receive a response, please contact us directly.",
+          "Request Form Sent",
+          "Your submission request has been sent.  If you do not receive a response from us within 12 hours, please contact us directly using alternative channels.",
           "mailto:" + SITE.email +
             "?subject=" +
             encodeURIComponent("Service enquiry: " + values.company),
