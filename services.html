@@ -5,11 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 
   <title>HR Consulting & Recruitment Services in Nigeria | AgileTalent Associates</title>
-  <meta name="description" content="Explore AgileTalent Associates' recruitment outsourcing, HR consulting, payroll, performance management, learning and development, and business advisory services in Nigeria.">
+  <meta name="description" content="AgileTalent Associates helps Nigerian organisations recruit better talent, strengthen HR systems, manage payroll and develop workforce capability.">
   <meta name="robots" content="index, follow">
 
   <link rel="icon" type="image/png" href="favicon.png">
-
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -26,47 +25,339 @@
       --f-body: 'Inter', sans-serif;
     }
 
-    @media (min-width: 1201px) {
-      header .bar {
-        width: 100%;
-        max-width: none;
-        flex-wrap: nowrap;
-        gap: 16px;
+    body {
+      font-family: var(--f-body);
+    }
+
+    h1, h2, h3, h4, .brand, .btn {
+      font-family: var(--f-head);
+    }
+
+    .services-hero {
+      position: relative;
+      overflow: hidden;
+      padding-top: clamp(80px, 11vw, 145px);
+      padding-bottom: clamp(80px, 10vw, 125px);
+      background: #0B1426;
+      color: #fff;
+    }
+
+    .services-hero::after {
+      content: "";
+      position: absolute;
+      width: 340px;
+      height: 340px;
+      right: -100px;
+      top: 5%;
+      border: 1px solid rgba(242,183,5,.32);
+      border-radius: 50%;
+      box-shadow:
+        0 0 0 42px rgba(242,183,5,.035),
+        0 0 0 84px rgba(242,183,5,.025);
+      pointer-events: none;
+    }
+
+    .services-hero .wrap {
+      position: relative;
+      z-index: 1;
+    }
+
+    .services-hero h1 {
+      max-width: 900px;
+      font-size: clamp(2.8rem, 6.5vw, 5.4rem);
+      line-height: 1.06;
+      letter-spacing: -.055em;
+      margin: 18px 0 24px;
+    }
+
+    .services-hero h1 span {
+      color: #F2B705;
+    }
+
+    .services-hero .lead {
+      max-width: 690px;
+      line-height: 1.8;
+    }
+
+    .service-hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px 28px;
+      margin-top: 38px;
+      color: rgba(255,255,255,.78);
+      font-size: .92rem;
+    }
+
+    .service-hero-meta span::before {
+      content: "—";
+      color: #F2B705;
+      margin-right: 9px;
+    }
+
+    .service-overview {
+      padding-top: 48px;
+      padding-bottom: 48px;
+      border-bottom: 1px solid rgba(11,20,38,.12);
+    }
+
+    .service-overview-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0,1fr));
+      gap: 26px;
+    }
+
+    .service-overview-item {
+      padding-right: 18px;
+    }
+
+    .service-overview-item strong {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 1.02rem;
+    }
+
+    .service-overview-item p {
+      margin: 0;
+      font-size: .94rem;
+      line-height: 1.7;
+    }
+
+    .service-intro {
+      max-width: 760px;
+      margin-bottom: 52px;
+    }
+
+    .service-intro h2 {
+      font-size: clamp(2rem,4vw,3.2rem);
+      line-height: 1.15;
+      letter-spacing: -.04em;
+      margin: 12px 0 18px;
+    }
+
+    .service-row {
+      display: grid;
+      grid-template-columns: 100px minmax(0,1fr) minmax(230px,.75fr);
+      gap: 30px;
+      align-items: start;
+      padding: 38px 0;
+      border-top: 1px solid rgba(11,20,38,.15);
+    }
+
+    .service-index {
+      color: #B48500;
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: .08em;
+      padding-top: 7px;
+    }
+
+    .service-main h3 {
+      font-size: clamp(1.45rem,2.4vw,2rem);
+      line-height: 1.25;
+      letter-spacing: -.035em;
+      margin: 0 0 14px;
+    }
+
+    .service-main p {
+      line-height: 1.8;
+      margin-bottom: 18px;
+    }
+
+    .service-main .text-link {
+      display: inline-block;
+      margin-top: 4px;
+    }
+
+    .service-outcome {
+      padding: 23px;
+      border-radius: 12px;
+      background: #FAF8F3;
+    }
+
+    .service-outcome .outcome-label {
+      display: block;
+      margin-bottom: 13px;
+      color: #806000;
+      font-size: .76rem;
+      font-weight: 700;
+      letter-spacing: .09em;
+      text-transform: uppercase;
+    }
+
+    .service-outcome p {
+      margin: 0;
+      line-height: 1.75;
+      font-size: .94rem;
+    }
+
+    .service-outcome ul {
+      padding-left: 18px;
+      margin: 0;
+    }
+
+    .service-outcome li {
+      margin: 8px 0;
+      line-height: 1.55;
+      font-size: .93rem;
+    }
+
+    .service-proof {
+      background: #0B1426;
+      color: #fff;
+      overflow: hidden;
+    }
+
+    .service-proof-grid {
+      display: grid;
+      grid-template-columns: minmax(0,1fr) minmax(0,1fr);
+      gap: 56px;
+      align-items: center;
+    }
+
+    .proof-number {
+      display: block;
+      color: #F2B705;
+      font-size: clamp(3.8rem,8vw,7rem);
+      font-weight: 800;
+      letter-spacing: -.075em;
+      line-height: 1;
+      margin-bottom: 18px;
+    }
+
+    .service-proof h2 {
+      font-size: clamp(2rem,4vw,3.1rem);
+      line-height: 1.15;
+      letter-spacing: -.04em;
+      margin: 14px 0 20px;
+    }
+
+    .service-proof p {
+      line-height: 1.8;
+    }
+
+    .proof-note {
+      padding: 25px;
+      border: 1px solid rgba(255,255,255,.19);
+      border-radius: 12px;
+      background: rgba(255,255,255,.035);
+    }
+
+    .proof-note h3 {
+      margin-top: 0;
+    }
+
+    .proof-note p:last-child {
+      margin-bottom: 0;
+    }
+
+    .service-process-grid {
+      display: grid;
+      grid-template-columns: repeat(3,minmax(0,1fr));
+      gap: 28px;
+      margin-top: 42px;
+    }
+
+    .process-item {
+      padding-top: 22px;
+      border-top: 2px solid #F2B705;
+    }
+
+    .process-item .step {
+      display: block;
+      color: #947000;
+      font-size: .82rem;
+      font-weight: 700;
+      letter-spacing: .08em;
+      margin-bottom: 18px;
+    }
+
+    .process-item h3 {
+      margin-bottom: 10px;
+    }
+
+    .process-item p {
+      line-height: 1.75;
+      margin-bottom: 0;
+    }
+
+    .service-final-cta {
+      background: #FAF8F3;
+    }
+
+    .service-final-cta h2 {
+      max-width: 760px;
+      font-size: clamp(2.2rem,4.5vw,3.8rem);
+      line-height: 1.12;
+      letter-spacing: -.045em;
+      margin: 12px 0 20px;
+    }
+
+    .service-final-cta .lead {
+      max-width: 680px;
+      line-height: 1.8;
+    }
+
+    .service-contact-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px 26px;
+      margin-top: 26px;
+    }
+
+    .service-contact-links a {
+      overflow-wrap: anywhere;
+    }
+
+    @media (max-width: 900px) {
+      .service-row {
+        grid-template-columns: 55px minmax(0,1fr);
+        gap: 18px;
       }
 
-      header .brand {
-        flex-shrink: 0;
+      .service-outcome {
+        grid-column: 2;
       }
 
-      header #nav {
-        margin-left: auto;
-        flex-shrink: 0;
+      .service-proof-grid {
+        gap: 30px;
+      }
+    }
+
+    @media (max-width: 650px) {
+      .services-hero::after {
+        right: -230px;
+        top: 30%;
       }
 
-      header #nav > ul {
-        display: flex;
-        flex-wrap: nowrap;
-        align-items: center;
-        white-space: nowrap;
-        gap: 2px;
-        margin: 0;
-        padding: 0;
-        list-style: none;
+      .service-overview-grid,
+      .service-proof-grid,
+      .service-process-grid {
+        grid-template-columns: 1fr;
+        gap: 26px;
       }
 
-      header #nav > ul > li {
-        flex: 0 0 auto;
-        white-space: nowrap;
-        list-style: none;
+      .service-overview-item {
+        padding-right: 0;
       }
 
-      header #nav > ul > li > a {
-        white-space: nowrap;
+      .service-row {
+        grid-template-columns: 36px minmax(0,1fr);
+        gap: 12px;
+        padding: 30px 0;
       }
 
-      header #nav > ul > li > a.btn {
-        flex-shrink: 0;
-        white-space: nowrap;
+      .service-outcome {
+        grid-column: 2;
+        padding: 20px;
+      }
+
+      .service-intro {
+        margin-bottom: 34px;
+      }
+
+      .service-contact-links {
+        flex-direction: column;
+        gap: 12px;
       }
     }
   </style>
@@ -101,186 +392,326 @@
 
   <main id="main" tabindex="-1">
 
-    <section class="hero">
+    <!-- HERO -->
+    <section class="services-hero">
       <div class="wrap">
-        <div class="kicker">What we do</div>
+        <div class="kicker">People. Processes. Performance.</div>
 
-        <h1>People solutions that move your business forward.</h1>
+        <h1>Better people decisions.<br><span>Stronger business performance.</span></h1>
 
         <p class="lead">
-          From finding the right talent to strengthening your HR systems,
-          AgileTalent Associates helps organisations build capable teams,
-          improve workforce performance and operate more effectively.
+          Your people and processes influence how your business performs.
+          AgileTalent Associates helps organisations find the right talent,
+          build effective HR systems and strengthen the capabilities
+          required to move forward.
         </p>
 
         <div class="hero-actions">
-          <a class="btn" href="contact.html?s=general">Let's Talk About Your Needs</a>
-          <a class="btn secondary" href="recruitment.html">Explore Recruitment</a>
+          <a class="btn" href="contact.html?s=general">Tell Us What You Need</a>
+          <a class="btn secondary" href="#our-services">Explore Our Services</a>
+        </div>
+
+        <div class="service-hero-meta">
+          <span>Recruitment and talent acquisition</span>
+          <span>HR systems and advisory</span>
+          <span>Workforce development</span>
         </div>
       </div>
     </section>
 
-    <section class="section">
+    <!-- SERVICE POSITIONING -->
+    <section class="service-overview">
+      <div class="wrap service-overview-grid">
+        <div class="service-overview-item">
+          <strong>Build your team</strong>
+          <p>Find and assess talent against your actual role requirements.</p>
+        </div>
+
+        <div class="service-overview-item">
+          <strong>Strengthen your systems</strong>
+          <p>Establish clearer people processes, policies and accountability.</p>
+        </div>
+
+        <div class="service-overview-item">
+          <strong>Develop capability</strong>
+          <p>Support employee performance, learning and organisational growth.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="section" id="our-services">
       <div class="wrap">
-        <div class="section-heading">
-          <div class="kicker">Our capabilities</div>
-          <h2>Practical solutions for your workforce and business.</h2>
+        <div class="service-intro">
+          <div class="kicker">Our services</div>
+          <h2>What does your business need to do better?</h2>
           <p>
-            Our services address real operational challenges, whether you are
-            building a team, improving existing HR processes or seeking more
-            structured workforce management.
+            Start with the challenge you need to solve. We work with you
+            to define the right scope of support rather than offering
+            a one-size-fits-all solution.
           </p>
         </div>
 
-        <div class="grid">
-          <article class="card">
-            <div class="card-number">01</div>
+        <!-- 01 -->
+        <article class="service-row">
+          <div class="service-index">01</div>
+
+          <div class="service-main">
             <h3>Recruitment & Recruitment Outsourcing</h3>
             <p>
-              Find qualified candidates through structured sourcing,
-              screening and selection. Our database includes
-              <strong>4,000+ pre-screened candidates</strong> to support
-              recruitment across different roles and business functions.
+              Hiring the wrong person can cost time, disrupt delivery and
+              place additional pressure on existing employees. We support
+              your hiring process through candidate sourcing, screening,
+              shortlisting and recruitment coordination tailored to the
+              roles you need to fill.
             </p>
-            <a href="recruitment.html" class="text-link">Explore Recruitment</a>
-          </article>
+            <a href="recruitment.html" class="text-link">Explore our recruitment approach →</a>
+          </div>
 
-          <article class="card">
-            <div class="card-number">02</div>
-            <h3>HR Consulting</h3>
+          <div class="service-outcome">
+            <span class="outcome-label">Business value</span>
+            <ul>
+              <li>A more structured hiring process</li>
+              <li>Access to a broader candidate pool</li>
+              <li>Shortlisting aligned with role requirements</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- 02 -->
+        <article class="service-row">
+          <div class="service-index">02</div>
+
+          <div class="service-main">
+            <h3>HR Consulting & People Operations</h3>
             <p>
-              Establish and improve HR policies, procedures, employee
-              relations practices and workforce management systems that
-              support compliance, consistency and business performance.
+              Unclear processes and inconsistent people practices can
+              create avoidable operational problems. We help organisations
+              review and strengthen HR policies, procedures, employee
+              relations practices and workforce management systems in
+              line with their business context and applicable requirements.
             </p>
-            <a href="contact.html?s=hr-consulting" class="text-link">Discuss HR Consulting</a>
-          </article>
+            <a href="contact.html?s=hr-consulting" class="text-link">Discuss your HR challenges →</a>
+          </div>
 
-          <article class="card">
-            <div class="card-number">03</div>
-            <h3>Payroll Management</h3>
+          <div class="service-outcome">
+            <span class="outcome-label">Business value</span>
+            <ul>
+              <li>Clearer policies and responsibilities</li>
+              <li>More consistent HR processes</li>
+              <li>Better structured employee relations practices</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- 03 -->
+        <article class="service-row">
+          <div class="service-index">03</div>
+
+          <div class="service-main">
+            <h3>SME Payroll Support</h3>
             <p>
-              Support accurate and timely payroll administration through
-              structured payroll processes, employee records management,
-              payroll checks and reporting.
+              Payroll requires reliable records, clear processes and
+              careful checks. We support small and growing businesses
+              with structured payroll administration, employee data
+              management, payroll verification and reporting based on
+              the agreed service scope.
             </p>
-            <a href="contact.html?s=payroll" class="text-link">Discuss Payroll Support</a>
-          </article>
+            <a href="contact.html?s=payroll" class="text-link">Discuss payroll support →</a>
+          </div>
 
-          <article class="card">
-            <div class="card-number">04</div>
+          <div class="service-outcome">
+            <span class="outcome-label">Business value</span>
+            <ul>
+              <li>More organised payroll processes</li>
+              <li>Improved record keeping and checks</li>
+              <li>Better visibility of payroll information</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- 04 -->
+        <article class="service-row">
+          <div class="service-index">04</div>
+
+          <div class="service-main">
             <h3>Performance Management</h3>
             <p>
-              Connect employee goals to organisational priorities through
+              Performance management should connect individual contribution
+              to organisational priorities. We support the development of
               performance frameworks, measurable KPIs, appraisal processes
-              and structured performance reviews.
+              and review practices that help managers assess performance
+              and identify areas for improvement.
             </p>
-            <a href="contact.html?s=performance-management" class="text-link">Improve Performance Management</a>
-          </article>
+            <a href="contact.html?s=performance-management" class="text-link">Strengthen performance management →</a>
+          </div>
 
-          <article class="card">
-            <div class="card-number">05</div>
+          <div class="service-outcome">
+            <span class="outcome-label">Business value</span>
+            <ul>
+              <li>Clearer goals and performance measures</li>
+              <li>More structured performance conversations</li>
+              <li>Better visibility of capability gaps</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- 05 -->
+        <article class="service-row">
+          <div class="service-index">05</div>
+
+          <div class="service-main">
             <h3>Learning & Development</h3>
             <p>
-              Identify capability gaps and develop targeted learning
-              interventions that strengthen employee competence,
-              leadership effectiveness and workplace productivity.
+              Training creates value when it addresses real capability
+              needs. We help organisations identify development priorities,
+              structure learning interventions and support the development
+              of employee, managerial and leadership capabilities.
             </p>
-            <a href="contact.html?s=learning-development" class="text-link">Discuss Training Needs</a>
-          </article>
+            <a href="contact.html?s=learning-development" class="text-link">Discuss your training needs →</a>
+          </div>
 
-          <article class="card">
-            <div class="card-number">06</div>
-            <h3>Business Advisory</h3>
+          <div class="service-outcome">
+            <span class="outcome-label">Business value</span>
+            <ul>
+              <li>Learning linked to identified needs</li>
+              <li>Targeted employee development</li>
+              <li>Stronger focus on applying new skills</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- 06 -->
+        <article class="service-row">
+          <div class="service-index">06</div>
+
+          <div class="service-main">
+            <h3>Business Advisory & Workforce Planning</h3>
             <p>
-              Improve organisational effectiveness with practical advice
-              on people operations, workforce planning, business processes
-              and the systems required to support sustainable growth.
+              Growth requires the right people, responsibilities and
+              operating processes. We provide practical advisory support
+              on workforce planning, organisational effectiveness and
+              people-related processes to help businesses assess their
+              current position and plan their next steps.
             </p>
-            <a href="contact.html?s=business-advisory" class="text-link">Discuss Advisory Support</a>
-          </article>
-        </div>
+            <a href="contact.html?s=business-advisory" class="text-link">Discuss advisory support →</a>
+          </div>
+
+          <div class="service-outcome">
+            <span class="outcome-label">Business value</span>
+            <ul>
+              <li>Clearer workforce priorities</li>
+              <li>Better alignment between roles and business needs</li>
+              <li>More structured planning for growth</li>
+            </ul>
+          </div>
+        </article>
+
       </div>
     </section>
 
-    <section class="section section-alt">
-      <div class="wrap split">
+    <!-- RECRUITMENT ADVANTAGE -->
+    <section class="section service-proof">
+      <div class="wrap service-proof-grid">
         <div>
-          <div class="kicker">Why AgileTalent</div>
-          <h2>Solutions built around your business needs.</h2>
+          <div class="kicker" style="color:#F2B705">Our recruitment advantage</div>
+          <span class="proof-number">4,000+</span>
+          <h2>Pre-screened candidates. A stronger starting point for hiring.</h2>
           <p>
-            Every organisation faces different workforce challenges. We focus
-            on understanding your requirements and delivering practical,
-            structured support that fits your priorities.
+            Our candidate database gives AgileTalent a valuable starting
+            point when supporting recruitment requirements across different
+            roles and business functions.
           </p>
         </div>
 
-        <div class="feature-list">
-          <div class="feature">
-            <h3>Access to talent</h3>
-            <p>Recruitment support backed by a database of 4,000+ pre-screened candidates.</p>
-          </div>
-
-          <div class="feature">
-            <h3>Practical implementation</h3>
-            <p>Recommendations and processes designed to work in real organisational settings.</p>
-          </div>
-
-          <div class="feature">
-            <h3>Flexible engagement</h3>
-            <p>Support tailored to your organisation's needs, priorities and operational requirements.</p>
-          </div>
+        <div class="proof-note">
+          <h3>Built around your requirements</h3>
+          <p>
+            The right candidate depends on the role, responsibilities,
+            experience and capabilities your business needs. We tailor
+            screening and shortlisting to the agreed hiring criteria.
+          </p>
+          <p>
+            Candidate availability and suitability are assessed against
+            each specific vacancy; the database does not replace
+            role-specific evaluation.
+          </p>
+          <p style="margin-top:24px">
+            <a class="btn" href="recruitment.html">Discover Recruitment Services</a>
+          </p>
         </div>
       </div>
     </section>
 
+    <!-- PROCESS -->
     <section class="section">
       <div class="wrap">
         <div class="section-heading">
           <div class="kicker">How we work</div>
-          <h2>A clear process from discussion to delivery.</h2>
+          <h2>A clear process. Support shaped around your needs.</h2>
           <p>
-            We begin by understanding your challenge, agree on the required
-            scope and work towards an appropriate solution.
+            Every engagement starts with understanding the challenge
+            and agreeing what successful delivery should look like.
           </p>
         </div>
 
-        <div class="steps">
-          <div class="step">
-            <span class="step-number">01</span>
+        <div class="service-process-grid">
+          <article class="process-item">
+            <span class="step">STEP 01</span>
             <h3>Understand</h3>
-            <p>We discuss your needs, challenges and desired outcomes.</p>
-          </div>
+            <p>
+              We discuss your organisation, the challenge you are facing
+              and the outcome you need.
+            </p>
+          </article>
 
-          <div class="step">
-            <span class="step-number">02</span>
-            <h3>Define</h3>
-            <p>We establish the scope, priorities and proposed approach.</p>
-          </div>
+          <article class="process-item">
+            <span class="step">STEP 02</span>
+            <h3>Agree the approach</h3>
+            <p>
+              We define the scope, priorities, responsibilities and
+              appropriate support for your requirements.
+            </p>
+          </article>
 
-          <div class="step">
-            <span class="step-number">03</span>
+          <article class="process-item">
+            <span class="step">STEP 03</span>
             <h3>Deliver</h3>
-            <p>We implement the agreed solution and provide relevant support.</p>
-          </div>
+            <p>
+              We work through the agreed activities and communicate
+              on progress, outputs and next steps.
+            </p>
+          </article>
         </div>
       </div>
     </section>
 
-    <section class="cta">
+    <!-- FINAL CTA -->
+    <section class="section service-final-cta">
       <div class="wrap">
-        <div class="kicker">Let's work together</div>
-        <h2>What workforce challenge are you looking to solve?</h2>
-        <p>
-          Tell us what your organisation needs, and let's discuss
-          a practical way forward.
+        <div class="kicker">Let's start a conversation</div>
+        <h2>Your business has a people challenge. Let's work through it.</h2>
+        <p class="lead">
+          Tell us what your organisation is trying to achieve, where
+          you need support and what a practical solution would look like.
         </p>
-        <a class="btn" href="contact.html?s=general">Tell Us How We Can Help</a>
+
+        <div class="hero-actions">
+          <a class="btn" href="contact.html?s=general">Tell Us How We Can Help</a>
+          <a class="btn secondary" href="mailto:agiletalents@outlook.com">Email AgileTalent</a>
+        </div>
+
+        <div class="service-contact-links">
+          <a href="mailto:agiletalents@outlook.com">agiletalents@outlook.com</a>
+          <a href="tel:+2347036783875">+234 703 678 3875</a>
+          <a href="https://wa.me/2348152866467" target="_blank" rel="noopener noreferrer">Chat with us on WhatsApp</a>
+        </div>
       </div>
     </section>
 
   </main>
 
+  <!-- FOOTER -->
   <footer class="footer">
     <div class="wrap footer-grid">
       <div>
@@ -293,6 +724,7 @@
           Practical people and workforce solutions for organisations
           seeking to build stronger teams and operate more effectively.
         </p>
+
         <p><a href="mailto:agiletalents@outlook.com">agiletalents@outlook.com</a></p>
         <p><a href="tel:+2347036783875">+234 703 678 3875</a></p>
         <p><a href="https://wa.me/2348152866467" target="_blank" rel="noopener noreferrer">Chat with us on WhatsApp</a></p>
