@@ -4,13 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 
-<title>Recruitment Agency in Nigeria | AgileTalent Associates</title>
-<meta name="description" content="AgileTalent Associates supports Nigerian businesses with recruitment outsourcing, candidate sourcing, screening, interview coordination and shortlisting.">
+<title>Recruitment Firm in Lagos, Nigeria | AgileTalent Associates</title>
+<meta name="description" content="Looking for a recruitment firm in Lagos, Nigeria? AgileTalent Associates supports businesses with recruitment outsourcing and access to 4,000+ pre-screened candidates.">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://agiletalentassociates.com/recruitment.html">
 
-<meta property="og:title" content="Recruitment Agency in Nigeria | AgileTalent Associates">
-<meta property="og:description" content="Recruitment outsourcing, candidate sourcing, screening, interview coordination and shortlisting for Nigerian businesses.">
+<meta property="og:title" content="Recruitment Firm in Lagos, Nigeria | AgileTalent Associates">
+<meta property="og:description" content="Recruitment and recruitment outsourcing for Nigerian businesses, supported by a database of 4,000+ pre-screened candidates.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://agiletalentassociates.com/recruitment.html">
 
@@ -26,6 +26,9 @@
 :root {
   --f-head: 'Inter', sans-serif;
   --f-body: 'Inter', sans-serif;
+  --recruit-ink: #0B1426;
+  --recruit-gold: #F2B705;
+  --recruit-paper: #FAF8F3;
 }
 
 body {
@@ -36,43 +39,415 @@ h1, h2, h3, h4, .btn, .brand {
   font-family: var(--f-head);
 }
 
+.recruit-hero {
+  background: var(--recruit-ink);
+  color: #fff;
+  padding: clamp(72px, 10vw, 130px) 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.recruit-hero::after {
+  content: "";
+  position: absolute;
+  width: 390px;
+  height: 390px;
+  border: 1px solid rgba(242,183,5,.25);
+  border-radius: 50%;
+  right: -140px;
+  top: -130px;
+  box-shadow: 0 0 0 45px rgba(242,183,5,.035),
+              0 0 0 90px rgba(242,183,5,.025);
+  pointer-events: none;
+}
+
+.recruit-hero .wrap {
+  position: relative;
+  z-index: 1;
+}
+
+.recruit-eyebrow {
+  color: var(--recruit-gold);
+  font-size: .78rem;
+  font-weight: 700;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.recruit-hero h1 {
+  max-width: 900px;
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  line-height: 1.06;
+  letter-spacing: -.055em;
+  margin: 0 0 24px;
+}
+
+.recruit-hero h1 span {
+  color: var(--recruit-gold);
+}
+
+.recruit-hero .lead {
+  max-width: 720px;
+  color: rgba(255,255,255,.78);
+  line-height: 1.85;
+  font-size: clamp(1rem, 1.6vw, 1.2rem);
+}
+
+.recruit-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 13px;
+  margin-top: 30px;
+}
+
+.recruit-hero .recruit-note {
+  max-width: 680px;
+  margin-top: 25px;
+  color: rgba(255,255,255,.65);
+  font-size: .9rem;
+  line-height: 1.8;
+}
+
+.recruit-proof {
+  background: var(--recruit-gold);
+  color: var(--recruit-ink);
+  padding: 28px 0;
+}
+
+.recruit-proof-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0,1fr));
+  gap: 24px;
+}
+
+.recruit-proof-item {
+  padding-left: 20px;
+  border-left: 1px solid rgba(11,20,38,.3);
+}
+
+.recruit-proof-item strong {
+  display: block;
+  font-size: clamp(1.2rem,2.3vw,1.65rem);
+  line-height: 1.3;
+}
+
+.recruit-proof-item span {
+  display: block;
+  margin-top: 6px;
+  font-size: .9rem;
+  line-height: 1.6;
+}
+
+.recruit-intro {
+  background: var(--recruit-paper);
+}
+
+.recruit-intro-grid {
+  display: grid;
+  grid-template-columns: .9fr 1.1fr;
+  gap: clamp(30px,7vw,95px);
+  align-items: start;
+}
+
+.recruit-intro h2,
+.recruit-section-heading h2 {
+  font-size: clamp(2rem,4vw,3.3rem);
+  line-height: 1.12;
+  letter-spacing: -.045em;
+  margin: 0;
+}
+
+.recruit-intro-copy p {
+  line-height: 1.9;
+}
+
+.recruit-intro-copy p:first-child {
+  margin-top: 0;
+}
+
+.recruit-section-heading {
+  max-width: 760px;
+  margin-bottom: 36px;
+}
+
+.recruit-section-heading p {
+  color: #596171;
+  line-height: 1.85;
+  max-width: 680px;
+  margin-top: 16px;
+}
+
+.recruit-label {
+  color: #8B6900;
+  font-size: .76rem;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+}
+
+.recruit-services {
+  background: #fff;
+}
+
+.recruit-service-grid {
+  display: grid;
+  grid-template-columns: repeat(2,minmax(0,1fr));
+  gap: 1px;
+  border: 1px solid #DDE0E5;
+  background: #DDE0E5;
+}
+
+.recruit-service {
+  background: #fff;
+  padding: clamp(24px,4vw,38px);
+}
+
+.recruit-service .service-number {
+  color: #997500;
+  font-size: .77rem;
+  font-weight: 700;
+  letter-spacing: .1em;
+}
+
+.recruit-service h3 {
+  font-size: 1.25rem;
+  margin: 17px 0 11px;
+  letter-spacing: -.025em;
+}
+
+.recruit-service p {
+  color: #596171;
+  line-height: 1.8;
+  margin-bottom: 0;
+}
+
+.recruit-database {
+  background: var(--recruit-ink);
+  color: #fff;
+}
+
+.recruit-database-grid {
+  display: grid;
+  grid-template-columns: .85fr 1.15fr;
+  gap: clamp(32px,7vw,95px);
+  align-items: center;
+}
+
+.recruit-big-number {
+  color: var(--recruit-gold);
+  font-size: clamp(3.8rem,9vw,7rem);
+  line-height: 1;
+  font-weight: 800;
+  letter-spacing: -.07em;
+  margin-bottom: 15px;
+}
+
+.recruit-database h2 {
+  font-size: clamp(2rem,4vw,3.2rem);
+  line-height: 1.12;
+  letter-spacing: -.045em;
+  margin: 0 0 18px;
+}
+
+.recruit-database p {
+  color: rgba(255,255,255,.76);
+  line-height: 1.85;
+}
+
+.recruit-database .database-callout {
+  border-left: 2px solid var(--recruit-gold);
+  padding-left: 23px;
+}
+
+.recruit-steps {
+  background: var(--recruit-paper);
+}
+
+.recruit-steps-grid {
+  display: grid;
+  grid-template-columns: repeat(4,minmax(0,1fr));
+  gap: 20px;
+}
+
+.recruit-step {
+  border-top: 2px solid var(--recruit-gold);
+  padding: 23px 18px 20px 0;
+}
+
+.recruit-step .step-number {
+  color: #8B6900;
+  font-size: .78rem;
+  font-weight: 700;
+  letter-spacing: .1em;
+}
+
+.recruit-step h3 {
+  font-size: 1.1rem;
+  line-height: 1.4;
+  margin: 16px 0 10px;
+}
+
+.recruit-step p {
+  color: #596171;
+  line-height: 1.8;
+  font-size: .94rem;
+}
+
+.recruit-audience {
+  background: #fff;
+}
+
+.recruit-audience-grid {
+  display: grid;
+  grid-template-columns: repeat(2,minmax(0,1fr));
+  gap: 18px;
+}
+
+.recruit-audience-item {
+  padding: 25px;
+  border: 1px solid #DDE0E5;
+}
+
+.recruit-audience-item h3 {
+  margin: 0 0 10px;
+  font-size: 1.15rem;
+}
+
+.recruit-audience-item p {
+  color: #596171;
+  line-height: 1.8;
+  margin: 0;
+}
+
+.recruit-final-cta {
+  background: var(--recruit-gold);
+  color: var(--recruit-ink);
+  padding: clamp(48px,7vw,82px) 0;
+}
+
+.recruit-final-cta .cta-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.recruit-final-cta h2 {
+  max-width: 700px;
+  font-size: clamp(2rem,4.5vw,3.4rem);
+  line-height: 1.1;
+  letter-spacing: -.05em;
+  margin: 0 0 14px;
+}
+
+.recruit-final-cta p {
+  max-width: 650px;
+  line-height: 1.8;
+  margin: 0;
+}
+
+.recruit-final-cta .btn {
+  flex-shrink: 0;
+  background: var(--recruit-ink);
+  border-color: var(--recruit-ink);
+  color: #fff;
+}
+
+.recruit-final-cta .btn:hover {
+  background: #192945;
+}
+
+.recruit-contact-note {
+  font-size: .88rem;
+  color: #596171;
+  line-height: 1.8;
+}
+
 @media (min-width: 1201px) {
-  .bar {
+  header .bar {
     width: 100%;
     max-width: none;
     flex-wrap: nowrap;
     gap: 16px;
   }
 
-  .brand {
+  header .brand {
     flex-shrink: 0;
   }
 
-  #nav {
+  header #nav {
     margin-left: auto;
     flex-shrink: 0;
   }
 
-  #nav ul {
+  header #nav > ul {
     display: flex;
     flex-wrap: nowrap;
     align-items: center;
     white-space: nowrap;
     gap: 2px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
   }
 
-  #nav ul li {
+  header #nav > ul > li {
     flex: 0 0 auto;
     white-space: nowrap;
+    list-style: none;
   }
 
-  #nav ul li a {
+  header #nav > ul > li > a {
     white-space: nowrap;
   }
 
-  #nav ul li .btn {
+  header #nav > ul > li > a.btn {
     flex-shrink: 0;
     white-space: nowrap;
+  }
+}
+
+@media (max-width: 900px) {
+  .recruit-steps-grid {
+    grid-template-columns: repeat(2,minmax(0,1fr));
+  }
+
+  .recruit-database-grid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+}
+
+@media (max-width: 760px) {
+  .recruit-hero {
+    padding: 72px 0 80px;
+  }
+
+  .recruit-proof-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .recruit-proof-item {
+    padding-left: 16px;
+  }
+
+  .recruit-intro-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .recruit-service-grid,
+  .recruit-audience-grid,
+  .recruit-steps-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .recruit-final-cta .cta-inner {
+    flex-direction: column;
+    align-items: flex-start;
   }
 }
 </style>
@@ -81,8 +456,8 @@ h1, h2, h3, h4, .btn, .brand {
 {
   "@context": "https://schema.org",
   "@type": "Service",
-  "name": "Recruitment and Recruitment Outsourcing",
-  "serviceType": "Recruitment outsourcing and talent acquisition support",
+  "name": "Recruitment and Recruitment Outsourcing in Lagos, Nigeria",
+  "serviceType": "Recruitment, recruitment outsourcing and talent acquisition support",
   "url": "https://agiletalentassociates.com/recruitment.html",
   "provider": {
     "@type": "Organization",
@@ -94,11 +469,17 @@ h1, h2, h3, h4, .btn, .brand {
       "https://www.linkedin.com/company/agiletalent-associates"
     ]
   },
-  "areaServed": {
-    "@type": "Country",
-    "name": "Nigeria"
-  },
-  "description": "Recruitment support including candidate sourcing, screening, interview scheduling, candidate communication and shortlisting. Scope is agreed with each client."
+  "areaServed": [
+    {
+      "@type": "City",
+      "name": "Lagos"
+    },
+    {
+      "@type": "Country",
+      "name": "Nigeria"
+    }
+  ],
+  "description": "Recruitment support including candidate sourcing, screening, interview coordination, candidate communication and shortlisting. Scope is agreed with each client."
 }
 </script>
 </head>
@@ -110,10 +491,7 @@ h1, h2, h3, h4, .btn, .brand {
 <header>
   <div class="wrap bar">
     <a class="brand" href="index.html" aria-label="AgileTalent Associates home">
-      <img
-        class="mark"
-        src="Artboard 4@4x.png"
-        alt="AgileTalent Associates"
+      <img class="mark" src="Artboard 4@4x.png" alt="AgileTalent Associates"
         onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'wm',textContent:'AgileTalent Associates'}))">
     </a>
 
@@ -138,270 +516,294 @@ h1, h2, h3, h4, .btn, .brand {
 
 <main id="main" tabindex="-1">
 
-  <section class="sec dark">
+  <section class="recruit-hero">
     <div class="wrap">
-      <p class="lab" style="color:var(--gold);font-weight:600;letter-spacing:.08em;text-transform:uppercase">
-        Recruitment and workforce solutions
-      </p>
+      <p class="recruit-eyebrow">Recruitment and talent acquisition</p>
 
-      <h1>Recruitment and Recruitment Outsourcing in Nigeria</h1>
+      <h1>Recruitment Firm in <span>Lagos, Nigeria</span></h1>
 
       <p class="lead">
-        Find and assess talent with structured recruitment support.
-        AgileTalent Associates helps businesses manage candidate sourcing,
-        screening, interview coordination, communication and shortlisting.
+        Find the right people without letting recruitment slow your business down.
+        AgileTalent Associates supports employers with candidate sourcing,
+        screening, interview coordination and shortlisting, tailored to
+        their hiring requirements.
       </p>
 
-      <div class="acts">
-        <a class="btn" href="contact.html?s=recruitment">Let’s Talk About Your Needs</a>
+      <div class="recruit-actions">
+        <a class="btn" href="contact.html?s=recruitment">Discuss Your Hiring Needs</a>
         <a class="btn ghost" href="#how-it-works">How It Works</a>
       </div>
 
-      <p class="tag">
-        Access to a database of 4,000+ pre-screened candidates.
-        Candidate suitability is assessed against each role’s requirements.
-      </p>
-
-      <p class="tag">
-        The scope, responsibilities and deliverables are agreed with each client before work begins.
+      <p class="recruit-note">
+        Recruitment outsourcing and one-off hiring support are available subject
+        to an agreed scope, responsibilities and commercial terms.
       </p>
     </div>
   </section>
 
-  <section class="sec">
-    <div class="wrap">
-      <div class="facts" style="--c:#fff">
-        <div>
-          <strong>4,000+</strong>
-          <span style="color:var(--grey)">Pre-screened candidates in our database</span>
-        </div>
-        <div>
-          <strong>Role-led</strong>
-          <span style="color:var(--grey)">Screening against agreed requirements</span>
-        </div>
-        <div>
-          <strong>Flexible</strong>
-          <span style="color:var(--grey)">One-off, recurring and volume recruitment</span>
-        </div>
+  <section class="recruit-proof" aria-label="Recruitment capabilities">
+    <div class="wrap recruit-proof-grid">
+      <div class="recruit-proof-item">
+        <strong>4,000+ candidates</strong>
+        <span>Pre-screened candidates in our database</span>
+      </div>
+
+      <div class="recruit-proof-item">
+        <strong>Role-led screening</strong>
+        <span>Candidate suitability assessed against agreed requirements</span>
+      </div>
+
+      <div class="recruit-proof-item">
+        <strong>Flexible support</strong>
+        <span>One-off recruitment, recurring hiring and volume recruitment</span>
       </div>
     </div>
   </section>
 
-  <section class="sec">
-    <div class="wrap split">
+  <section class="sec recruit-intro">
+    <div class="wrap recruit-intro-grid">
       <div>
-        <h2>Recruitment support built around your hiring needs</h2>
-        <p class="lead">
-          Whether you are filling a specific vacancy or need ongoing
-          recruitment support, we first clarify the role, hiring context
-          and responsibilities.
-        </p>
+        <p class="recruit-label">Recruitment support</p>
+        <h2>A more structured way to find your next hire.</h2>
       </div>
 
-      <div>
+      <div class="recruit-intro-copy">
         <p>
-          Recruitment can take time away from managers and internal teams.
-          A defined process helps keep candidate communication, screening
-          and interview coordination organised while giving decision-makers
-          a clearer basis for selecting candidates.
+          Recruitment requires time, coordination and consistent evaluation.
+          When these activities compete with everyday business priorities,
+          hiring can become difficult to manage.
         </p>
 
         <p>
-          AgileTalent can support one-off recruitment, recurring hiring and
-          volume recruitment. The exact activities depend on your requirements
-          and the scope agreed in writing.
+          We help organisations organise key parts of the recruitment process,
+          from identifying potential candidates to coordinating interviews
+          and presenting a shortlist against agreed criteria. Our database
+          of 4,000+ pre-screened candidates provides an additional starting
+          point for suitable searches.
         </p>
 
         <p>
-          We do not promise a guaranteed placement or a fixed hiring timeline;
-          these depend on the role, market conditions and the agreed engagement.
+          Each engagement begins with a discussion about the role, hiring
+          context, essential requirements and the level of support needed.
+          This helps establish clear expectations before recruitment work begins.
         </p>
       </div>
     </div>
   </section>
 
-  <section class="sec dark">
+  <section class="sec recruit-services">
     <div class="wrap">
-      <h2>Our recruitment services</h2>
+      <div class="recruit-section-heading">
+        <p class="recruit-label">What we do</p>
+        <h2>Recruitment services that support your hiring process.</h2>
+        <p>
+          Select the support your organisation needs, with responsibilities
+          and deliverables agreed before the engagement begins.
+        </p>
+      </div>
 
-      <div class="grid g2" style="margin-top:24px">
-        <div class="cell">
+      <div class="recruit-service-grid">
+        <article class="recruit-service">
+          <span class="service-number">01 / SOURCING</span>
           <h3>Candidate sourcing</h3>
           <p>
-            Draw on our database of 4,000+ pre-screened candidates alongside
-            the agreed sourcing approach, then assess suitability against
-            the role requirements.
+            Identify potential candidates through agreed sourcing methods,
+            including our database of 4,000+ pre-screened candidates where relevant.
           </p>
-        </div>
+        </article>
 
-        <div class="cell">
+        <article class="recruit-service">
+          <span class="service-number">02 / SCREENING</span>
           <h3>CV and candidate screening</h3>
           <p>
-            Review candidate information against the criteria provided for
-            the role and support an initial shortlist.
+            Assess candidate information against role requirements and
+            agreed selection criteria to support initial shortlisting.
           </p>
-        </div>
+        </article>
 
-        <div class="cell">
+        <article class="recruit-service">
+          <span class="service-number">03 / COORDINATION</span>
           <h3>Interview coordination</h3>
           <p>
-            Help schedule interviews and coordinate communication between
-            candidates and your hiring team.
+            Help arrange interviews and coordinate communication between
+            candidates and the hiring team.
           </p>
-        </div>
+        </article>
 
-        <div class="cell">
+        <article class="recruit-service">
+          <span class="service-number">04 / COMMUNICATION</span>
           <h3>Candidate communication</h3>
           <p>
-            Support timely, organised communication with candidates during
+            Support organised communication with candidates throughout
             the agreed recruitment stages.
           </p>
-        </div>
+        </article>
 
-        <div class="cell">
+        <article class="recruit-service">
+          <span class="service-number">05 / SHORTLISTING</span>
           <h3>Shortlisting support</h3>
           <p>
-            Present shortlisted candidates against the agreed role
-            requirements to support your hiring decision.
+            Present candidates against agreed role requirements so your
+            hiring team can make informed selection decisions.
           </p>
-        </div>
+        </article>
 
-        <div class="cell">
-          <h3>Ongoing and volume recruitment</h3>
+        <article class="recruit-service">
+          <span class="service-number">06 / OUTSOURCING</span>
+          <h3>Recruitment outsourcing</h3>
           <p>
-            Discuss recurring or multiple vacancies and agree a workable
-            process, responsibilities and deliverables.
+            Discuss ongoing or multiple vacancies and agree the recruitment
+            activities, responsibilities and deliverables that suit your needs.
           </p>
-        </div>
+        </article>
       </div>
     </div>
   </section>
 
-  <section class="sec" id="how-it-works">
-    <div class="wrap split">
+  <section class="sec recruit-database">
+    <div class="wrap recruit-database-grid">
       <div>
-        <h2>How the process works</h2>
-        <p class="lead">
-          A clear process, with scope agreed before delivery starts.
-        </p>
+        <p class="recruit-eyebrow">Our talent database</p>
+        <div class="recruit-big-number">4,000+</div>
+        <h2>Pre-screened candidates. A stronger starting point.</h2>
+      </div>
+
+      <div class="database-callout">
         <p>
-          <a class="btn" href="contact.html?s=recruitment">Let’s Talk About Your Needs</a>
+          Finding suitable candidates can be one of the most demanding parts
+          of recruitment. Our database of more than 4,000 pre-screened
+          candidates gives AgileTalent a valuable starting point when
+          supporting client hiring requirements.
+        </p>
+
+        <p>
+          Candidate suitability is considered against each role's requirements.
+          The availability of relevant candidates depends on the role,
+          experience, location and other selection criteria.
+        </p>
+
+        <p>
+          <a class="btn" href="contact.html?s=recruitment">Discuss a Vacancy</a>
         </p>
       </div>
-
-      <ol class="steps">
-        <li>
-          <h3>Share your hiring needs</h3>
-          <p>
-            Tell us about the roles, number of vacancies, expected timing
-            and any essential criteria.
-          </p>
-        </li>
-
-        <li>
-          <h3>Clarify the scope</h3>
-          <p>
-            We discuss your requirements, recruitment process and the
-            responsibilities of each party.
-          </p>
-        </li>
-
-        <li>
-          <h3>Agree the engagement</h3>
-          <p>
-            Deliverables, working arrangements and commercial terms are
-            set out in writing before work begins.
-          </p>
-        </li>
-
-        <li>
-          <h3>Recruitment support begins</h3>
-          <p>
-            We carry out the agreed activities, such as sourcing, screening,
-            interview coordination, candidate communication and shortlisting.
-          </p>
-        </li>
-      </ol>
     </div>
   </section>
 
-  <section class="sec dark">
-    <div class="wrap split">
-      <div>
-        <h2>Who can use this service?</h2>
-        <p class="lead">
-          Organisations that need recruitment capacity or a more structured hiring process.
+  <section class="sec recruit-steps" id="how-it-works">
+    <div class="wrap">
+      <div class="recruit-section-heading">
+        <p class="recruit-label">Our process</p>
+        <h2>From hiring brief to recruitment support.</h2>
+        <p>
+          A clear, agreed process helps both parties understand what needs
+          to happen and who is responsible at each stage.
         </p>
       </div>
 
-      <div class="grid g2">
-        <div class="cell">
+      <div class="recruit-steps-grid">
+        <article class="recruit-step">
+          <span class="step-number">STEP 01</span>
+          <h3>Tell us what you need</h3>
+          <p>
+            Share the roles, number of vacancies, essential criteria and
+            expected hiring timeline.
+          </p>
+        </article>
+
+        <article class="recruit-step">
+          <span class="step-number">STEP 02</span>
+          <h3>Agree the scope</h3>
+          <p>
+            We discuss the requirements, recruitment stages, responsibilities
+            and appropriate working arrangements.
+          </p>
+        </article>
+
+        <article class="recruit-step">
+          <span class="step-number">STEP 03</span>
+          <h3>Confirm the engagement</h3>
+          <p>
+            Deliverables, commercial terms and expectations are documented
+            before work begins.
+          </p>
+        </article>
+
+        <article class="recruit-step">
+          <span class="step-number">STEP 04</span>
+          <h3>Begin recruitment support</h3>
+          <p>
+            We carry out the agreed activities and coordinate with your
+            team through the defined recruitment stages.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec recruit-audience">
+    <div class="wrap">
+      <div class="recruit-section-heading">
+        <p class="recruit-label">Who we support</p>
+        <h2>Recruitment support for different business needs.</h2>
+        <p>
+          Our recruitment services can be tailored to organisations with
+          different hiring priorities and internal capacity.
+        </p>
+      </div>
+
+      <div class="recruit-audience-grid">
+        <article class="recruit-audience-item">
           <h3>Growing businesses</h3>
-          <p>Teams hiring for new roles as their operations expand.</p>
-        </div>
+          <p>
+            Organisations recruiting for new positions as their operations
+            expand and business needs evolve.
+          </p>
+        </article>
 
-        <div class="cell">
-          <h3>Businesses with recurring vacancies</h3>
-          <p>Employers that need recruitment support across multiple hiring cycles.</p>
-        </div>
-
-        <div class="cell">
+        <article class="recruit-audience-item">
           <h3>Lean HR teams</h3>
-          <p>Organisations that need support with sourcing, screening and coordination.</p>
-        </div>
+          <p>
+            Teams that need additional capacity for candidate sourcing,
+            screening, coordination or shortlisting.
+          </p>
+        </article>
 
-        <div class="cell">
-          <h3>Volume hiring requirements</h3>
-          <p>Businesses planning to fill multiple roles, subject to an agreed scope and capacity.</p>
-        </div>
+        <article class="recruit-audience-item">
+          <h3>Recurring recruitment needs</h3>
+          <p>
+            Employers that regularly recruit and want a more consistent
+            approach to managing hiring activities.
+          </p>
+        </article>
+
+        <article class="recruit-audience-item">
+          <h3>Multiple-vacancy recruitment</h3>
+          <p>
+            Organisations planning to recruit for several roles, subject
+            to agreed requirements, capacity and timelines.
+          </p>
+        </article>
       </div>
     </div>
   </section>
 
-  <section class="sec">
-    <div class="wrap split">
+  <section class="recruit-final-cta">
+    <div class="wrap cta-inner">
       <div>
-        <h2>Discuss your recruitment requirements</h2>
-        <p class="lead">
-          Share the roles you need to fill and the kind of support you are looking for.
+        <h2>Looking for a recruitment firm in Lagos, Nigeria?</h2>
+        <p>
+          Tell us about your vacancies and recruitment requirements.
+          We will discuss the support that best fits your organisation.
         </p>
       </div>
 
-      <div>
-        <p>
-          Tell us about your organisation and hiring needs. We will review
-          your enquiry and respond by email to arrange a conversation.
-        </p>
-
-        <p>
-          <a class="btn" href="contact.html?s=recruitment">Tell Us How We Can Help</a>
-        </p>
-
-        <p>
-          Prefer email?
-          <a href="mailto:agiletalents@outlook.com">agiletalents@outlook.com</a>
-        </p>
-
-        <p>
-          <a href="https://wa.me/2348152866467" target="_blank" rel="noopener noreferrer">Chat with us on WhatsApp</a>
-          &nbsp;|&nbsp;
-          <a href="tel:+2347036783875">Give Us a Call</a>
-        </p>
-
-        <p class="note">
-          Please do not send CVs, identity documents or employee records through
-          the enquiry form. Recruitment scope, fees and timelines are discussed
-          and agreed for each engagement.
-        </p>
-      </div>
+      <a class="btn" href="contact.html?s=recruitment">Tell Us How We Can Help</a>
     </div>
   </section>
 
 </main>
 
-<a class="btn sticky" id="sticky" href="contact.html?s=recruitment">
-  Let’s Talk
-</a>
+<a class="btn sticky" id="sticky" href="contact.html?s=recruitment">Let’s Talk</a>
 
 <footer>
   <div class="wrap cols">
