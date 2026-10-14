@@ -4,17 +4,18 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 
-<title>HR Insights and Guides for Nigerian Businesses | AgileTalent</title>
-<meta name="description" content="Practical HR guides, recruitment insights, payroll resources and people management advice for Nigerian businesses from AgileTalent Associates.">
+<title>HR Insights, Recruitment Guides &amp; Business Resources | AgileTalent</title>
+<meta name="description" content="Explore practical HR guides for Nigerian businesses, covering SME HR management, recruitment outsourcing, performance management and workforce development.">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://agiletalentassociates.com/insights.html">
 
-<meta property="og:title" content="HR Insights and Guides for Nigerian Businesses | AgileTalent">
-<meta property="og:description" content="Practical HR guides and business resources for Nigerian organisations.">
+<meta property="og:title" content="HR Insights and Business Resources | AgileTalent Associates">
+<meta property="og:description" content="Practical recruitment and HR guidance for employers, business leaders and HR professionals in Nigeria.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://agiletalentassociates.com/insights.html">
+<meta property="og:site_name" content="AgileTalent Associates Limited">
 
-<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="icon" type="image/png" href="favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -23,17 +24,16 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "AgileTalent Associates Limited",
-  "url": "https://agiletalentassociates.com/",
-  "foundingDate": "2022",
-  "email": "agiletalents@outlook.com",
-  "areaServed": "NG",
-  "description": "Human resources consulting, recruitment and workforce solutions.",
-  "sameAs": [
-    "https://x.com/agiletalents_ng",
-    "https://www.linkedin.com/company/agiletalent-associates"
-  ]
+  "@type": "CollectionPage",
+  "name": "HR Insights and Business Resources",
+  "url": "https://agiletalentassociates.com/insights.html",
+  "description": "Practical HR, recruitment and workforce management guidance for Nigerian organisations.",
+  "publisher": {
+    "@type": "Organization",
+    "name": "AgileTalent Associates Limited",
+    "url": "https://agiletalentassociates.com/"
+  },
+  "inLanguage": "en-GB"
 }
 </script>
 
@@ -43,83 +43,184 @@
   --f-body: 'Inter', sans-serif;
 }
 
-.article-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 24px;
-  margin-top: 32px;
+body {
+  font-family: var(--f-body);
 }
 
-.article-card {
-  display: flex;
-  flex-direction: column;
-  padding: 26px;
-  border: 1px solid var(--line, #DAD7CE);
-  border-radius: 12px;
-  background: #fff;
-  min-width: 0;
+h1, h2, h3, h4, .brand, .btn {
+  font-family: var(--f-head);
 }
 
-.article-card h3 {
-  margin: 10px 0;
-  line-height: 1.4;
+header .brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  flex-shrink: 0;
 }
 
-.article-card p {
-  line-height: 1.7;
+header .brand-descriptor {
+  display: inline-block;
+  max-width: 190px;
+  padding-left: 12px;
+  border-left: 1px solid #d6d6d6;
+  color: #6b7280;
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.5;
 }
 
-.article-category {
-  color: var(--gold-d, #8A6A00);
-  font-size: .78rem;
+.insights-hero .lead {
+  max-width: 760px;
+}
+
+.insights-kicker {
+  color: var(--gold, #F2B705);
+  font-size: .8rem;
   font-weight: 700;
-  letter-spacing: .07em;
+  letter-spacing: .1em;
   text-transform: uppercase;
 }
 
-.article-date {
-  color: var(--grey, #5B6475);
-  font-size: .88rem;
-  margin-bottom: 10px;
+.insights-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+  margin-top: 32px;
 }
 
-.article-link {
-  display: inline-block;
+.insight-card {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  padding: 28px;
+  border: 1px solid var(--line, #DAD7CE);
+  border-radius: 14px;
+  background: #fff;
+  box-sizing: border-box;
+  transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+}
+
+.insight-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(242,183,5,.8);
+  box-shadow: 0 12px 28px rgba(11,20,38,.06);
+}
+
+.insight-category {
+  color: #8A6A00;
+  font-size: .76rem;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.insight-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  margin-bottom: 22px;
+  border-radius: 10px;
+  background: var(--off-white, #FAF8F3);
+  color: var(--navy, #0B1426);
+  font-size: .9rem;
+  font-weight: 800;
+}
+
+.insight-card h3 {
+  margin: 12px 0;
+  font-size: 1.15rem;
+  line-height: 1.5;
+}
+
+.insight-card p {
+  color: #535b68;
+  line-height: 1.75;
+}
+
+.insight-meta {
   margin-top: auto;
-  padding-top: 16px;
+  padding-top: 12px;
+  color: #687080;
+  font-size: .85rem;
+}
+
+.insight-link {
+  display: inline-block;
+  margin-top: 18px;
   font-weight: 700;
   text-decoration: none;
 }
 
-.article-link:hover {
+.insight-link:hover {
   text-decoration: underline;
 }
 
-.editor-note {
-  margin-top: 28px;
-  padding: 18px 20px;
+.insight-cta {
+  padding: 24px;
+  margin-top: 34px;
   border-left: 4px solid var(--gold, #F2B705);
-  background: var(--paper, #FAF8F3);
-  border-radius: 4px;
+  border-radius: 6px;
+  background: var(--off-white, #FAF8F3);
+}
+
+.insight-cta p:last-child {
+  margin-bottom: 0;
 }
 
 .linkedin-embed {
+  display: block;
   width: 100%;
   max-width: 504px;
   height: 263px;
-  border: 0;
-  display: block;
   margin: 24px 0;
+  border: 0;
+  background: #fff;
 }
 
-@media (max-width: 700px) {
-  .article-grid {
+@media (max-width: 1000px) {
+  .insights-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 650px) {
+  header .brand {
+    gap: 8px;
+    min-width: 0;
+  }
+
+  header .brand .mark {
+    max-width: 145px;
+    height: auto;
+  }
+
+  header .brand-descriptor {
+    max-width: 125px;
+    padding-left: 8px;
+    font-size: 10px;
+  }
+
+  .insights-grid {
     grid-template-columns: 1fr;
     gap: 16px;
   }
 
-  .article-card {
-    padding: 22px;
+  .insight-card {
+    padding: 23px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .insight-card {
+    transition: none;
+  }
+
+  .insight-card:hover {
+    transform: none;
   }
 }
 </style>
@@ -130,9 +231,10 @@
 
 <header>
   <div class="wrap bar">
-    <a class="brand" href="index.html" aria-label="AgileTalent Associates, home">
+    <a class="brand" href="index.html" aria-label="AgileTalent Associates home">
       <img class="mark" src="Artboard 4@4x.png" alt="AgileTalent Associates"
         onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'wm',textContent:'AgileTalent Associates'}))">
+      <span class="brand-descriptor">Recruitment &amp; HR Consulting in Nigeria</span>
     </a>
 
     <button class="menu" id="menu" aria-expanded="false" aria-controls="nav">Menu</button>
@@ -154,165 +256,101 @@
 
 <main id="main" tabindex="-1">
 
-  <!-- PAGE INTRODUCTION -->
-  <section class="sec dark">
+  <section class="sec dark insights-hero">
     <div class="wrap">
-      <h1 style="font-size:clamp(2.2rem,5vw,3.6rem)">Insights and Resources</h1>
+      <p class="insights-kicker">Ideas for better people decisions</p>
+      <h1 style="font-size:clamp(2.2rem,5vw,3.6rem);max-width:850px">
+        Practical HR Insights for Growing Businesses
+      </h1>
       <p class="lead">
-        Practical guidance on recruitment, HR management, payroll and workforce
-        development to help Nigerian organisations make better people decisions.
+        Clear, practical guidance on recruitment, people management and
+        workforce development to help Nigerian organisations build stronger
+        teams and make more informed decisions.
+      </p>
+      <p style="margin-top:28px">
+        <a class="btn" href="contact.html">Discuss Your HR Needs</a>
       </p>
     </div>
   </section>
 
-  <!-- ARTICLES
-       TO ADD AN ARTICLE:
-       1. Copy one article-card block below.
-       2. Change the category, date, title, summary and link.
-       3. Replace the placeholder link with the article's published URL.
-       4. Save and publish the page.
-
-       Keep unpublished articles out of this section.
-  -->
   <section class="sec">
     <div class="wrap">
-      <h2>Latest Insights</h2>
-      <p>Guides and perspectives for employers, business leaders and HR professionals.</p>
+      <p class="lab">The resource centre</p>
+      <h2>Guides for Employers and HR Professionals</h2>
+      <p style="max-width:760px">
+        Explore approaches you can adapt to your organisation, whether you
+        are establishing HR processes, planning a recruitment exercise or
+        improving how employee performance is managed.
+      </p>
 
-      <div class="article-grid">
+      <div class="insights-grid">
 
-        <!-- ARTICLE CARD: DUPLICATE THIS BLOCK TO ADD AN ARTICLE -->
-        <article class="article-card">
-          <span class="article-category">HR Management</span>
+        <article class="insight-card">
+          <span class="insight-number">01</span>
+          <span class="insight-category">HR Management</span>
           <h3>How Nigerian SMEs Can Professionalise HR Without Excessive Overhead</h3>
           <p>
-            Practical ways growing businesses can establish clearer HR processes,
-            strengthen employee management and build a more structured workplace.
+            A practical starting point for growing businesses that need clearer
+            policies, employee records and consistent people processes without
+            building an unnecessarily complex HR function.
           </p>
-          <span class="article-date">Coming soon</span>
-          <!-- Replace # with the article URL when published -->
-          <a class="article-link" href="#"
-             aria-label="Read How Nigerian SMEs Can Professionalise HR Without Excessive Overhead">
-            Article coming soon
+          <p class="insight-meta">Practical guide · SME management</p>
+          <a class="insight-link" href="hr-for-smes.html">
+            Read the guide →
           </a>
         </article>
-        <!-- END ARTICLE CARD -->
 
-        <!-- ARTICLE CARD: DUPLICATE THIS BLOCK TO ADD AN ARTICLE -->
-        <article class="article-card">
-          <span class="article-category">Recruitment</span>
+        <article class="insight-card">
+          <span class="insight-number">02</span>
+          <span class="insight-category">Recruitment</span>
           <h3>Recruitment Outsourcing Versus In-House Recruitment</h3>
           <p>
-            Understand the differences between managing recruitment internally
-            and working with a recruitment partner to meet your hiring needs.
+            Compare the two approaches, understand their trade-offs and decide
+            what makes sense for your hiring volume, internal capacity and
+            business priorities.
           </p>
-          <span class="article-date">Coming soon</span>
-          <a class="article-link" href="#"
-             aria-label="Read Recruitment Outsourcing Versus In-House Recruitment">
-            Article coming soon
+          <p class="insight-meta">Decision guide · Talent acquisition</p>
+          <a class="insight-link" href="recruitment-outsourcing.html">
+            Read the guide →
           </a>
         </article>
-        <!-- END ARTICLE CARD -->
 
-        <!-- ARTICLE CARD: DUPLICATE THIS BLOCK TO ADD AN ARTICLE -->
-        <article class="article-card">
-          <span class="article-category">Performance Management</span>
+        <article class="insight-card">
+          <span class="insight-number">03</span>
+          <span class="insight-category">Performance Management</span>
           <h3>Building a Performance Management System That Managers Will Use</h3>
           <p>
-            Explore practical approaches to setting goals, reviewing performance
-            and connecting employee contributions to business results.
+            Learn how clear goals, meaningful check-ins, evidence-based reviews
+            and accountability can make performance management more useful
+            to managers and employees.
           </p>
-          <span class="article-date">Coming soon</span>
-          <a class="article-link" href="#"
-             aria-label="Read Building a Performance Management System That Managers Will Use">
-            Article coming soon
+          <p class="insight-meta">Management guide · Employee performance</p>
+          <a class="insight-link" href="performance-management.html">
+            Read the guide →
           </a>
         </article>
-        <!-- END ARTICLE CARD -->
-
-        <!-- ARTICLE CARD: DUPLICATE THIS BLOCK TO ADD AN ARTICLE -->
-        <article class="article-card">
-          <span class="article-category">Payroll and Compliance</span>
-          <h3>Payroll Administration and Statutory Obligations in Nigeria</h3>
-          <p>
-            An introduction to the payroll processes, records and compliance
-            responsibilities employers should consider when managing staff pay.
-          </p>
-          <span class="article-date">Coming soon</span>
-          <a class="article-link" href="#"
-             aria-label="Read Payroll Administration and Statutory Obligations in Nigeria">
-            Article coming soon
-          </a>
-        </article>
-        <!-- END ARTICLE CARD -->
-
-        <!-- ARTICLE CARD: DUPLICATE THIS BLOCK TO ADD AN ARTICLE -->
-        <article class="article-card">
-          <span class="article-category">Leadership Development</span>
-          <h3>Developing First-Time Managers</h3>
-          <p>
-            Key skills and management practices that help newly promoted
-            supervisors lead teams, provide feedback and manage performance.
-          </p>
-          <span class="article-date">Coming soon</span>
-          <a class="article-link" href="#"
-             aria-label="Read Developing First-Time Managers">
-            Article coming soon
-          </a>
-        </article>
-        <!-- END ARTICLE CARD -->
-
-        <!-- ARTICLE CARD: DUPLICATE THIS BLOCK TO ADD AN ARTICLE -->
-        <article class="article-card">
-          <span class="article-category">HR Policies</span>
-          <h3>Common HR Policy Gaps in Growing Businesses</h3>
-          <p>
-            Areas employers should review as their teams expand, from leave and
-            conduct to employee records and workplace expectations.
-          </p>
-          <span class="article-date">Coming soon</span>
-          <a class="article-link" href="#"
-             aria-label="Read Common HR Policy Gaps in Growing Businesses">
-            Article coming soon
-          </a>
-        </article>
-        <!-- END ARTICLE CARD -->
-
-        <!-- ARTICLE CARD: DUPLICATE THIS BLOCK TO ADD AN ARTICLE -->
-        <article class="article-card">
-          <span class="article-category">People Analytics</span>
-          <h3>Using Workforce Data to Improve People Decisions</h3>
-          <p>
-            Learn how organisations can use workforce metrics to identify trends,
-            assess people initiatives and support better management decisions.
-          </p>
-          <span class="article-date">Coming soon</span>
-          <a class="article-link" href="#"
-             aria-label="Read Using Workforce Data to Improve People Decisions">
-            Article coming soon
-          </a>
-        </article>
-        <!-- END ARTICLE CARD -->
 
       </div>
 
-      <div class="editor-note">
-        <strong>Need help with an HR challenge now?</strong>
-        <p style="margin-bottom:0">
-          <a href="contact.html">Tell us how we can help</a> with your recruitment,
-          HR processes or workforce needs.
+      <div class="insight-cta">
+        <strong>Have a people-management challenge?</strong>
+        <p>
+          Every organisation has different needs. If you require support with
+          recruitment, HR processes or workforce development, we can discuss
+          the problem and the scope of support that may be appropriate.
         </p>
+        <p><a href="contact.html">Talk to AgileTalent Associates</a></p>
       </div>
     </div>
   </section>
 
-  <!-- LINKEDIN UPDATES -->
   <section class="sec dark">
     <div class="wrap">
-      <h2>From LinkedIn</h2>
+      <p class="lab" style="color:var(--gold)">Join the conversation</p>
+      <h2>Follow AgileTalent on LinkedIn</h2>
       <p class="lead">
-        Follow our updates and perspectives on recruitment, people management
-        and the workplace.
+        Follow our company page for updates, workplace perspectives and
+        further insights on recruitment and people management.
       </p>
 
       <iframe
@@ -326,29 +364,28 @@
       <p>
         <a href="https://www.linkedin.com/company/agiletalent-associates"
            target="_blank" rel="noopener noreferrer">
-          Follow AgileTalent Associates on LinkedIn
+          Visit AgileTalent Associates on LinkedIn →
         </a>
       </p>
     </div>
   </section>
 
-  <!-- CONTACT CTA -->
   <section class="sec">
     <div class="wrap">
-      <h2>Let’s Talk About Your Needs</h2>
-      <p class="lead">
-        Looking for recruitment support, practical HR advice or workforce
-        solutions for your organisation? Tell us what you need.
+      <h2>Need Support Beyond the Guides?</h2>
+      <p class="lead" style="max-width:760px">
+        From recruitment and HR consulting to payroll support and people
+        development, AgileTalent Associates helps organisations address
+        practical workforce needs.
       </p>
-      <p>
-        <a class="btn" href="contact.html">Tell Us How We Can Help</a>
+      <p style="margin-top:24px">
+        <a class="btn" href="services.html">Explore Our Services</a>
+        <a href="contact.html" style="margin-left:16px">Contact us</a>
       </p>
     </div>
   </section>
 
 </main>
-
-<a class="btn sticky" id="sticky" href="contact.html">Let’s Talk</a>
 
 <footer>
   <div class="wrap cols">
@@ -360,13 +397,10 @@
         Human resources consulting, recruitment and workforce solutions
         for Nigerian organisations. Established 2022.
       </p>
-      <p>
-        <a href="mailto:agiletalents@outlook.com">agiletalents@outlook.com</a>
-      </p>
+      <p><a href="mailto:agiletalents@outlook.com">agiletalents@outlook.com</a></p>
       <p><a href="tel:+2347036783875">+234 703 678 3875</a></p>
       <p>
-        <a href="https://wa.me/2348152866467"
-           target="_blank" rel="noopener noreferrer">
+        <a href="https://wa.me/2348152866467" target="_blank" rel="noopener noreferrer">
           Chat with us on WhatsApp
         </a>
       </p>
@@ -385,8 +419,10 @@
     </div>
 
     <div>
-      <h2>Notices</h2>
+      <h2>Connect</h2>
       <ul>
+        <li><a href="https://x.com/agiletalents_ng" target="_blank" rel="noopener noreferrer">X</a></li>
+        <li><a href="https://www.linkedin.com/company/agiletalent-associates" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
         <li><a href="contact.html">Privacy notice</a></li>
       </ul>
       <p style="margin-top:1em">Advisory support is not legal advice.</p>
@@ -395,11 +431,8 @@
 
   <div class="wrap social-area">
     <h2 class="social-heading">Connect with AgileTalent</h2>
-
     <div class="social-links">
-      <a href="https://x.com/agiletalents_ng"
-         target="_blank" rel="noopener noreferrer"
-         aria-label="Follow AgileTalent Associates on X">
+      <a href="https://x.com/agiletalents_ng" target="_blank" rel="noopener noreferrer" aria-label="Follow AgileTalent Associates on X">
         <svg class="social-icon" viewBox="0 0 64 64" aria-hidden="true">
           <circle cx="32" cy="32" r="32" fill="#000"/>
           <path d="M18.9 15h8.2l7.4 10 8.8-10h3.1L36 27.1 47.5 49h-8.2l-8.1-11.7L20.9 49h-3.2l12-13.8L18.9 15zm4.5 2.7 17.2 28.6h3.1L26.5 17.7h-3.1z" fill="#fff"/>
@@ -407,9 +440,7 @@
         <span>X</span>
       </a>
 
-      <a href="https://www.linkedin.com/company/agiletalent-associates"
-         target="_blank" rel="noopener noreferrer"
-         aria-label="Follow AgileTalent Associates on LinkedIn">
+      <a href="https://www.linkedin.com/company/agiletalent-associates" target="_blank" rel="noopener noreferrer" aria-label="Follow AgileTalent Associates on LinkedIn">
         <svg class="social-icon" viewBox="0 0 64 64" aria-hidden="true">
           <circle cx="32" cy="32" r="32" fill="#0A66C2"/>
           <g fill="#fff" transform="translate(14 14) scale(1.55)">
@@ -427,6 +458,8 @@
     </p>
   </div>
 </footer>
+
+<a class="btn sticky" id="sticky" href="contact.html">Let’s Talk</a>
 
 <script src="main.js"></script>
 </body>
