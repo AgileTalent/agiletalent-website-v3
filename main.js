@@ -1,4 +1,3 @@
-```javascript
 /* AgileTalent Associates Limited
    Shared script: responsive menu and enquiry form
 */
