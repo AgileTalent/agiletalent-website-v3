@@ -5,13 +5,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 
 <title>Careers and Job Vacancies in Nigeria | AgileTalent Associates</title>
-<meta name="description" content="Explore current job vacancies at AgileTalent Associates. Review job requirements, responsibilities, salary details and application deadlines, or join our talent network.">
+<meta name="description" content="Explore current job vacancies at AgileTalent Associates. Review job requirements, responsibilities and application deadlines, or register your CV for future opportunities.">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://agiletalentassociates.com/careers.html">
 <link rel="icon" type="image/png" href="favicon.png">
 
 <meta property="og:title" content="Careers and Job Vacancies | AgileTalent Associates">
-<meta property="og:description" content="Explore job opportunities and join the AgileTalent Associates talent network.">
+<meta property="og:description" content="Explore current job opportunities and register your CV with AgileTalent Associates.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://agiletalentassociates.com/careers.html">
 <meta property="og:site_name" content="AgileTalent Associates Limited">
@@ -61,6 +61,13 @@
   border-radius: 14px;
   background: #fff;
   overflow-wrap: anywhere;
+  transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+}
+
+.vacancy-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(242,183,5,.8);
+  box-shadow: 0 12px 28px rgba(11,20,38,.06);
 }
 
 .vacancy-id {
@@ -129,7 +136,12 @@
 .vacancy-apply {
   display: inline-block;
   align-self: flex-start;
-  margin-top: 22px;
+  margin-top: auto;
+  padding-top: 22px;
+}
+
+.vacancy-apply .btn {
+  display: inline-block;
 }
 
 .vacancy-status {
@@ -148,7 +160,7 @@
 }
 
 .vacancy-status[hidden] {
-  display: none;
+  display: none !important;
 }
 
 .careers-cta {
@@ -163,6 +175,29 @@
   margin-bottom: 0;
 }
 
+.careers-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.careers-actions .btn {
+  display: inline-block;
+}
+
+.careers-secondary-link {
+  font-weight: 700;
+}
+
+.careers-note {
+  margin-top: 18px;
+  color: #535b68;
+  font-size: .9rem;
+  line-height: 1.7;
+}
+
 @media (max-width: 800px) {
   .vacancy-list {
     grid-template-columns: 1fr;
@@ -173,6 +208,25 @@
   .vacancy-card,
   .careers-cta {
     padding: 22px;
+  }
+
+  .careers-actions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .careers-actions .btn {
+    text-align: center;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .vacancy-card {
+    transition: none;
+  }
+
+  .vacancy-card:hover {
+    transform: none;
   }
 }
 </style>
@@ -217,12 +271,15 @@
       </h1>
       <p class="lead">
         Explore current opportunities and discover roles that match your
-        experience, skills and career goals. Review the vacancy details
-        carefully before applying.
+        experience, skills and career goals. Review each vacancy carefully
+        before applying, or register your CV for future opportunities.
       </p>
-      <p style="margin-top:28px">
+      <div class="careers-actions">
         <a class="btn" href="#current-vacancies">View Current Vacancies</a>
-      </p>
+        <a class="careers-secondary-link" href="#talent-registration">
+          Register Your CV →
+        </a>
+      </div>
     </div>
   </section>
 
@@ -231,12 +288,15 @@
       <p class="lab">Career opportunities</p>
       <h2>Current Job Vacancies</h2>
       <p style="max-width:760px">
-        Vacancies listed below are retrieved from our vacancy register.
-        Check the requirements and application deadline for each position
-        before submitting your application.
+        Vacancies are retrieved from our vacancy register. Review the
+        responsibilities, requirements and deadline for a position before
+        submitting your application.
       </p>
 
-      <div id="vacancy-status" class="vacancy-status" role="status" aria-live="polite">
+      <div id="vacancy-status"
+           class="vacancy-status"
+           role="status"
+           aria-live="polite">
         <p>Loading current vacancies. Please wait…</p>
       </div>
 
@@ -245,23 +305,39 @@
       <noscript>
         <div class="vacancy-status">
           JavaScript must be enabled to display current vacancies.
-          Please return with JavaScript enabled or contact AgileTalent Associates.
+          You can still register your CV using the talent registration link below.
         </div>
       </noscript>
+    </div>
+  </section>
 
+  <section class="sec" id="talent-registration">
+    <div class="wrap">
       <div class="careers-cta">
-        <h3>Don't see a suitable vacancy?</h3>
+        <p class="lab">Join our talent network</p>
+        <h2>Don't See a Suitable Vacancy?</h2>
         <p>
-          Join our talent network so we can consider your profile for
-          relevant opportunities as they become available.
+          Register your profile and upload your CV even if there is no
+          suitable vacancy listed today. Our recruitment team can consider
+          your information for relevant opportunities as they become available.
         </p>
-        <p>
+
+        <div class="careers-actions">
           <a class="btn"
-             href="https://forms.gle/QbwsfGHGmsUm3eSf8"
+             href="https://script.google.com/macros/s/AKfycbwfdsY72BZPa74n3_HI6MWe9KqGfMp50cT7Jzfw1wRtYhu3QxsVO3hRZSAV49ABZ4Eu/exec?view=general"
              target="_blank"
              rel="noopener noreferrer">
-            Submit Your CV
+            Register Your CV
           </a>
+          <a class="careers-secondary-link" href="#current-vacancies">
+            View Current Vacancies
+          </a>
+        </div>
+
+        <p class="careers-note">
+          Your information will be collected for recruitment-related purposes.
+          Please provide accurate details and review the consent statement
+          before submitting your registration.
         </p>
       </div>
     </div>
@@ -323,10 +399,14 @@
     <div>
       <h2>Connect</h2>
       <ul>
-        <li><a href="https://x.com/agiletalents_ng"
-               target="_blank" rel="noopener noreferrer">X</a></li>
-        <li><a href="https://www.linkedin.com/company/agiletalent-associates"
-               target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+        <li>
+          <a href="https://x.com/agiletalents_ng"
+             target="_blank" rel="noopener noreferrer">X</a>
+        </li>
+        <li>
+          <a href="https://www.linkedin.com/company/agiletalent-associates"
+             target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        </li>
         <li><a href="contact.html">Privacy notice</a></li>
       </ul>
       <p style="margin-top:1em">Advisory support is not legal advice.</p>
@@ -375,15 +455,20 @@
 (function () {
   "use strict";
 
-  // This is the new Apps Script Web app URL.
-  const feedUrl = "https://script.google.com/macros/s/AKfycbwfdsY72BZPa74n3_HI6MWe9KqGfMp50cT7Jzfw1wRtYhu3QxsVO3hRZSAV49ABZ4Eu/exec";
-  const registrationUrl = "https://forms.gle/QbwsfGHGmsUm3eSf8";
+  const APPS_SCRIPT_URL =
+    "https://script.google.com/macros/s/AKfycbwfdsY72BZPa74n3_HI6MWe9KqGfMp50cT7Jzfw1wRtYhu3QxsVO3hRZSAV49ABZ4Eu/exec";
 
   const statusBox = document.getElementById("vacancy-status");
   const vacancyList = document.getElementById("vacancy-list");
 
+  let feedLoaded = false;
+
   function addText(parent, tag, value, className) {
-    if (value === null || value === undefined || String(value).trim() === "") {
+    if (
+      value === null ||
+      value === undefined ||
+      String(value).trim() === ""
+    ) {
       return null;
     }
 
@@ -399,7 +484,11 @@
   }
 
   function addDetail(card, heading, value) {
-    if (value === null || value === undefined || String(value).trim() === "") {
+    if (
+      value === null ||
+      value === undefined ||
+      String(value).trim() === ""
+    ) {
       return;
     }
 
@@ -415,6 +504,23 @@
   function formatDeadline(value) {
     if (!value) return "";
 
+    // Handle date-only values without shifting the calendar date.
+    const dateOnly = /^(\d{4})-(\d{2})-(\d{2})$/.exec(String(value).trim());
+
+    if (dateOnly) {
+      const date = new Date(
+        Number(dateOnly[1]),
+        Number(dateOnly[2]) - 1,
+        Number(dateOnly[3])
+      );
+
+      return new Intl.DateTimeFormat("en-GB", {
+        day: "numeric",
+        month: "long",
+        year: "numeric"
+      }).format(date);
+    }
+
     const date = new Date(value);
 
     if (Number.isNaN(date.getTime())) {
@@ -427,6 +533,22 @@
       year: "numeric",
       timeZone: "Africa/Lagos"
     }).format(date);
+  }
+
+  function createApplicationUrl(vacancy) {
+    const vacancyId = String(vacancy.id || "").trim();
+    const title = String(vacancy.title || "").trim();
+
+    if (!vacancyId || !title) {
+      return "";
+    }
+
+    const url = new URL(APPS_SCRIPT_URL);
+    url.searchParams.set("view", "job");
+    url.searchParams.set("vacancyId", vacancyId);
+    url.searchParams.set("title", title);
+
+    return url.toString();
   }
 
   function addVacancy(vacancy) {
@@ -451,8 +573,8 @@
       vacancy.employmentType,
       vacancy.experienceLevel,
       vacancy.industry
-    ].forEach(function (value) {
-      addText(meta, "span", value);
+    ].forEach(function (item) {
+      addText(meta, "span", item);
     });
 
     if (meta.childElementCount > 0) {
@@ -462,7 +584,7 @@
     addText(
       card,
       "p",
-      vacancy.salary ? "Monthly net salary: " + vacancy.salary : "",
+      vacancy.salary ? "Salary: " + vacancy.salary : "",
       "vacancy-salary"
     );
 
@@ -480,34 +602,37 @@
       );
     }
 
-    const applicationUrl = String(vacancy.applicationLink || "").trim();
+    const applicationUrl = createApplicationUrl(vacancy);
 
     if (applicationUrl) {
-      try {
-        const parsedUrl = new URL(applicationUrl);
+      const action = document.createElement("div");
+      action.className = "vacancy-apply";
 
-        if (
-          (parsedUrl.protocol === "https:" || parsedUrl.protocol === "http:") &&
-          parsedUrl.hostname.includes(".")
-        ) {
-          const applyLink = document.createElement("a");
-          applyLink.className = "btn vacancy-apply";
-          applyLink.href = parsedUrl.href;
-          applyLink.target = "_blank";
-          applyLink.rel = "noopener noreferrer";
-          applyLink.textContent = "View Vacancy & Apply";
+      const link = document.createElement("a");
+      link.className = "btn";
+      link.href = applicationUrl;
+      link.target = "_blank";
+      link.rel = "noopener noreferrer";
+      link.textContent = "View Vacancy & Apply";
 
-          card.appendChild(applyLink);
-        }
-      } catch (error) {
-        // Do not create an application button for an invalid URL.
-      }
+      action.appendChild(link);
+      card.appendChild(action);
     }
 
     vacancyList.appendChild(card);
   }
 
-  function showRegistrationPrompt() {
+  function createRegistrationLink() {
+    const link = document.createElement("a");
+    link.className = "btn";
+    link.href = APPS_SCRIPT_URL + "?view=general";
+    link.target = "_blank";
+    link.rel = "noopener noreferrer";
+    link.textContent = "Register Your CV";
+    return link;
+  }
+
+  function showNoVacancies() {
     statusBox.hidden = false;
     statusBox.replaceChildren();
 
@@ -515,64 +640,13 @@
     addText(
       statusBox,
       "p",
-      "You can still join our talent network to be considered for future opportunities."
+      "You can register your CV with AgileTalent Associates for consideration for relevant future opportunities."
     );
 
-    const link = document.createElement("a");
-    link.className = "btn";
-    link.href = registrationUrl;
-    link.target = "_blank";
-    link.rel = "noopener noreferrer";
-    link.textContent = "Submit Your CV";
-
-    statusBox.appendChild(link);
+    statusBox.appendChild(createRegistrationLink());
   }
 
-  window.agileTalentVacanciesLoaded = function (response) {
-    vacancyList.replaceChildren();
-    statusBox.replaceChildren();
-
-    let vacancies;
-
-    if (Array.isArray(response)) {
-      vacancies = response;
-    } else if (
-      response &&
-      response.success === true &&
-      Array.isArray(response.vacancies)
-    ) {
-      vacancies = response.vacancies;
-    } else {
-      statusBox.hidden = false;
-      addText(
-        statusBox,
-        "p",
-        "We could not load vacancy information. Please try again later."
-      );
-      return;
-    }
-
-    // Only display vacancies marked Published.
-    vacancies = vacancies.filter(function (vacancy) {
-      return String(vacancy.status || "").trim().toLowerCase() === "published";
-    });
-
-    if (vacancies.length === 0) {
-      showRegistrationPrompt();
-      return;
-    }
-
-    vacancies.forEach(addVacancy);
-    statusBox.hidden = true;
-  };
-
-  const callbackName = "agileTalentVacanciesLoaded";
-  const script = document.createElement("script");
-
-  script.src = feedUrl + "?callback=" + encodeURIComponent(callbackName);
-  script.async = true;
-
-  script.onerror = function () {
+  function showFeedError() {
     statusBox.hidden = false;
     statusBox.replaceChildren();
 
@@ -580,20 +654,82 @@
     addText(
       statusBox,
       "p",
-      "Please refresh the page later or use the talent registration form to register for future opportunities."
+      "Please try again later. You can still register your CV for consideration for future opportunities."
     );
 
-    const link = document.createElement("a");
-    link.href = registrationUrl;
-    link.className = "btn";
-    link.target = "_blank";
-    link.rel = "noopener noreferrer";
-    link.textContent = "Submit Your CV";
+    statusBox.appendChild(createRegistrationLink());
+  }
 
-    statusBox.appendChild(link);
+  /*
+   * Code.gs returns a JSONP response containing:
+   * {
+   *   success: true,
+   *   count: 1,
+   *   vacancies: [...]
+   * }
+   *
+   * Each vacancy includes fields such as:
+   * id, title, industry, department, location, employmentType,
+   * experienceLevel, salary, summary, responsibilities,
+   * requirements, deadline and status.
+   */
+  window.agileTalentVacanciesLoaded = function (response) {
+    if (feedLoaded) return;
+    feedLoaded = true;
+
+    vacancyList.replaceChildren();
+    statusBox.replaceChildren();
+
+    if (
+      !response ||
+      response.success !== true ||
+      !Array.isArray(response.vacancies)
+    ) {
+      showFeedError();
+      return;
+    }
+
+    const vacancies = response.vacancies.filter(function (vacancy) {
+      return String(vacancy.status || "").trim().toLowerCase() === "published";
+    });
+
+    if (vacancies.length === 0) {
+      showNoVacancies();
+      return;
+    }
+
+    vacancies.forEach(addVacancy);
+    statusBox.hidden = true;
+  };
+
+  const script = document.createElement("script");
+  const callbackName = "agileTalentVacanciesLoaded";
+
+  script.src =
+    APPS_SCRIPT_URL +
+    "?callback=" +
+    encodeURIComponent(callbackName);
+
+  script.async = true;
+
+  script.onerror = function () {
+    if (feedLoaded) return;
+    feedLoaded = true;
+    showFeedError();
   };
 
   document.head.appendChild(script);
+
+  /*
+   * If the feed neither loads nor returns a response,
+   * show the fallback instead of leaving "Loading" indefinitely.
+   */
+  window.setTimeout(function () {
+    if (!feedLoaded) {
+      feedLoaded = true;
+      showFeedError();
+    }
+  }, 15000);
 })();
 </script>
 
