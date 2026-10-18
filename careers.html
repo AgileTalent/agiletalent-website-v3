@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 
   <title>Careers &amp; Vacancies in Nigeria | AgileTalent Associates</title>
-  <meta name="description" content="Explore current job vacancies through AgileTalent Associates or join our talent network to be considered for future recruitment opportunities in Nigeria.">
+  <meta name="description" content="Explore current job vacancies through AgileTalent Associates or join our talent network for future recruitment opportunities in Nigeria.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://agiletalentassociates.com/careers.html">
 
@@ -16,7 +16,7 @@
   <link rel="stylesheet" href="style.css">
 
   <meta property="og:title" content="Careers &amp; Vacancies | AgileTalent Associates">
-  <meta property="og:description" content="Find current vacancies or register your CV with AgileTalent Associates for consideration for future opportunities.">
+  <meta property="og:description" content="Find current vacancies or register your CV with AgileTalent Associates for future opportunities.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://agiletalentassociates.com/careers.html">
   <meta property="og:site_name" content="AgileTalent Associates Limited">
@@ -49,16 +49,26 @@
     :root {
       --f-head: 'Inter', sans-serif;
       --f-body: 'Inter', sans-serif;
+      --careers-navy: #0B1426;
+      --careers-gold: #F2B705;
+      --careers-line: #DAD7CE;
+      --careers-muted: #535B68;
+      --careers-offwhite: #FAF8F3;
     }
 
-    body { font-family: var(--f-body); }
-    h1, h2, h3, h4, .brand, .btn { font-family: var(--f-head); }
+    body {
+      font-family: var(--f-body);
+    }
+
+    h1, h2, h3, h4, .brand, .btn {
+      font-family: var(--f-head);
+    }
 
     .careers-hero {
       position: relative;
       overflow: hidden;
       padding: clamp(76px, 10vw, 130px) 0;
-      background: #0B1426;
+      background: var(--careers-navy);
       color: #fff;
     }
 
@@ -89,7 +99,9 @@
       letter-spacing: -.05em;
     }
 
-    .careers-hero h1 span { color: #F2B705; }
+    .careers-hero h1 span {
+      color: var(--careers-gold);
+    }
 
     .careers-hero .lead {
       max-width: 700px;
@@ -98,13 +110,21 @@
 
     .careers-overview {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0,1fr));
+      grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 26px;
     }
 
-    .careers-overview article { padding-right: 12px; }
-    .careers-overview h3 { margin-bottom: 10px; }
-    .careers-overview p { line-height: 1.75; }
+    .careers-overview article {
+      padding-right: 12px;
+    }
+
+    .careers-overview h3 {
+      margin-bottom: 10px;
+    }
+
+    .careers-overview p {
+      line-height: 1.75;
+    }
 
     .careers-heading {
       max-width: 760px;
@@ -113,14 +133,15 @@
 
     .careers-heading h2 {
       margin: 12px 0 18px;
-      font-size: clamp(2rem,4vw,3.1rem);
+      font-size: clamp(2rem, 4vw, 3.1rem);
       line-height: 1.15;
       letter-spacing: -.04em;
     }
 
     .vacancy-list {
       display: grid;
-      grid-template-columns: repeat(2,minmax(0,1fr));
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      align-items: stretch;
       gap: 22px;
       margin-top: 28px;
     }
@@ -130,13 +151,21 @@
       flex-direction: column;
       min-width: 0;
       padding: 26px;
-      border: 1px solid #DAD7CE;
+      border: 1px solid var(--careers-line);
       border-radius: 14px;
       background: #fff;
+      box-sizing: border-box;
+      transition: border-color .2s ease, box-shadow .2s ease;
+    }
+
+    .vacancy-card:hover {
+      border-color: rgba(242,183,5,.8);
+      box-shadow: 0 12px 28px rgba(11,20,38,.06);
     }
 
     .vacancy-card h3 {
       margin: 12px 0;
+      color: var(--careers-navy);
       font-size: 1.35rem;
       line-height: 1.4;
     }
@@ -159,54 +188,98 @@
     .vacancy-meta span {
       padding: 6px 9px;
       border-radius: 6px;
-      background: #FAF8F3;
+      background: var(--careers-offwhite);
       color: #414957;
       font-size: .82rem;
+      line-height: 1.5;
     }
 
-    .vacancy-summary {
-      color: #535B68;
-      line-height: 1.75;
+    .vacancy-salary {
+      margin: 8px 0 14px;
+      color: var(--careers-navy);
+      font-size: 1.05rem;
+      font-weight: 700;
       overflow-wrap: anywhere;
     }
 
-    .vacancy-deadline {
-      margin-top: 10px;
-      color: #535B68;
-      font-size: .9rem;
+    .vacancy-summary {
+      color: var(--careers-muted);
+      line-height: 1.75;
+      overflow-wrap: anywhere;
+      white-space: pre-line;
     }
 
-    .vacancy-card .btn {
-      align-self: flex-start;
-      margin-top: auto;
-      padding-top: 12px;
+    .vacancy-detail {
+      margin-top: 18px;
+      padding-top: 16px;
+      border-top: 1px solid #E8E5DD;
+    }
+
+    .vacancy-detail h4 {
+      margin: 0 0 8px;
+      color: var(--careers-navy);
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+
+    .vacancy-detail p {
+      margin: 0;
+      color: var(--careers-muted);
+      line-height: 1.75;
+      overflow-wrap: anywhere;
+      white-space: pre-line;
+    }
+
+    .vacancy-deadline {
+      margin-top: 18px;
+      color: var(--careers-muted);
+      font-size: .9rem;
+      line-height: 1.6;
     }
 
     .vacancy-card .vacancy-apply {
-      margin-top: 20px;
+      align-self: flex-start;
+      margin-top: 22px;
     }
 
     .vacancy-empty,
     .vacancy-message {
       padding: 26px;
-      border: 1px solid #DAD7CE;
+      border: 1px solid var(--careers-line);
       border-radius: 12px;
-      background: #FAF8F3;
+      background: var(--careers-offwhite);
       line-height: 1.8;
     }
 
-    .vacancy-empty h3 { margin-top: 0; }
+    .vacancy-message:empty,
+    .vacancy-message[hidden] {
+      display: none;
+    }
 
-    .vacancy-empty .btn { margin-top: 12px; }
+    .vacancy-empty h3,
+    .vacancy-message h3 {
+      margin-top: 0;
+    }
+
+    .vacancy-empty .btn,
+    .vacancy-message .btn {
+      margin-top: 12px;
+    }
+
+    .vacancy-updated {
+      margin-top: 16px;
+      color: #687080;
+      font-size: .85rem;
+    }
 
     .talent-section {
-      background: #0B1426;
+      background: var(--careers-navy);
       color: #fff;
     }
 
     .talent-grid {
       display: grid;
-      grid-template-columns: minmax(0,1.2fr) minmax(0,.8fr);
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, .8fr);
       gap: 48px;
       align-items: center;
     }
@@ -214,12 +287,14 @@
     .talent-section h2 {
       max-width: 700px;
       margin: 14px 0 20px;
-      font-size: clamp(2rem,4vw,3.2rem);
+      font-size: clamp(2rem, 4vw, 3.2rem);
       line-height: 1.15;
       letter-spacing: -.04em;
     }
 
-    .talent-section p { line-height: 1.8; }
+    .talent-section p {
+      line-height: 1.8;
+    }
 
     .talent-panel {
       padding: 28px;
@@ -228,14 +303,18 @@
       background: rgba(255,255,255,.035);
     }
 
-    .talent-panel h3 { margin-top: 0; }
+    .talent-panel h3 {
+      margin-top: 0;
+    }
 
     .talent-panel ul {
       padding-left: 20px;
       line-height: 1.8;
     }
 
-    .talent-panel .btn { margin-top: 10px; }
+    .talent-panel .btn {
+      margin-top: 10px;
+    }
 
     .careers-note {
       max-width: 820px;
@@ -252,7 +331,9 @@
         gap: 24px;
       }
 
-      .vacancy-list { grid-template-columns: 1fr; }
+      .vacancy-list {
+        grid-template-columns: 1fr;
+      }
     }
 
     @media (max-width: 650px) {
@@ -261,8 +342,16 @@
         top: 35%;
       }
 
-      .vacancy-card { padding: 22px; }
-      .talent-panel { padding: 22px; }
+      .vacancy-card,
+      .talent-panel {
+        padding: 22px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .vacancy-card {
+        transition: none;
+      }
     }
   </style>
 </head>
@@ -342,7 +431,7 @@
           <h2>Explore available vacancies</h2>
           <p>
             The vacancies below are supplied from our recruitment register.
-            Please review each role's requirements and deadline before applying.
+            Review each role's details, requirements and deadline before applying.
           </p>
         </div>
 
@@ -482,38 +571,76 @@
       const vacancyList = document.getElementById("vacancy-list");
 
       function addText(parent, tag, value, className) {
+        if (value === null || value === undefined || String(value).trim() === "") {
+          return null;
+        }
+
         const element = document.createElement(tag);
-        element.textContent = value || "";
-        if (className) element.className = className;
+        element.textContent = String(value).trim();
+
+        if (className) {
+          element.className = className;
+        }
+
         parent.appendChild(element);
         return element;
+      }
+
+      function addDetail(card, heading, value) {
+        if (!value || !String(value).trim()) return;
+
+        const section = document.createElement("section");
+        section.className = "vacancy-detail";
+
+        addText(section, "h4", heading);
+        addText(section, "p", value);
+
+        card.appendChild(section);
       }
 
       function addVacancy(vacancy) {
         const card = document.createElement("article");
         card.className = "vacancy-card";
 
-        if (vacancy.id) {
-          addText(card, "div", "VACANCY REF. " + vacancy.id, "vacancy-id");
-        }
+        addText(
+          card,
+          "div",
+          vacancy.id ? "VACANCY REF. " + vacancy.id : "",
+          "vacancy-id"
+        );
 
         addText(card, "h3", vacancy.title || "Vacancy");
 
         const meta = document.createElement("div");
         meta.className = "vacancy-meta";
 
-        if (vacancy.location) addText(meta, "span", vacancy.location);
-        if (vacancy.employmentType) addText(meta, "span", vacancy.employmentType);
-        if (vacancy.industry) addText(meta, "span", vacancy.industry);
+        [
+          vacancy.department,
+          vacancy.location,
+          vacancy.employmentType,
+          vacancy.experienceLevel,
+          vacancy.industry
+        ].forEach(function (value) {
+          addText(meta, "span", value);
+        });
 
-        if (meta.childNodes.length) card.appendChild(meta);
-
-        if (vacancy.summary) {
-          addText(card, "p", vacancy.summary, "vacancy-summary");
+        if (meta.childElementCount) {
+          card.appendChild(meta);
         }
 
+        addText(card, "p", vacancy.salary ? "Salary: " + vacancy.salary : "", "vacancy-salary");
+        addText(card, "p", vacancy.summary, "vacancy-summary");
+
+        addDetail(card, "Key Responsibilities", vacancy.responsibilities);
+        addDetail(card, "Requirements", vacancy.requirements);
+
         if (vacancy.deadline) {
-          addText(card, "p", "Application deadline: " + vacancy.deadline, "vacancy-deadline");
+          addText(
+            card,
+            "p",
+            "Application deadline: " + vacancy.deadline,
+            "vacancy-deadline"
+          );
         }
 
         const applyUrl = String(vacancy.applicationLink || "").trim();
@@ -521,7 +648,11 @@
         if (applyUrl) {
           try {
             const parsed = new URL(applyUrl);
-            if (parsed.protocol === "https:" || parsed.protocol === "http:") {
+
+            if (
+              (parsed.protocol === "https:" || parsed.protocol === "http:") &&
+              parsed.hostname.includes(".")
+            ) {
               const link = document.createElement("a");
               link.className = "btn vacancy-apply";
               link.href = parsed.href;
@@ -531,53 +662,77 @@
               card.appendChild(link);
             }
           } catch (error) {
-            // Do not render an invalid application link.
+            // Invalid application URLs are not displayed.
           }
         }
 
         vacancyList.appendChild(card);
       }
 
-      window.agileTalentVacanciesLoaded = function (vacancies) {
-        statusBox.hidden = true;
-        vacancyList.replaceChildren();
+      function showRegistrationPrompt() {
+        statusBox.hidden = false;
+        statusBox.replaceChildren();
 
-        if (!Array.isArray(vacancies)) {
+        addText(statusBox, "h3", "No current vacancies are listed.");
+
+        addText(
+          statusBox,
+          "p",
+          "You can still join our talent network to be considered for future opportunities."
+        );
+
+        const link = document.createElement("a");
+        link.className = "btn";
+        link.href = registrationUrl;
+        link.target = "_blank";
+        link.rel = "noopener noreferrer";
+        link.textContent = "Submit Your CV";
+
+        statusBox.appendChild(link);
+      }
+
+      window.agileTalentVacanciesLoaded = function (response) {
+        vacancyList.replaceChildren();
+        statusBox.replaceChildren();
+
+        let vacancies;
+
+        // New Apps Script response: { success, count, vacancies }
+        // Also accept the previous plain-array response format.
+        if (Array.isArray(response)) {
+          vacancies = response;
+        } else if (
+          response &&
+          response.success === true &&
+          Array.isArray(response.vacancies)
+        ) {
+          vacancies = response.vacancies;
+        } else {
           statusBox.hidden = false;
-          statusBox.textContent = "We could not load the vacancy list. Please try again later.";
+          addText(
+            statusBox,
+            "p",
+            "We could not load vacancy information. Please try again later."
+          );
           return;
         }
 
         if (vacancies.length === 0) {
-          statusBox.hidden = false;
-          statusBox.replaceChildren();
-
-          addText(statusBox, "h3", "No current vacancies are listed.");
-          addText(
-            statusBox,
-            "p",
-            "You can still join our talent network to be considered for future opportunities."
-          );
-
-          const link = document.createElement("a");
-          link.className = "btn";
-          link.href = registrationUrl;
-          link.target = "_blank";
-          link.rel = "noopener noreferrer";
-          link.textContent = "Submit Your CV";
-          statusBox.appendChild(link);
+          showRegistrationPrompt();
           return;
         }
 
         vacancies.forEach(addVacancy);
+        statusBox.hidden = true;
       };
 
       const script = document.createElement("script");
       script.src = feedUrl + "?callback=agileTalentVacanciesLoaded";
+
       script.onerror = function () {
         statusBox.hidden = false;
         statusBox.textContent =
-          "We could not load vacancies at this time. Please use the talent registration form to be considered for future opportunities.";
+          "We could not load vacancies at this time. Please use the talent registration form to register for future opportunities.";
       };
 
       document.head.appendChild(script);
