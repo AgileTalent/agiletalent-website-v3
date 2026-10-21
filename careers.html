@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 
 <title>Careers and Job Vacancies in Nigeria | AgileTalent Associates</title>
-<meta name="description" content="Explore current job vacancies at AgileTalent Associates. Review job summaries and application deadlines, or register your CV for future opportunities.">
+<meta name="description" content="Explore current job vacancies at AgileTalent Associates. View job summaries and apply online, or register your CV for future opportunities.">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://agiletalentassociates.com/careers.html">
 <link rel="icon" type="image/png" href="favicon.png">
@@ -114,7 +114,6 @@
 }
 
 .vacancy-apply {
-  display: inline-block;
   align-self: flex-start;
   margin-top: auto;
   padding-top: 22px;
@@ -251,8 +250,9 @@
       </h1>
       <p class="lead">
         Explore current opportunities and discover roles that match your
-        experience, skills and career goals. Review each vacancy before
-        applying, or register your CV for future opportunities.
+        experience, skills and career goals. Select Apply Now to review the
+        full vacancy details and submit your application, or register your CV
+        for future opportunities.
       </p>
       <div class="careers-actions">
         <a class="btn" href="#current-vacancies">View Current Vacancies</a>
@@ -268,8 +268,9 @@
       <p class="lab">Career opportunities</p>
       <h2>Current Job Vacancies</h2>
       <p style="max-width:760px">
-        Browse available positions below. Each listing provides a short
-        summary; select Apply Now to view the full job details and application form.
+        Browse our current openings. Each listing contains a short summary.
+        Click Apply Now to view the full job description, responsibilities,
+        requirements and application form.
       </p>
 
       <div id="vacancy-status"
@@ -284,7 +285,7 @@
       <noscript>
         <div class="vacancy-status">
           JavaScript must be enabled to display current vacancies.
-          You can still register your CV using the talent registration link below.
+          You can still register your CV using the Register Your CV link below.
         </div>
       </noscript>
     </div>
@@ -303,7 +304,7 @@
 
         <div class="careers-actions">
           <a class="btn"
-             href="https://script.google.com/macros/s/AKfycbwfdsY72BZPa74n3_HI6MWe9KqGfMp50cT7Jzfw1wRtYhu3QxsVO3hRZSAV49ABZ4Eu/exec?view=general"
+             href="https://script.google.com/macros/s/AKfycbwfdsY72BZPa74n3_HI6MWe9KqGfMp50cT7Jzfw1wRtYhu3QxsVO3hZRSAV49ABZ4Eu/exec?view=general"
              target="_blank"
              rel="noopener noreferrer">
             Register Your CV
@@ -462,41 +463,6 @@
     return element;
   }
 
-  function formatDeadline(value) {
-    if (!value) return "";
-
-    const match = /^(\d{4})-(\d{2})-(\d{2})$/.exec(
-      String(value).trim()
-    );
-
-    if (match) {
-      const date = new Date(
-        Number(match[1]),
-        Number(match[2]) - 1,
-        Number(match[3])
-      );
-
-      return new Intl.DateTimeFormat("en-GB", {
-        day: "numeric",
-        month: "long",
-        year: "numeric"
-      }).format(date);
-    }
-
-    const date = new Date(value);
-
-    if (Number.isNaN(date.getTime())) {
-      return String(value);
-    }
-
-    return new Intl.DateTimeFormat("en-GB", {
-      day: "numeric",
-      month: "long",
-      year: "numeric",
-      timeZone: "Africa/Lagos"
-    }).format(date);
-  }
-
   function createApplicationUrl(vacancy) {
     const vacancyId = String(vacancy.id || "").trim();
     const title = String(vacancy.title || "").trim();
@@ -508,21 +474,18 @@
     const url = new URL(APPS_SCRIPT_URL);
     url.searchParams.set("view", "job");
     url.searchParams.set("vacancyId", vacancyId);
-    url.searchParams.set("title", title);
+
+    // Code.gs reads the job title from the "jobTitle" parameter.
+    url.searchParams.set("jobTitle", title);
 
     return url.toString();
   }
 
   function formatSalary(value) {
-    if (value === null || value === undefined) {
-      return "";
-    }
+    if (value === null || value === undefined) return "";
 
     const salary = String(value).trim();
-
-    if (!salary) {
-      return "";
-    }
+    if (!salary) return "";
 
     if (/^\d+(\.\d+)?$/.test(salary)) {
       return "₦" + Number(salary).toLocaleString("en-NG");
@@ -564,22 +527,11 @@
     const salary = formatSalary(vacancy.salary);
 
     if (salary) {
-      addText(
-        card,
-        "p",
-        "Salary: " + salary,
-        "vacancy-salary"
-      );
+      addText(card, "p", "Salary: " + salary, "vacancy-salary");
     }
 
-    // Only the short summary appears on the listing page.
-    // Full responsibilities and requirements are not rendered here.
-    addText(
-      card,
-      "p",
-      vacancy.summary,
-      "vacancy-summary"
-    );
+    // Listing cards intentionally show the summary only.
+    addText(card, "p", vacancy.summary, "vacancy-summary");
 
     const applicationUrl = createApplicationUrl(vacancy);
 
@@ -614,11 +566,10 @@
     statusBox.replaceChildren();
 
     addText(statusBox, "h3", "No current vacancies are listed.");
-
     addText(
       statusBox,
       "p",
-      "You can register your CV with AgileTalent Associates for consideration for relevant future opportunities."
+      "Register your CV with AgileTalent Associates for consideration for relevant future opportunities."
     );
 
     statusBox.appendChild(createRegistrationLink());
@@ -629,11 +580,10 @@
     statusBox.replaceChildren();
 
     addText(statusBox, "h3", "Vacancies could not be loaded.");
-
     addText(
       statusBox,
       "p",
-      "Please try again later. You can still register your CV for consideration for future opportunities."
+      "Please try again later. You can still register your CV for future opportunities."
     );
 
     statusBox.appendChild(createRegistrationLink());
