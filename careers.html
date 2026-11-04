@@ -29,6 +29,45 @@
   --career-off-white: var(--off-white, #FAF8F3);
 }
 
+/* HEADER — MATCH THE SHARED WEBSITE HEADER */
+
+header .bar {
+  display: flex;
+  align-items: center;
+}
+
+header .brand {
+  display: flex;
+  align-items: center;
+  width: 260px;
+  height: 68px;
+  flex-shrink: 0;
+  gap: 0;
+  overflow: visible;
+  text-decoration: none;
+}
+
+header .brand .mark {
+  display: block;
+  width: 260px;
+  height: 62px;
+  max-width: none;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+header .brand-descriptor {
+  display: inline-block;
+  max-width: 190px;
+  padding-left: 12px;
+  border-left: 1px solid #d6d6d6;
+  color: #6b7280;
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
 .careers-hero .lead {
   max-width: 760px;
 }
@@ -198,9 +237,31 @@
   line-height: 1.7;
 }
 
+/* TABLET */
+
 @media (max-width: 800px) {
   .vacancy-list {
     grid-template-columns: 1fr;
+  }
+}
+
+/* MOBILE HEADER */
+
+@media (max-width: 650px) {
+  header .brand {
+    width: 210px;
+    height: 60px;
+  }
+
+  header .brand .mark {
+    width: 210px;
+    height: 55px;
+  }
+
+  header .brand-descriptor {
+    max-width: 125px;
+    padding-left: 8px;
+    font-size: 10px;
   }
 }
 
@@ -483,28 +544,9 @@
     return element;
   }
 
-  function addDetail(card, heading, value) {
-    if (
-      value === null ||
-      value === undefined ||
-      String(value).trim() === ""
-    ) {
-      return;
-    }
-
-    const section = document.createElement("section");
-    section.className = "vacancy-detail";
-
-    addText(section, "h4", heading);
-    addText(section, "p", value);
-
-    card.appendChild(section);
-  }
-
   function formatDeadline(value) {
     if (!value) return "";
 
-    // Handle date-only values without shifting the calendar date.
     const dateOnly = /^(\d{4})-(\d{2})-(\d{2})$/.exec(String(value).trim());
 
     if (dateOnly) {
@@ -539,9 +581,7 @@
     const vacancyId = String(vacancy.id || "").trim();
     const title = String(vacancy.title || "").trim();
 
-    if (!vacancyId || !title) {
-      return "";
-    }
+    if (!vacancyId || !title) return "";
 
     const url = new URL(APPS_SCRIPT_URL);
     url.searchParams.set("view", "job");
@@ -590,6 +630,21 @@
 
     addText(card, "p", vacancy.summary, "vacancy-summary");
 
+    if (vacancy.responsibilities) {
+      const section = document.createElement("section");
+      section.className = "vacancy-detail";
+      addText(section, "h4", "Responsibilities");
+      addText(section, "p", vacancy.responsibilities);
+      card.appendChild(section);
+    }
+
+    if (vacancy.requirements) {
+      const section = document.createElement("section");
+      section.className = "vacancy-detail";
+      addText(section, "h4", "Requirements");
+      addText(section, "p", vacancy.requirements);
+      card.appendChild(section);
+    }
 
     if (vacancy.deadline) {
       addText(
@@ -658,19 +713,6 @@
     statusBox.appendChild(createRegistrationLink());
   }
 
-  /*
-   * Code.gs returns a JSONP response containing:
-   * {
-   *   success: true,
-   *   count: 1,
-   *   vacancies: [...]
-   * }
-   *
-   * Each vacancy includes fields such as:
-   * id, title, industry, department, location, employmentType,
-   * experienceLevel, salary, summary, responsibilities,
-   * requirements, deadline and status.
-   */
   window.agileTalentVacanciesLoaded = function (response) {
     if (feedLoaded) return;
     feedLoaded = true;
@@ -701,12 +743,11 @@
   };
 
   const script = document.createElement("script");
-  const callbackName = "agileTalentVacanciesLoaded";
 
   script.src =
     APPS_SCRIPT_URL +
     "?callback=" +
-    encodeURIComponent(callbackName);
+    encodeURIComponent("agileTalentVacanciesLoaded");
 
   script.async = true;
 
@@ -718,10 +759,6 @@
 
   document.head.appendChild(script);
 
-  /*
-   * If the feed neither loads nor returns a response,
-   * show the fallback instead of leaving "Loading" indefinitely.
-   */
   window.setTimeout(function () {
     if (!feedLoaded) {
       feedLoaded = true;
