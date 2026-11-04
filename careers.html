@@ -5,13 +5,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 
 <title>Careers and Job Vacancies in Nigeria | AgileTalent Associates</title>
-<meta name="description" content="Explore current job vacancies at AgileTalent Associates. Review job requirements, responsibilities and application deadlines, or register your CV for future opportunities.">
+<meta name="description" content="Explore current job vacancies, improve your CV with AgileTalent Career Studio, and register for future career opportunities.">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://agiletalentassociates.com/careers.html">
 <link rel="icon" type="image/png" href="favicon.png">
 
 <meta property="og:title" content="Careers and Job Vacancies | AgileTalent Associates">
-<meta property="og:description" content="Explore current job opportunities and register your CV with AgileTalent Associates.">
+<meta property="og:description" content="Explore job opportunities, improve your CV and register your profile with AgileTalent Associates.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://agiletalentassociates.com/careers.html">
 <meta property="og:site_name" content="AgileTalent Associates Limited">
@@ -29,7 +29,7 @@
   --career-off-white: var(--off-white, #FAF8F3);
 }
 
-/* HEADER — MATCH THE SHARED WEBSITE HEADER */
+/* HEADER */
 
 header .bar {
   display: flex;
@@ -67,6 +67,8 @@ header .brand-descriptor {
   font-weight: 500;
   line-height: 1.5;
 }
+
+/* CAREERS PAGE */
 
 .careers-hero .lead {
   max-width: 760px;
@@ -202,6 +204,164 @@ header .brand-descriptor {
   display: none !important;
 }
 
+/* CAREER STUDIO PROMOTION */
+
+.career-studio-section {
+  background: var(--career-off-white);
+}
+
+.career-studio-panel {
+  display: grid;
+  grid-template-columns: 1.2fr .8fr;
+  gap: 48px;
+  align-items: center;
+  padding: 48px;
+  border: 1px solid var(--career-line);
+  border-radius: 16px;
+  background: #fff;
+}
+
+.career-studio-label {
+  display: inline-block;
+  padding: 7px 12px;
+  margin-bottom: 18px;
+  border-radius: 5px;
+  background: #fff5d5;
+  color: #735800;
+  font-size: .75rem;
+  font-weight: 800;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.career-studio-copy h2 {
+  max-width: 600px;
+  margin: 0 0 18px;
+  color: var(--career-navy);
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  line-height: 1.25;
+}
+
+.career-studio-copy p {
+  max-width: 650px;
+  color: #535b68;
+  line-height: 1.8;
+}
+
+.career-studio-benefits {
+  display: grid;
+  gap: 13px;
+  margin: 22px 0 26px;
+  padding: 0;
+  list-style: none;
+}
+
+.career-studio-benefits li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  color: #454c59;
+  line-height: 1.6;
+}
+
+.career-studio-benefits li::before {
+  content: "✓";
+  display: inline-flex;
+  flex: 0 0 23px;
+  width: 23px;
+  height: 23px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #edf5ee;
+  color: #286b38;
+  font-size: .8rem;
+  font-weight: 800;
+}
+
+.career-studio-action {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+}
+
+.career-studio-action .btn {
+  display: inline-block;
+}
+
+.career-studio-note {
+  margin-top: 14px;
+  color: #687080;
+  font-size: .82rem;
+}
+
+.career-studio-visual {
+  display: flex;
+  min-height: 290px;
+  flex-direction: column;
+  justify-content: center;
+  padding: 28px;
+  border-radius: 12px;
+  background: var(--career-navy);
+  color: #fff;
+}
+
+.career-studio-visual .visual-kicker {
+  margin-bottom: 24px;
+  color: var(--career-gold);
+  font-size: .75rem;
+  font-weight: 800;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+
+.career-studio-visual h3 {
+  margin: 0 0 14px;
+  color: #fff;
+  font-size: 1.65rem;
+  line-height: 1.35;
+}
+
+.career-studio-visual p {
+  margin: 0;
+  color: #d5dbe5;
+  line-height: 1.7;
+}
+
+.studio-steps {
+  display: grid;
+  gap: 12px;
+  margin-top: 26px;
+}
+
+.studio-step {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  border: 1px solid rgba(255,255,255,.15);
+  border-radius: 8px;
+  background: rgba(255,255,255,.06);
+  font-size: .88rem;
+}
+
+.studio-step-number {
+  display: flex;
+  width: 28px;
+  height: 28px;
+  flex: 0 0 28px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--career-gold);
+  color: var(--career-navy);
+  font-size: .8rem;
+  font-weight: 800;
+}
+
+/* TALENT REGISTRATION */
+
 .careers-cta {
   padding: 28px;
   margin-top: 40px;
@@ -237,15 +397,25 @@ header .brand-descriptor {
   line-height: 1.7;
 }
 
-/* TABLET */
+/* RESPONSIVE */
+
+@media (max-width: 900px) {
+  .career-studio-panel {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    padding: 34px;
+  }
+
+  .career-studio-visual {
+    min-height: 250px;
+  }
+}
 
 @media (max-width: 800px) {
   .vacancy-list {
     grid-template-columns: 1fr;
   }
 }
-
-/* MOBILE HEADER */
 
 @media (max-width: 650px) {
   header .brand {
@@ -269,6 +439,25 @@ header .brand-descriptor {
   .vacancy-card,
   .careers-cta {
     padding: 22px;
+  }
+
+  .career-studio-panel {
+    padding: 24px;
+    gap: 24px;
+  }
+
+  .career-studio-visual {
+    min-height: 230px;
+    padding: 22px;
+  }
+
+  .career-studio-action {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .career-studio-action .btn {
+    text-align: center;
   }
 
   .careers-actions {
@@ -324,6 +513,8 @@ header .brand-descriptor {
 
 <main id="main" tabindex="-1">
 
+  <!-- CAREERS HERO -->
+
   <section class="sec dark careers-hero">
     <div class="wrap">
       <p class="careers-kicker">Your next opportunity</p>
@@ -343,6 +534,8 @@ header .brand-descriptor {
       </div>
     </div>
   </section>
+
+  <!-- CURRENT VACANCIES -->
 
   <section class="sec vacancy-section" id="current-vacancies">
     <div class="wrap">
@@ -372,6 +565,76 @@ header .brand-descriptor {
     </div>
   </section>
 
+  <!-- CAREER STUDIO -->
+
+  <section class="sec career-studio-section" id="career-studio">
+    <div class="wrap">
+
+      <div class="career-studio-panel">
+
+        <div class="career-studio-copy">
+          <span class="career-studio-label">Free career resource</span>
+
+          <h2>Make Your CV Work Harder for You.</h2>
+
+          <p>
+            A strong CV can make a difference in how employers understand
+            your experience and potential. Use AgileTalent Career Studio
+            to improve your CV and present your professional strengths
+            more effectively.
+          </p>
+
+          <ul class="career-studio-benefits">
+            <li>Improve your CV structure, clarity and presentation.</li>
+            <li>Strengthen how your experience and achievements are communicated.</li>
+            <li>Get AI-powered guidance to make your CV more effective.</li>
+          </ul>
+
+          <div class="career-studio-action">
+            <a class="btn" href="career-studio.html">
+              Explore Career Studio →
+            </a>
+          </div>
+
+          <p class="career-studio-note">
+            Free to use. No payment required.
+          </p>
+        </div>
+
+        <div class="career-studio-visual">
+          <p class="visual-kicker">AgileTalent Career Studio</p>
+
+          <h3>Your experience deserves a better presentation.</h3>
+
+          <p>
+            Take a practical step towards presenting your skills,
+            experience and career value with confidence.
+          </p>
+
+          <div class="studio-steps">
+            <div class="studio-step">
+              <span class="studio-step-number">1</span>
+              <span>Upload your existing CV</span>
+            </div>
+
+            <div class="studio-step">
+              <span class="studio-step-number">2</span>
+              <span>Get AI-powered improvement support</span>
+            </div>
+
+            <div class="studio-step">
+              <span class="studio-step-number">3</span>
+              <span>Refine your professional profile</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- TALENT REGISTRATION -->
+
   <section class="sec" id="talent-registration">
     <div class="wrap">
       <div class="careers-cta">
@@ -390,6 +653,7 @@ header .brand-descriptor {
              rel="noopener noreferrer">
             Register Your CV
           </a>
+
           <a class="careers-secondary-link" href="#current-vacancies">
             View Current Vacancies
           </a>
@@ -403,6 +667,8 @@ header .brand-descriptor {
       </div>
     </div>
   </section>
+
+  <!-- LINKEDIN -->
 
   <section class="sec dark">
     <div class="wrap">
@@ -423,6 +689,8 @@ header .brand-descriptor {
   </section>
 
 </main>
+
+<!-- FOOTER -->
 
 <footer>
   <div class="wrap cols">
@@ -476,6 +744,7 @@ header .brand-descriptor {
 
   <div class="wrap social-area">
     <h2 class="social-heading">Connect with AgileTalent</h2>
+
     <div class="social-links">
       <a href="https://x.com/agiletalents_ng"
          target="_blank" rel="noopener noreferrer"
@@ -511,6 +780,8 @@ header .brand-descriptor {
 <a class="btn sticky" id="sticky" href="contact.html">Let’s Talk</a>
 
 <script src="main.js"></script>
+
+<!-- VACANCY FEED -->
 
 <script>
 (function () {
