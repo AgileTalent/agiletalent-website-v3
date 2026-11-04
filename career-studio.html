@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Free AI CV Builder | AgileTalent Career Studio</title>
+  <meta name="description" content="Improve your CV for free with AgileTalent Career Studio. Get an AI-powered CV review and a professionally formatted Word document.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://agiletalentassociates.com/career-studio.html">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://agiletalent.github.io/agiletalent-career-studio/frontend/career-studio.css">
+</head>
+
+<body>
+<a class="skip" href="#main">Skip to main content</a>
+
+<header>
+  <div class="wrap bar">
+    <a class="brand" href="index.html" aria-label="AgileTalent Associates home">
+      <img class="mark" src="Artboard 4@4x.png" alt="AgileTalent Associates"
+        onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'wm',textContent:'AgileTalent Associates'}))">
+      <span class="brand-descriptor">Recruitment &amp; HR Consulting in Nigeria</span>
+    </a>
+
+    <button class="menu" id="menu" aria-expanded="false" aria-controls="nav">Menu</button>
+
+    <nav id="nav" aria-label="Main">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="recruitment.html">Recruitment</a></li>
+        <li><a href="industries.html">Who We Serve</a></li>
+        <li><a href="insights.html">Insights</a></li>
+        <li><a href="careers.html">Careers</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a class="btn" href="contact.html">Let's Talk</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main" tabindex="-1">
+
+<section class="career-studio" id="career-studio">
+  <div class="cs-wrap">
+
+    <p class="cs-kicker">AGILETALENT CAREER STUDIO</p>
+
+    <h1>Your experience deserves a better CV.</h1>
+
+    <p class="cs-intro">
+      A free CV improvement service for graduates, early-career and
+      mid-level professionals. Upload your existing CV, receive an
+      immediate review and work with our AI assistant to improve it.
+    </p>
+
+    <div class="cs-panel" id="cs-upload-panel">
+
+      <label class="cs-label" for="cs-file">
+        Upload your existing CV
+      </label>
+
+      <input
+        id="cs-file"
+        type="file"
+        accept=".pdf,.docx,application/pdf,application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+      >
+
+      <p class="cs-hint">PDF or Word document · Maximum 8 MB</p>
+
+      <label class="cs-consent">
+        <input type="checkbox" id="cs-consent">
+        <span>
+          I have read the
+          <a href="privacy.html" target="_blank" rel="noopener noreferrer">
+            Privacy Notice
+          </a>
+          and consent to my CV being processed to provide this service.
+        </span>
+      </label>
+
+      <p id="cs-rebuild-usage" class="cs-usage" aria-live="polite"></p>
+
+      <button class="cs-button" id="cs-start" type="button">
+        Analyse and revamp my CV
+      </button>
+
+      <p class="cs-status" id="cs-upload-status" role="status" aria-live="polite"></p>
+
+    </div>
+
+    <div class="cs-workspace" id="cs-workspace" hidden>
+
+      <div class="cs-analysis">
+        <h2>CV review</h2>
+        <p id="cs-analysis-text"></p>
+      </div>
+
+      <div class="cs-preview">
+        <h2>Your current CV draft</h2>
+        <p class="cs-preview-hint">
+          Your complete revised CV appears here and updates as you request changes.
+        </p>
+        <pre id="cs-cv-preview" aria-live="polite"></pre>
+      </div>
+
+      <div class="cs-chat" aria-label="Conversation with your CV assistant">
+
+        <h2>Your CV assistant</h2>
+
+        <div id="cs-messages" class="cs-messages" aria-live="polite"></div>
+
+        <form id="cs-chat-form">
+
+          <p id="cs-chat-usage" class="cs-usage" aria-live="polite">
+            Conversation exchanges used: 0 of 5.
+          </p>
+
+          <label class="cs-label" for="cs-message">
+            What would you like to change?
+          </label>
+
+          <textarea
+            id="cs-message"
+            rows="3"
+            maxlength="4000"
+            placeholder="For example: Tailor my CV for a Senior Accountant role in a commercial bank.">
+          </textarea>
+
+          <button class="cs-button" type="submit">
+            Send instructions
+          </button>
+
+        </form>
+      </div>
+
+      <div class="cs-download">
+
+        <h2>Your revised CV</h2>
+
+        <p>
+          Review the latest version with the assistant before downloading.
+        </p>
+
+        <button class="cs-button" id="cs-download" type="button">
+          Download Word document
+        </button>
+
+        <button class="cs-text-button" id="cs-delete" type="button">
+          End session and delete my CV session
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<section class="sec">
+  <div class="wrap">
+    <h2>Make your next career move with confidence.</h2>
+    <p>
+      AgileTalent Career Studio helps you present your experience more
+      clearly and professionally. Your CV remains yours: review the
+      suggestions, request changes and download the version you approve.
+    </p>
+    <p>
+      This service does not guarantee ATS selection, interviews or employment.
+      CVs submitted through Career Studio are not automatically added to
+      AgileTalent's recruitment database.
+    </p>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap cols">
+    <div>
+      <p style="color:#fff;font:700 1.2rem var(--f-head);margin-bottom:.4em">
+        AgileTalent Associates Limited
+      </p>
+      <p>
+        Human resources consulting, recruitment and workforce solutions
+        for Nigerian organisations. Established 2022.
+      </p>
+      <p><a href="mailto:agiletalents@outlook.com">agiletalents@outlook.com</a></p>
+      <p><a href="tel:+234906479293">+234 906 479 293</a></p>
+    </div>
+
+    <div>
+      <h2>Explore</h2>
+      <ul>
+        <li><a href="about.html">About us</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="recruitment.html">Recruitment</a></li>
+        <li><a href="careers.html">Careers</a></li>
+        <li><a href="insights.html">Insights</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h2>Connect</h2>
+      <ul>
+        <li><a href="https://x.com/agiletalents_ng" target="_blank" rel="noopener noreferrer">X</a></li>
+        <li><a href="https://www.linkedin.com/company/agiletalent-associates" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+        <li><a href="privacy.html">Privacy Notice</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <p style="margin-top:32px;font-size:.85rem">
+      &copy; 2026 AgileTalent Associates Limited. All rights reserved.
+    </p>
+  </div>
+</footer>
+
+<a class="btn sticky" id="sticky" href="contact.html">Let's Talk</a>
+
+<script src="main.js"></script>
+<script src="https://agiletalent.github.io/agiletalent-career-studio/frontend/career-studio.js" defer></script>
+
+</body>
+</html>
