@@ -1,0 +1,286 @@
+/* =========================================
+   AGILETALENT CAREER STUDIO
+   Brand: Navy, Gold and Off-white
+========================================= */
+
+.career-studio {
+  --cs-navy: #0B1426;
+  --cs-gold: #F2B705;
+  --cs-ink: #273142;
+  --cs-muted: #687386;
+  --cs-line: #E2E5EB;
+  --cs-off-white: #FAF8F3;
+
+  padding: 64px 20px;
+  background: var(--cs-off-white);
+  color: var(--cs-ink);
+  font-family: Inter, Arial, sans-serif;
+}
+
+.cs-wrap {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.cs-kicker {
+  color: #8A6A00;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+}
+
+.career-studio h1 {
+  max-width: 760px;
+  margin: 12px 0;
+  color: var(--cs-navy);
+  font-size: clamp(2.1rem, 5vw, 3.5rem);
+  line-height: 1.1;
+}
+
+.cs-intro {
+  max-width: 700px;
+  color: var(--cs-muted);
+  line-height: 1.8;
+  font-size: 1.02rem;
+}
+
+.cs-panel,
+.cs-analysis,
+.cs-chat,
+.cs-download,
+.cs-preview {
+  margin-top: 22px;
+  padding: 26px;
+  background: #fff;
+  border: 1px solid var(--cs-line);
+  border-radius: 14px;
+  box-sizing: border-box;
+}
+
+.cs-label {
+  display: block;
+  margin: 0 0 10px;
+  color: var(--cs-navy);
+  font-weight: 700;
+}
+
+.career-studio input[type="file"],
+.career-studio textarea {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 13px;
+  border: 1px solid #CBD1DB;
+  border-radius: 8px;
+  background: #fff;
+  color: var(--cs-ink);
+  font: inherit;
+}
+
+.career-studio textarea {
+  resize: vertical;
+  line-height: 1.6;
+}
+
+.career-studio input:focus,
+.career-studio textarea:focus {
+  outline: 2px solid var(--cs-gold);
+  outline-offset: 2px;
+}
+
+.cs-hint,
+.cs-status {
+  color: var(--cs-muted);
+  font-size: 0.88rem;
+  line-height: 1.6;
+}
+
+.cs-consent {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin: 20px 0;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.cs-consent input {
+  flex: 0 0 auto;
+  margin-top: 4px;
+}
+
+.cs-consent a {
+  color: #725600;
+  font-weight: 700;
+}
+
+/* Usage counters */
+
+.cs-usage {
+  margin: 14px 0;
+  padding: 11px 14px;
+  border-left: 3px solid var(--cs-gold);
+  border-radius: 5px;
+  background: #FAF8F3;
+  color: #465064;
+  font-size: 0.88rem;
+  line-height: 1.6;
+}
+
+/* Buttons */
+
+.cs-button {
+  display: inline-block;
+  margin-top: 14px;
+  padding: 13px 20px;
+  border: 0;
+  border-radius: 7px;
+  background: var(--cs-navy);
+  color: #fff;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.cs-button:hover {
+  background: #182C4C;
+  transform: translateY(-1px);
+}
+
+.cs-button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.cs-text-button {
+  display: block;
+  margin-top: 18px;
+  padding: 5px 0;
+  border: 0;
+  background: none;
+  color: #596579;
+  font: inherit;
+  font-size: 0.9rem;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.cs-text-button:hover {
+  color: var(--cs-navy);
+}
+
+/* Workspace */
+
+.cs-workspace[hidden] {
+  display: none !important;
+}
+
+.cs-workspace h2 {
+  margin-top: 0;
+  color: var(--cs-navy);
+  font-size: 1.2rem;
+}
+
+.cs-analysis p,
+.cs-download p {
+  color: var(--cs-muted);
+  line-height: 1.7;
+  white-space: pre-wrap;
+}
+
+/* CV preview */
+
+.cs-preview-hint {
+  color: var(--cs-muted);
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.cs-preview pre {
+  max-height: 720px;
+  overflow: auto;
+  padding: 18px;
+  border: 1px solid var(--cs-line);
+  border-radius: 8px;
+  background: #FBFCFE;
+  color: var(--cs-ink);
+  font-family: Inter, Arial, sans-serif;
+  font-size: 0.9rem;
+  line-height: 1.7;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+/* AI conversation */
+
+.cs-messages {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 18px 0;
+}
+
+.cs-message {
+  padding: 13px 15px;
+  border-radius: 10px;
+  line-height: 1.65;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.cs-message.assistant {
+  background: #F2F4F7;
+  color: var(--cs-ink);
+}
+
+.cs-message.user {
+  border: 1px solid #F3DF9C;
+  background: #FFF6D9;
+  color: var(--cs-ink);
+}
+
+/* Status messages */
+
+.cs-status {
+  min-height: 20px;
+  margin-top: 12px;
+}
+
+/* Mobile responsiveness */
+
+@media (max-width: 600px) {
+  .career-studio {
+    padding: 42px 15px;
+  }
+
+  .cs-panel,
+  .cs-analysis,
+  .cs-chat,
+  .cs-download,
+  .cs-preview {
+    padding: 19px;
+  }
+
+  .cs-button {
+    width: 100%;
+    text-align: center;
+  }
+
+  .cs-text-button {
+    line-height: 1.6;
+  }
+}
+
+/* Accessibility */
+
+@media (prefers-reduced-motion: reduce) {
+  .cs-button {
+    transition: none;
+  }
+
+  .cs-button:hover {
+    transform: none;
+  }
+}
