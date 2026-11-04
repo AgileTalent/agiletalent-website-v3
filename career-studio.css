@@ -1,258 +1,449 @@
-/* =========================================
+/* =====================================================
    AGILETALENT CAREER STUDIO
-   Brand: Navy, Gold and Off-white
-========================================= */
+   Complete page styling
+   Brand: Navy | Gold | Off-white
+===================================================== */
 
 .career-studio {
   --cs-navy: #0B1426;
+  --cs-navy-light: #172945;
   --cs-gold: #F2B705;
-  --cs-ink: #273142;
-  --cs-muted: #687386;
-  --cs-line: #E2E5EB;
-  --cs-off-white: #FAF8F3;
+  --cs-ink: #263247;
+  --cs-muted: #697586;
+  --cs-line: #E5E8EF;
+  --cs-background: #F7F8FA;
+  --cs-white: #FFFFFF;
 
-  padding: 64px 20px;
-  background: var(--cs-off-white);
+  width: 100%;
+  padding: 76px 24px 88px;
+  background:
+    radial-gradient(circle at 90% 5%, rgba(242,183,5,.09), transparent 30%),
+    linear-gradient(180deg, #FAF8F3 0%, #F5F6F9 100%);
   color: var(--cs-ink);
   font-family: Inter, Arial, sans-serif;
 }
 
+.career-studio,
+.career-studio * {
+  box-sizing: border-box;
+}
+
 .cs-wrap {
-  max-width: 900px;
+  width: 100%;
+  max-width: 960px;
   margin: 0 auto;
 }
 
+/* INTRODUCTION */
+
 .cs-kicker {
-  color: #8A6A00;
-  font-size: 0.78rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 18px;
+  color: #856400;
+  font-size: .75rem;
   font-weight: 800;
-  letter-spacing: 0.12em;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+
+.cs-kicker::before {
+  content: "";
+  width: 26px;
+  height: 3px;
+  border-radius: 4px;
+  background: var(--cs-gold);
 }
 
 .career-studio h1 {
   max-width: 760px;
-  margin: 12px 0;
+  margin: 0 0 20px;
   color: var(--cs-navy);
-  font-size: clamp(2.1rem, 5vw, 3.5rem);
-  line-height: 1.1;
+  font-size: clamp(2.35rem, 5.5vw, 4rem);
+  font-weight: 800;
+  letter-spacing: -.045em;
+  line-height: 1.12;
 }
 
 .cs-intro {
-  max-width: 700px;
-  color: var(--cs-muted);
-  line-height: 1.8;
+  max-width: 710px;
+  margin: 0 0 38px;
+  color: #586477;
   font-size: 1.02rem;
+  line-height: 1.85;
 }
+
+/* PANELS */
 
 .cs-panel,
 .cs-analysis,
 .cs-chat,
 .cs-download,
 .cs-preview {
-  margin-top: 22px;
-  padding: 26px;
-  background: #fff;
-  border: 1px solid var(--cs-line);
-  border-radius: 14px;
-  box-sizing: border-box;
-}
-
-.cs-label {
-  display: block;
-  margin: 0 0 10px;
-  color: var(--cs-navy);
-  font-weight: 700;
-}
-
-.career-studio input[type="file"],
-.career-studio textarea {
-  display: block;
   width: 100%;
-  box-sizing: border-box;
-  padding: 13px;
-  border: 1px solid #CBD1DB;
-  border-radius: 8px;
-  background: #fff;
-  color: var(--cs-ink);
-  font: inherit;
+  margin-top: 24px;
+  padding: 30px;
+  border: 1px solid var(--cs-line);
+  border-radius: 15px;
+  background: var(--cs-white);
+  box-shadow: 0 8px 30px rgba(11,20,38,.045);
 }
 
-.career-studio textarea {
-  resize: vertical;
-  line-height: 1.6;
+.cs-panel {
+  padding: 34px;
+  border-top: 4px solid var(--cs-gold);
+  box-shadow: 0 14px 40px rgba(11,20,38,.065);
 }
 
-.career-studio input:focus,
-.career-studio textarea:focus {
-  outline: 2px solid var(--cs-gold);
-  outline-offset: 2px;
+.cs-workspace {
+  width: 100%;
+  margin-top: 34px;
 }
-
-.cs-hint,
-.cs-status {
-  color: var(--cs-muted);
-  font-size: 0.88rem;
-  line-height: 1.6;
-}
-
-.cs-consent {
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
-  margin: 20px 0;
-  font-size: 0.9rem;
-  line-height: 1.6;
-}
-
-.cs-consent input {
-  flex: 0 0 auto;
-  margin-top: 4px;
-}
-
-.cs-consent a {
-  color: #725600;
-  font-weight: 700;
-}
-
-/* Usage counters */
-
-.cs-usage {
-  margin: 14px 0;
-  padding: 11px 14px;
-  border-left: 3px solid var(--cs-gold);
-  border-radius: 5px;
-  background: #FAF8F3;
-  color: #465064;
-  font-size: 0.88rem;
-  line-height: 1.6;
-}
-
-/* Buttons */
-
-.cs-button {
-  display: inline-block;
-  margin-top: 14px;
-  padding: 13px 20px;
-  border: 0;
-  border-radius: 7px;
-  background: var(--cs-navy);
-  color: #fff;
-  font: inherit;
-  font-weight: 700;
-  cursor: pointer;
-  transition: background 0.2s ease, transform 0.2s ease;
-}
-
-.cs-button:hover {
-  background: #182C4C;
-  transform: translateY(-1px);
-}
-
-.cs-button:disabled {
-  opacity: 0.55;
-  cursor: not-allowed;
-  transform: none;
-}
-
-.cs-text-button {
-  display: block;
-  margin-top: 18px;
-  padding: 5px 0;
-  border: 0;
-  background: none;
-  color: #596579;
-  font: inherit;
-  font-size: 0.9rem;
-  text-decoration: underline;
-  cursor: pointer;
-}
-
-.cs-text-button:hover {
-  color: var(--cs-navy);
-}
-
-/* Workspace */
 
 .cs-workspace[hidden] {
   display: none !important;
 }
 
-.cs-workspace h2 {
-  margin-top: 0;
+/* HEADINGS */
+
+.career-studio h2 {
+  margin: 0 0 16px;
   color: var(--cs-navy);
-  font-size: 1.2rem;
+  font-size: 1.25rem;
+  font-weight: 750;
+  line-height: 1.4;
+  letter-spacing: -.02em;
+}
+
+/* UPLOAD AND FORM */
+
+.cs-label {
+  display: block;
+  margin: 0 0 12px;
+  color: var(--cs-navy);
+  font-size: .95rem;
+  font-weight: 700;
+}
+
+.career-studio input[type="file"] {
+  display: block;
+  width: 100%;
+  min-height: 58px;
+  padding: 13px;
+  border: 1.5px dashed #BFC7D4;
+  border-radius: 9px;
+  background: #FAFBFD;
+  color: var(--cs-ink);
+  font-family: inherit;
+  font-size: .9rem;
+  cursor: pointer;
+}
+
+.career-studio input[type="file"]:hover {
+  border-color: var(--cs-gold);
+  background: #FFFDF6;
+}
+
+.career-studio input[type="file"]::file-selector-button {
+  margin-right: 14px;
+  padding: 9px 15px;
+  border: 0;
+  border-radius: 6px;
+  background: var(--cs-navy);
+  color: #fff;
+  font-family: inherit;
+  font-size: .83rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.career-studio textarea {
+  display: block;
+  width: 100%;
+  min-height: 105px;
+  padding: 15px;
+  border: 1px solid #CBD2DE;
+  border-radius: 9px;
+  background: #FAFBFD;
+  color: var(--cs-ink);
+  font-family: inherit;
+  font-size: .94rem;
+  line-height: 1.7;
+  resize: vertical;
+}
+
+.career-studio input:focus,
+.career-studio textarea:focus {
+  outline: 3px solid rgba(242,183,5,.22);
+  outline-offset: 1px;
+  border-color: #C89A00;
+}
+
+.cs-hint {
+  margin: 10px 0 20px;
+  color: var(--cs-muted);
+  font-size: .83rem;
+  line-height: 1.6;
+}
+
+/* PRIVACY CONSENT
+   Checkbox stays aligned with the first line of text.
+*/
+
+.career-studio .cs-consent {
+  display: grid;
+  grid-template-columns: 18px minmax(0, 1fr);
+  align-items: start;
+  column-gap: 11px;
+  margin: 23px 0;
+  color: #536073;
+  font-size: .88rem;
+  line-height: 1.65;
+}
+
+.career-studio .cs-consent input[type="checkbox"] {
+  display: block;
+  width: 16px;
+  height: 16px;
+  margin: 3px 0 0;
+  padding: 0;
+  accent-color: var(--cs-navy);
+  justify-self: start;
+  align-self: start;
+}
+
+.career-studio .cs-consent span {
+  display: block;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  line-height: 1.65;
+}
+
+.career-studio .cs-consent a {
+  color: #765900;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* USAGE COUNTERS */
+
+.cs-usage {
+  margin: 18px 0;
+  padding: 13px 16px;
+  border: 1px solid #F1E3B6;
+  border-left: 4px solid var(--cs-gold);
+  border-radius: 8px;
+  background: #FFFCF2;
+  color: #5D4A16;
+  font-size: .86rem;
+  font-weight: 600;
+  line-height: 1.65;
+}
+
+/* BUTTONS */
+
+.cs-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  margin-top: 12px;
+  padding: 13px 23px;
+  border: 1px solid var(--cs-navy);
+  border-radius: 8px;
+  background: var(--cs-navy);
+  color: #fff;
+  font-family: inherit;
+  font-size: .91rem;
+  font-weight: 700;
+  text-align: center;
+  cursor: pointer;
+  transition: background .2s ease, transform .2s ease;
+}
+
+.cs-button:hover {
+  border-color: var(--cs-navy-light);
+  background: var(--cs-navy-light);
+  transform: translateY(-1px);
+}
+
+.cs-button:focus-visible,
+.cs-text-button:focus-visible {
+  outline: 3px solid rgba(242,183,5,.65);
+  outline-offset: 3px;
+}
+
+.cs-button:disabled {
+  opacity: .55;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.cs-text-button {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 5px 0;
+  border: 0;
+  background: transparent;
+  color: #687386;
+  font-family: inherit;
+  font-size: .86rem;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  cursor: pointer;
+}
+
+.cs-text-button:hover {
+  color: #A12D2D;
+}
+
+/* STATUS */
+
+.cs-status {
+  min-height: 22px;
+  margin: 14px 0 0;
+  color: var(--cs-muted);
+  font-size: .87rem;
+  line-height: 1.6;
+}
+
+/* CV ANALYSIS */
+
+.cs-analysis {
+  border-left: 4px solid var(--cs-gold);
 }
 
 .cs-analysis p,
 .cs-download p {
-  color: var(--cs-muted);
-  line-height: 1.7;
+  margin: 0;
+  color: #596579;
+  font-size: .93rem;
+  line-height: 1.8;
   white-space: pre-wrap;
 }
 
-/* CV preview */
+/* CV PREVIEW */
+
+.cs-preview {
+  background: #fff;
+}
 
 .cs-preview-hint {
+  margin: 0 0 18px;
   color: var(--cs-muted);
-  font-size: 0.9rem;
-  line-height: 1.6;
+  font-size: .88rem;
+  line-height: 1.7;
 }
 
 .cs-preview pre {
   max-height: 720px;
   overflow: auto;
-  padding: 18px;
+  margin: 0;
+  padding: 22px;
   border: 1px solid var(--cs-line);
-  border-radius: 8px;
-  background: #FBFCFE;
-  color: var(--cs-ink);
+  border-radius: 9px;
+  background: #F8FAFC;
+  color: #263247;
   font-family: Inter, Arial, sans-serif;
-  font-size: 0.9rem;
-  line-height: 1.7;
+  font-size: .88rem;
+  line-height: 1.8;
   white-space: pre-wrap;
   overflow-wrap: anywhere;
 }
 
-/* AI conversation */
+/* AI CONVERSATION */
+
+.cs-chat {
+  border-top: 3px solid var(--cs-navy);
+}
 
 .cs-messages {
   display: flex;
   flex-direction: column;
-  gap: 12px;
-  margin: 18px 0;
+  gap: 14px;
+  max-height: 480px;
+  overflow-y: auto;
+  margin: 20px 0;
+  padding: 4px;
 }
 
 .cs-message {
-  padding: 13px 15px;
-  border-radius: 10px;
-  line-height: 1.65;
+  max-width: 88%;
+  padding: 14px 17px;
+  border-radius: 12px;
+  font-size: .9rem;
+  line-height: 1.75;
   white-space: pre-wrap;
   overflow-wrap: anywhere;
 }
 
 .cs-message.assistant {
-  background: #F2F4F7;
+  align-self: flex-start;
+  border: 1px solid #E7EAF0;
+  border-bottom-left-radius: 3px;
+  background: #F3F5F8;
   color: var(--cs-ink);
 }
 
 .cs-message.user {
-  border: 1px solid #F3DF9C;
-  background: #FFF6D9;
-  color: var(--cs-ink);
+  align-self: flex-end;
+  border: 1px solid #F1DEA0;
+  border-bottom-right-radius: 3px;
+  background: #FFF7DE;
+  color: #4A3B13;
 }
 
-/* Status messages */
-
-.cs-status {
-  min-height: 20px;
-  margin-top: 12px;
+.cs-chat form {
+  margin-top: 22px;
 }
 
-/* Mobile responsiveness */
+.cs-chat form .cs-button {
+  margin-top: 14px;
+}
 
-@media (max-width: 600px) {
+/* DOWNLOAD */
+
+.cs-download {
+  border-top: 3px solid var(--cs-gold);
+}
+
+.cs-download .cs-button {
+  margin-top: 20px;
+}
+
+/* TABLET */
+
+@media (max-width: 768px) {
   .career-studio {
-    padding: 42px 15px;
+    padding: 58px 20px 68px;
+  }
+
+  .career-studio h1 {
+    font-size: clamp(2.1rem, 8vw, 3rem);
+  }
+
+  .cs-panel,
+  .cs-analysis,
+  .cs-chat,
+  .cs-download,
+  .cs-preview {
+    padding: 24px;
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 520px) {
+  .career-studio {
+    padding: 42px 15px 54px;
+  }
+
+  .cs-intro {
+    font-size: .96rem;
+    line-height: 1.75;
   }
 
   .cs-panel,
@@ -261,19 +452,34 @@
   .cs-download,
   .cs-preview {
     padding: 19px;
+    border-radius: 12px;
+  }
+
+  .career-studio h2 {
+    font-size: 1.13rem;
   }
 
   .cs-button {
     width: 100%;
-    text-align: center;
   }
 
-  .cs-text-button {
-    line-height: 1.6;
+  .cs-message {
+    max-width: 96%;
+  }
+
+  .cs-preview pre {
+    padding: 14px;
+    font-size: .82rem;
+  }
+
+  .career-studio .cs-consent {
+    grid-template-columns: 18px minmax(0, 1fr);
+    column-gap: 9px;
+    font-size: .84rem;
   }
 }
 
-/* Accessibility */
+/* ACCESSIBILITY */
 
 @media (prefers-reduced-motion: reduce) {
   .cs-button {
