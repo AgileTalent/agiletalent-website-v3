@@ -1,485 +1,375 @@
 <!DOCTYPE html>
 <html lang="en-GB">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-
-<title>Careers and Job Vacancies in Nigeria | AgileTalent Associates</title>
-<meta name="description" content="Explore current job vacancies, improve your CV with AgileTalent Career Studio, and register for future career opportunities.">
-<meta name="robots" content="index, follow">
-<link rel="canonical" href="https://agiletalentassociates.com/careers.html">
-<link rel="icon" type="image/png" href="favicon.png">
-
-<meta property="og:title" content="Careers and Job Vacancies | AgileTalent Associates">
-<meta property="og:description" content="Explore job opportunities, improve your CV and register your profile with AgileTalent Associates.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://agiletalentassociates.com/careers.html">
-<meta property="og:site_name" content="AgileTalent Associates Limited">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
-
-<style>
-:root {
-  --career-navy: var(--navy, #0B1426);
-  --career-gold: var(--gold, #F2B705);
-  --career-line: var(--line, #DAD7CE);
-  --career-off-white: var(--off-white, #FAF8F3);
-}
-
-/* HEADER */
-
-header .bar {
-  display: flex;
-  align-items: center;
-}
-
-header .brand {
-  display: flex;
-  align-items: center;
-  width: 260px;
-  height: 68px;
-  flex-shrink: 0;
-  gap: 0;
-  overflow: visible;
-  text-decoration: none;
-}
-
-header .brand .mark {
-  display: block;
-  width: 260px;
-  height: 62px;
-  max-width: none;
-  object-fit: contain;
-  flex-shrink: 0;
-}
-
-header .brand-descriptor {
-  display: inline-block;
-  max-width: 190px;
-  padding-left: 12px;
-  border-left: 1px solid #d6d6d6;
-  color: #6b7280;
-  font-family: 'Inter', sans-serif;
-  font-size: 12px;
-  font-weight: 500;
-  line-height: 1.5;
-}
-
-/* CAREERS PAGE */
-
-.careers-hero .lead {
-  max-width: 760px;
-}
-
-.careers-kicker {
-  color: var(--career-gold);
-  font-size: .8rem;
-  font-weight: 700;
-  letter-spacing: .1em;
-  text-transform: uppercase;
-}
-
-.vacancy-section {
-  min-height: 240px;
-}
-
-.vacancy-list {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 24px;
-  margin-top: 32px;
-}
-
-.vacancy-card {
-  display: flex;
-  flex-direction: column;
-  min-width: 0;
-  padding: 28px;
-  border: 1px solid var(--career-line);
-  border-radius: 14px;
-  background: #fff;
-  overflow-wrap: anywhere;
-  transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
-}
-
-.vacancy-card:hover {
-  transform: translateY(-3px);
-  border-color: rgba(242,183,5,.8);
-  box-shadow: 0 12px 28px rgba(11,20,38,.06);
-}
-
-.vacancy-id {
-  margin-bottom: 12px;
-  color: #756000;
-  font-size: .76rem;
-  font-weight: 800;
-  letter-spacing: .08em;
-  text-transform: uppercase;
-}
-
-.vacancy-card h3 {
-  margin: 0 0 16px;
-  color: var(--career-navy);
-  font-size: 1.3rem;
-  line-height: 1.4;
-}
-
-.vacancy-meta {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-bottom: 16px;
-}
-
-.vacancy-meta span {
-  display: inline-block;
-  padding: 6px 10px;
-  border-radius: 6px;
-  background: var(--career-off-white);
-  color: #454c59;
-  font-size: .8rem;
-}
-
-.vacancy-salary {
-  margin: 0 0 14px;
-  font-weight: 700;
-}
-
-.vacancy-summary {
-  line-height: 1.75;
-}
-
-.vacancy-detail {
-  margin-top: 16px;
-}
-
-.vacancy-detail h4 {
-  margin: 0 0 8px;
-  font-size: 1rem;
-}
-
-.vacancy-detail p {
-  margin: 0;
-  color: #535b68;
-  line-height: 1.75;
-  white-space: pre-line;
-}
-
-.vacancy-deadline {
-  margin-top: 20px;
-  color: #535b68;
-  font-size: .9rem;
-}
-
-.vacancy-apply {
-  display: inline-block;
-  align-self: flex-start;
-  margin-top: auto;
-  padding-top: 22px;
-}
-
-.vacancy-apply .btn {
-  display: inline-block;
-}
-
-.vacancy-status {
-  padding: 24px;
-  margin-top: 24px;
-  border-radius: 10px;
-  background: var(--career-off-white);
-}
-
-.vacancy-status h3 {
-  margin-top: 0;
-}
-
-.vacancy-status p {
-  line-height: 1.7;
-}
-
-.vacancy-status[hidden] {
-  display: none !important;
-}
-
-/* CAREER STUDIO PROMOTION */
-
-.career-studio-section {
-  background: var(--career-off-white);
-}
-
-.career-studio-panel {
-  display: grid;
-  grid-template-columns: 1.2fr .8fr;
-  gap: 48px;
-  align-items: center;
-  padding: 48px;
-  border: 1px solid var(--career-line);
-  border-radius: 16px;
-  background: #fff;
-}
-
-.career-studio-label {
-  display: inline-block;
-  padding: 7px 12px;
-  margin-bottom: 18px;
-  border-radius: 5px;
-  background: #fff5d5;
-  color: #735800;
-  font-size: .75rem;
-  font-weight: 800;
-  letter-spacing: .08em;
-  text-transform: uppercase;
-}
-
-.career-studio-copy h2 {
-  max-width: 600px;
-  margin: 0 0 18px;
-  color: var(--career-navy);
-  font-size: clamp(1.8rem, 3vw, 2.5rem);
-  line-height: 1.25;
-}
-
-.career-studio-copy p {
-  max-width: 650px;
-  color: #535b68;
-  line-height: 1.8;
-}
-
-.career-studio-benefits {
-  display: grid;
-  gap: 13px;
-  margin: 22px 0 26px;
-  padding: 0;
-  list-style: none;
-}
-
-.career-studio-benefits li {
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
-  color: #454c59;
-  line-height: 1.6;
-}
-
-.career-studio-benefits li::before {
-  content: "✓";
-  display: inline-flex;
-  flex: 0 0 23px;
-  width: 23px;
-  height: 23px;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  background: #edf5ee;
-  color: #286b38;
-  font-size: .8rem;
-  font-weight: 800;
-}
-
-.career-studio-action {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  align-items: center;
-}
-
-.career-studio-action .btn {
-  display: inline-block;
-}
-
-.career-studio-note {
-  margin-top: 14px;
-  color: #687080;
-  font-size: .82rem;
-}
-
-.career-studio-visual {
-  display: flex;
-  min-height: 290px;
-  flex-direction: column;
-  justify-content: center;
-  padding: 28px;
-  border-radius: 12px;
-  background: var(--career-navy);
-  color: #fff;
-}
-
-.career-studio-visual .visual-kicker {
-  margin-bottom: 24px;
-  color: var(--career-gold);
-  font-size: .75rem;
-  font-weight: 800;
-  letter-spacing: .1em;
-  text-transform: uppercase;
-}
-
-.career-studio-visual h3 {
-  margin: 0 0 14px;
-  color: #fff;
-  font-size: 1.65rem;
-  line-height: 1.35;
-}
-
-.career-studio-visual p {
-  margin: 0;
-  color: #d5dbe5;
-  line-height: 1.7;
-}
-
-.studio-steps {
-  display: grid;
-  gap: 12px;
-  margin-top: 26px;
-}
-
-.studio-step {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  padding: 12px;
-  border: 1px solid rgba(255,255,255,.15);
-  border-radius: 8px;
-  background: rgba(255,255,255,.06);
-  font-size: .88rem;
-}
-
-.studio-step-number {
-  display: flex;
-  width: 28px;
-  height: 28px;
-  flex: 0 0 28px;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  background: var(--career-gold);
-  color: var(--career-navy);
-  font-size: .8rem;
-  font-weight: 800;
-}
-
-/* TALENT REGISTRATION */
-
-.careers-cta {
-  padding: 28px;
-  margin-top: 40px;
-  border-left: 4px solid var(--career-gold);
-  border-radius: 8px;
-  background: var(--career-off-white);
-}
-
-.careers-cta p:last-child {
-  margin-bottom: 0;
-}
-
-.careers-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 14px;
-  align-items: center;
-  margin-top: 20px;
-}
-
-.careers-actions .btn {
-  display: inline-block;
-}
-
-.careers-secondary-link {
-  font-weight: 700;
-}
-
-.careers-note {
-  margin-top: 18px;
-  color: #535b68;
-  font-size: .9rem;
-  line-height: 1.7;
-}
-
-/* RESPONSIVE */
-
-@media (max-width: 900px) {
-  .career-studio-panel {
-    grid-template-columns: 1fr;
-    gap: 30px;
-    padding: 34px;
-  }
-
-  .career-studio-visual {
-    min-height: 250px;
-  }
-}
-
-@media (max-width: 800px) {
-  .vacancy-list {
-    grid-template-columns: 1fr;
-  }
-}
-
-@media (max-width: 650px) {
-  header .brand {
-    width: 210px;
-    height: 60px;
-  }
-
-  header .brand .mark {
-    width: 210px;
-    height: 55px;
-  }
-
-  header .brand-descriptor {
-    max-width: 125px;
-    padding-left: 8px;
-    font-size: 10px;
-  }
-}
-
-@media (max-width: 600px) {
-  .vacancy-card,
-  .careers-cta {
-    padding: 22px;
-  }
-
-  .career-studio-panel {
-    padding: 24px;
-    gap: 24px;
-  }
-
-  .career-studio-visual {
-    min-height: 230px;
-    padding: 22px;
-  }
-
-  .career-studio-action {
-    align-items: stretch;
-    flex-direction: column;
-  }
-
-  .career-studio-action .btn {
-    text-align: center;
-  }
-
-  .careers-actions {
-    align-items: stretch;
-    flex-direction: column;
-  }
-
-  .careers-actions .btn {
-    text-align: center;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .vacancy-card {
-    transition: none;
-  }
-
-  .vacancy-card:hover {
-    transform: none;
-  }
-}
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Careers and Job Vacancies in Nigeria | AgileTalent Associates</title>
+  <meta name="description" content="Explore current job vacancies, improve your CV with AgileTalent Career Studio, and register for future career opportunities.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://agiletalentassociates.com/careers.html">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <meta property="og:title" content="Careers and Job Vacancies | AgileTalent Associates">
+  <meta property="og:description" content="Explore job opportunities, improve your CV and register your profile with AgileTalent Associates.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://agiletalentassociates.com/careers.html">
+  <meta property="og:site_name" content="AgileTalent Associates Limited">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    :root {
+      --career-navy: #0B1426;
+      --career-gold: #F2B705;
+      --career-line: #DAD7CE;
+      --career-paper: #FAF8F3;
+    }
+
+    /* Header branding */
+    header .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      flex-shrink: 0;
+    }
+
+    header .brand-descriptor {
+      display: inline-block;
+      max-width: 190px;
+      padding-left: 12px;
+      border-left: 1px solid #d6d6d6;
+      color: #6b7280;
+      font-family: 'Inter', sans-serif;
+      font-size: 12px;
+      font-weight: 500;
+      line-height: 1.5;
+    }
+
+    .careers-hero .lead { max-width: 760px; }
+
+    .careers-kicker {
+      color: var(--career-gold);
+      font-size: .8rem;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+
+    .careers-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      align-items: center;
+      margin-top: 20px;
+    }
+
+    .careers-actions .btn { display: inline-block; }
+    .careers-secondary-link { font-weight: 700; }
+
+    /* Vacancy cards */
+    .vacancy-section { min-height: 240px; }
+
+    .vacancy-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 24px;
+      margin-top: 32px;
+    }
+
+    .vacancy-card {
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+      padding: 28px;
+      border: 1px solid var(--career-line);
+      border-radius: 12px;
+      background: #fff;
+      overflow-wrap: anywhere;
+      transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+    }
+
+    .vacancy-card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(242,183,5,.8);
+      box-shadow: 0 12px 28px rgba(11,20,38,.06);
+    }
+
+    .vacancy-id {
+      margin-bottom: 12px;
+      color: #756000;
+      font-size: .76rem;
+      font-weight: 800;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .vacancy-card h3 {
+      margin: 0 0 16px;
+      color: var(--career-navy);
+      font-size: 1.3rem;
+      line-height: 1.4;
+    }
+
+    .vacancy-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 16px;
+    }
+
+    .vacancy-meta span {
+      display: inline-block;
+      padding: 6px 10px;
+      border-radius: 6px;
+      background: var(--career-paper);
+      color: #454c59;
+      font-size: .8rem;
+    }
+
+    .vacancy-salary { margin: 0 0 14px; font-weight: 700; }
+    .vacancy-summary { line-height: 1.75; }
+    .vacancy-deadline { margin-top: 20px; color: #535b68; font-size: .9rem; }
+
+    .vacancy-apply {
+      display: inline-block;
+      align-self: flex-start;
+      margin-top: auto;
+      padding-top: 22px;
+    }
+
+    .vacancy-status {
+      padding: 24px;
+      margin-top: 24px;
+      border-radius: 10px;
+      background: var(--career-paper);
+    }
+
+    .vacancy-status h3 { margin-top: 0; }
+    .vacancy-status p { line-height: 1.7; }
+    .vacancy-status[hidden] { display: none !important; }
+
+    /* Career Studio promotion */
+    .career-studio-section { background: var(--career-paper); }
+
+    .career-studio-panel {
+      display: grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 48px;
+      align-items: center;
+      padding: 48px;
+      border: 1px solid var(--career-line);
+      border-radius: 16px;
+      background: #fff;
+    }
+
+    .career-studio-label {
+      display: inline-block;
+      padding: 7px 12px;
+      margin-bottom: 18px;
+      border-radius: 5px;
+      background: #fff5d5;
+      color: #735800;
+      font-size: .75rem;
+      font-weight: 800;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .career-studio-copy h2 {
+      max-width: 600px;
+      margin: 0 0 18px;
+      color: var(--career-navy);
+      font-size: clamp(1.8rem, 3vw, 2.5rem);
+      line-height: 1.25;
+    }
+
+    .career-studio-copy p {
+      max-width: 650px;
+      color: #535b68;
+      line-height: 1.8;
+    }
+
+    .career-studio-benefits {
+      display: grid;
+      gap: 13px;
+      margin: 22px 0 26px;
+      padding: 0;
+      list-style: none;
+    }
+
+    .career-studio-benefits li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      color: #454c59;
+      line-height: 1.6;
+    }
+
+    .career-studio-benefits li::before {
+      content: "✓";
+      display: inline-flex;
+      flex: 0 0 23px;
+      width: 23px;
+      height: 23px;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background: #edf5ee;
+      color: #286b38;
+      font-size: .8rem;
+      font-weight: 800;
+    }
+
+    .career-studio-action {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .career-studio-action .btn { display: inline-block; }
+
+    .career-studio-note {
+      margin-top: 14px;
+      color: #687080;
+      font-size: .82rem;
+    }
+
+    .career-studio-visual {
+      display: flex;
+      min-height: 290px;
+      flex-direction: column;
+      justify-content: center;
+      padding: 28px;
+      border-radius: 12px;
+      background: var(--career-navy);
+      color: #fff;
+    }
+
+    .career-studio-visual .visual-kicker {
+      margin-bottom: 24px;
+      color: var(--career-gold);
+      font-size: .75rem;
+      font-weight: 800;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+
+    .career-studio-visual h3 {
+      margin: 0 0 14px;
+      color: #fff;
+      font-size: 1.65rem;
+      line-height: 1.35;
+    }
+
+    .career-studio-visual p {
+      margin: 0;
+      color: #d5dbe5;
+      line-height: 1.7;
+    }
+
+    .studio-steps {
+      display: grid;
+      gap: 12px;
+      margin-top: 26px;
+    }
+
+    .studio-step {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px;
+      border: 1px solid rgba(255,255,255,.15);
+      border-radius: 8px;
+      background: rgba(255,255,255,.06);
+      font-size: .88rem;
+    }
+
+    .studio-step-number {
+      display: flex;
+      width: 28px;
+      height: 28px;
+      flex: 0 0 28px;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background: var(--career-gold);
+      color: var(--career-navy);
+      font-size: .8rem;
+      font-weight: 800;
+    }
+
+    /* Talent registration */
+    .careers-cta {
+      padding: 28px;
+      margin-top: 40px;
+      border-left: 4px solid var(--career-gold);
+      border-radius: 8px;
+      background: var(--career-paper);
+    }
+
+    .careers-cta p:last-child { margin-bottom: 0; }
+
+    .careers-note {
+      margin-top: 18px;
+      color: #535b68;
+      font-size: .9rem;
+      line-height: 1.7;
+    }
+
+    @media (max-width: 900px) {
+      .career-studio-panel {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        padding: 34px;
+      }
+
+      .career-studio-visual { min-height: 250px; }
+    }
+
+    @media (max-width: 800px) {
+      .vacancy-list { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 600px) {
+      header .brand { gap: 8px; min-width: 0; }
+      header .brand .mark { max-width: 145px; height: auto; }
+
+      header .brand-descriptor {
+        max-width: 125px;
+        padding-left: 8px;
+        font-size: 10px;
+      }
+
+      .vacancy-card, .careers-cta { padding: 22px; }
+
+      .career-studio-panel {
+        padding: 24px;
+        gap: 24px;
+      }
+
+      .career-studio-visual {
+        min-height: 230px;
+        padding: 22px;
+      }
+
+      .career-studio-action, .careers-actions {
+        align-items: stretch;
+        flex-direction: column;
+      }
+
+      .career-studio-action .btn,
+      .careers-actions .btn { text-align: center; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .vacancy-card { transition: none; }
+      .vacancy-card:hover { transform: none; }
+    }
+  </style>
 </head>
 
 <body>
@@ -493,9 +383,9 @@ header .brand-descriptor {
       <span class="brand-descriptor">Recruitment &amp; HR Consulting in Nigeria</span>
     </a>
 
-    <button class="menu" id="menu" aria-expanded="false" aria-controls="nav">Menu</button>
+    <button class="menu" id="menu" aria-expanded="false" aria-controls="nav" type="button">Menu</button>
 
-    <nav id="nav" aria-label="Main">
+    <nav id="nav" aria-label="Main navigation">
       <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
@@ -514,43 +404,39 @@ header .brand-descriptor {
 <main id="main" tabindex="-1">
 
   <!-- CAREERS HERO -->
-
   <section class="sec dark careers-hero">
     <div class="wrap">
       <p class="careers-kicker">Your next opportunity</p>
+
       <h1 style="font-size:clamp(2.2rem,5vw,3.6rem);max-width:850px">
         Find Your Next Career Opportunity
       </h1>
+
       <p class="lead">
         Explore current opportunities and discover roles that match your
         experience, skills and career goals. Review each vacancy carefully
         before applying, or register your CV for future opportunities.
       </p>
+
       <div class="careers-actions">
         <a class="btn" href="#current-vacancies">View Current Vacancies</a>
-        <a class="careers-secondary-link" href="#talent-registration">
-          Register Your CV →
-        </a>
+        <a class="careers-secondary-link" href="#talent-registration">Register Your CV →</a>
       </div>
     </div>
   </section>
 
   <!-- CURRENT VACANCIES -->
-
   <section class="sec vacancy-section" id="current-vacancies">
     <div class="wrap">
       <p class="lab">Career opportunities</p>
       <h2>Current Job Vacancies</h2>
+
       <p style="max-width:760px">
-        Vacancies are retrieved from our vacancy register. Review the
-        responsibilities, requirements and deadline for a position before
-        submitting your application.
+        Explore available opportunities, review the role summary and application
+        deadline, and submit your application for positions that match your profile.
       </p>
 
-      <div id="vacancy-status"
-           class="vacancy-status"
-           role="status"
-           aria-live="polite">
+      <div id="vacancy-status" class="vacancy-status" role="status" aria-live="polite">
         <p>Loading current vacancies. Please wait…</p>
       </div>
 
@@ -566,10 +452,8 @@ header .brand-descriptor {
   </section>
 
   <!-- CAREER STUDIO -->
-
   <section class="sec career-studio-section" id="career-studio">
     <div class="wrap">
-
       <div class="career-studio-panel">
 
         <div class="career-studio-copy">
@@ -591,14 +475,10 @@ header .brand-descriptor {
           </ul>
 
           <div class="career-studio-action">
-            <a class="btn" href="career-studio.html">
-              Explore Career Studio →
-            </a>
+            <a class="btn" href="career-studio.html">Explore Career Studio →</a>
           </div>
 
-          <p class="career-studio-note">
-            Free to use. No payment required.
-          </p>
+          <p class="career-studio-note">Free to use. No payment required.</p>
         </div>
 
         <div class="career-studio-visual">
@@ -634,12 +514,14 @@ header .brand-descriptor {
   </section>
 
   <!-- TALENT REGISTRATION -->
-
   <section class="sec" id="talent-registration">
     <div class="wrap">
       <div class="careers-cta">
+
         <p class="lab">Join our talent network</p>
+
         <h2>Don't See a Suitable Vacancy?</h2>
+
         <p>
           Register your profile and upload your CV even if there is no
           suitable vacancy listed today. Our recruitment team can consider
@@ -664,20 +546,23 @@ header .brand-descriptor {
           Please provide accurate details and review the consent statement
           before submitting your registration.
         </p>
+
       </div>
     </div>
   </section>
 
   <!-- LINKEDIN -->
-
   <section class="sec dark">
     <div class="wrap">
       <p class="lab" style="color:var(--career-gold)">Build your future</p>
+
       <h2>Stay Connected with AgileTalent</h2>
+
       <p class="lead" style="max-width:760px">
         Follow AgileTalent Associates for company updates, career-related
         information and perspectives on recruitment and the workplace.
       </p>
+
       <p style="margin-top:24px">
         <a href="https://www.linkedin.com/company/agiletalent-associates"
            target="_blank"
@@ -691,22 +576,33 @@ header .brand-descriptor {
 </main>
 
 <!-- FOOTER -->
-
 <footer>
   <div class="wrap cols">
+
     <div>
       <p style="color:#fff;font:700 1.2rem var(--f-head);margin-bottom:.4em">
         AgileTalent Associates Limited
       </p>
+
       <p>
         Human resources consulting, recruitment and workforce solutions
         for Nigerian organisations. Established 2022.
       </p>
-      <p><a href="mailto:agiletalents@outlook.com">agiletalents@outlook.com</a></p>
-      <p><a href="tel:+2347036783875">+234 703 678 3875</a></p>
+
       <p>
-        <a href="https://wa.me/2348152866467"
-           target="_blank" rel="noopener noreferrer">
+        <a href="mailto:agiletalents@outlook.com">
+          agiletalents@outlook.com
+        </a>
+      </p>
+
+      <p>
+        <a href="tel:+2347036783875">
+          +234 703 678 3875
+        </a>
+      </p>
+
+      <p>
+        <a href="https://wa.me/2348152866467" target="_blank" rel="noopener noreferrer">
           Chat with us on WhatsApp
         </a>
       </p>
@@ -714,6 +610,7 @@ header .brand-descriptor {
 
     <div>
       <h2>Explore</h2>
+
       <ul>
         <li><a href="about.html">About us</a></li>
         <li><a href="services.html">Services</a></li>
@@ -727,46 +624,59 @@ header .brand-descriptor {
 
     <div>
       <h2>Connect</h2>
+
       <ul>
         <li>
-          <a href="https://x.com/agiletalents_ng"
-             target="_blank" rel="noopener noreferrer">X</a>
+          <a href="https://x.com/agiletalents_ng" target="_blank" rel="noopener noreferrer">X</a>
         </li>
+
         <li>
-          <a href="https://www.linkedin.com/company/agiletalent-associates"
-             target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a href="https://www.linkedin.com/company/agiletalent-associates" target="_blank" rel="noopener noreferrer">
+            LinkedIn
+          </a>
         </li>
+
         <li><a href="contact.html">Privacy notice</a></li>
       </ul>
+
       <p style="margin-top:1em">Advisory support is not legal advice.</p>
     </div>
+
   </div>
 
   <div class="wrap social-area">
     <h2 class="social-heading">Connect with AgileTalent</h2>
 
     <div class="social-links">
+
       <a href="https://x.com/agiletalents_ng"
-         target="_blank" rel="noopener noreferrer"
+         target="_blank"
+         rel="noopener noreferrer"
          aria-label="Follow AgileTalent Associates on X">
+
         <svg class="social-icon" viewBox="0 0 64 64" aria-hidden="true">
           <circle cx="32" cy="32" r="32" fill="#000"/>
           <path d="M18.9 15h8.2l7.4 10 8.8-10h3.1L36 27.1 47.5 49h-8.2l-8.1-11.7L20.9 49h-3.2l12-13.8L18.9 15zm4.5 2.7 17.2 28.6h3.1L26.5 17.7h-3.1z" fill="#fff"/>
         </svg>
+
         <span>X</span>
       </a>
 
       <a href="https://www.linkedin.com/company/agiletalent-associates"
-         target="_blank" rel="noopener noreferrer"
+         target="_blank"
+         rel="noopener noreferrer"
          aria-label="Follow AgileTalent Associates on LinkedIn">
+
         <svg class="social-icon" viewBox="0 0 64 64" aria-hidden="true">
           <circle cx="32" cy="32" r="32" fill="#0A66C2"/>
           <g fill="#fff" transform="translate(14 14) scale(1.55)">
             <path d="M3.5 6.5A2.25 2.25 0 1 0 3.5 2a2.25 2.25 0 0 0 0 4.5zM1.5 8h4v14h-4zM8 8h3.8v1.9h.1C12.4 8.8 13.8 7.6 16 7.6c4.1 0 4.9 2.7 4.9 6.2V22h-4v-7.3c0-1.8 0-4-2.4-4s-2.8 1.9-2.8 3.9V22H8z"/>
           </g>
         </svg>
+
         <span>LinkedIn</span>
       </a>
+
     </div>
   </div>
 
@@ -782,13 +692,11 @@ header .brand-descriptor {
 <script src="main.js"></script>
 
 <!-- VACANCY FEED -->
-
 <script>
 (function () {
   "use strict";
 
-  const APPS_SCRIPT_URL =
-    "https://script.google.com/macros/s/AKfycbwfdsY72BZPa74n3_HI6MWe9KqGfMp50cT7Jzfw1wRtYhu3QxsVO3hRZSAV49ABZ4Eu/exec";
+  const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwfdsY72BZPa74n3_HI6MWe9KqGfMp50cT7Jzfw1wRtYhu3QxsVO3hRZSAV49ABZ4Eu/exec";
 
   const statusBox = document.getElementById("vacancy-status");
   const vacancyList = document.getElementById("vacancy-list");
@@ -796,11 +704,7 @@ header .brand-descriptor {
   let feedLoaded = false;
 
   function addText(parent, tag, value, className) {
-    if (
-      value === null ||
-      value === undefined ||
-      String(value).trim() === ""
-    ) {
+    if (value === null || value === undefined || String(value).trim() === "") {
       return null;
     }
 
@@ -855,6 +759,7 @@ header .brand-descriptor {
     if (!vacancyId || !title) return "";
 
     const url = new URL(APPS_SCRIPT_URL);
+
     url.searchParams.set("view", "job");
     url.searchParams.set("vacancyId", vacancyId);
     url.searchParams.set("title", title);
@@ -899,22 +804,18 @@ header .brand-descriptor {
       "vacancy-salary"
     );
 
-    addText(card, "p", vacancy.summary, "vacancy-summary");
+    /*
+      IMPORTANT:
+      Only the summary is displayed on the vacancy card.
+      Responsibilities and requirements are deliberately excluded.
+    */
+    if (vacancy.summary) {
+      const summaryHeading = document.createElement("h4");
+      summaryHeading.textContent = "About the Role";
 
-    if (vacancy.responsibilities) {
-      const section = document.createElement("section");
-      section.className = "vacancy-detail";
-      addText(section, "h4", "Responsibilities");
-      addText(section, "p", vacancy.responsibilities);
-      card.appendChild(section);
-    }
+      card.appendChild(summaryHeading);
 
-    if (vacancy.requirements) {
-      const section = document.createElement("section");
-      section.className = "vacancy-detail";
-      addText(section, "h4", "Requirements");
-      addText(section, "p", vacancy.requirements);
-      card.appendChild(section);
+      addText(card, "p", vacancy.summary, "vacancy-summary");
     }
 
     if (vacancy.deadline) {
@@ -948,11 +849,13 @@ header .brand-descriptor {
 
   function createRegistrationLink() {
     const link = document.createElement("a");
+
     link.className = "btn";
     link.href = APPS_SCRIPT_URL + "?view=general";
     link.target = "_blank";
     link.rel = "noopener noreferrer";
     link.textContent = "Register Your CV";
+
     return link;
   }
 
@@ -961,6 +864,7 @@ header .brand-descriptor {
     statusBox.replaceChildren();
 
     addText(statusBox, "h3", "No current vacancies are listed.");
+
     addText(
       statusBox,
       "p",
@@ -975,6 +879,7 @@ header .brand-descriptor {
     statusBox.replaceChildren();
 
     addText(statusBox, "h3", "Vacancies could not be loaded.");
+
     addText(
       statusBox,
       "p",
@@ -986,6 +891,7 @@ header .brand-descriptor {
 
   window.agileTalentVacanciesLoaded = function (response) {
     if (feedLoaded) return;
+
     feedLoaded = true;
 
     vacancyList.replaceChildren();
@@ -1010,6 +916,7 @@ header .brand-descriptor {
     }
 
     vacancies.forEach(addVacancy);
+
     statusBox.hidden = true;
   };
 
@@ -1024,6 +931,7 @@ header .brand-descriptor {
 
   script.onerror = function () {
     if (feedLoaded) return;
+
     feedLoaded = true;
     showFeedError();
   };
@@ -1036,6 +944,7 @@ header .brand-descriptor {
       showFeedError();
     }
   }, 15000);
+
 })();
 </script>
 
