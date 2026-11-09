@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="SalarySense AI by AgileTalent Associates helps you estimate Nigerian take-home pay, understand PAYE, pension and other payroll deductions.">
+  <meta name="theme-color" content="#101d35">
+
+  <title>SalarySense AI | AgileTalent Associates Limited</title>
+
+  <link rel="stylesheet" href="salarysense.css">
+</head>
+
+<body>
+
+<header class="topbar">
+  <a class="brand" href="/" aria-label="AgileTalent Associates homepage">
+    <span class="brand-mark">A</span>
+    <span>AgileTalent <b>Associates</b></span>
+  </a>
+
+  <div class="header-right">
+    <a href="/" class="back-link">AgileTalent Home</a>
+    <span class="product">SALARYSENSE AI</span>
+  </div>
+</header>
+
+<main class="shell">
+
+  <section class="intro">
+    <p class="eyebrow">NIGERIAN PAYROLL INTELLIGENCE</p>
+
+    <h1>Know what your salary is really worth.</h1>
+
+    <p>
+      Enter your salary and we'll estimate what you may take home,
+      explain your deductions and help you understand your pay.
+    </p>
+  </section>
+
+  <section class="layout">
+
+    <form id="salaryForm" class="panel">
+
+      <h2>Let's calculate your salary</h2>
+
+      <p class="hint">
+        Start with the salary amount in your offer letter or payslip.
+        You can add more details if you have them.
+      </p>
+
+      <label>
+        What is your gross salary? (₦)
+        <input
+          id="gross"
+          type="number"
+          min="1"
+          step="0.01"
+          value="500000"
+          required
+        >
+      </label>
+
+      <label>
+        How often is this amount paid?
+        <select id="frequency">
+          <option value="monthly">Every month</option>
+          <option value="annual">Once a year (annual salary)</option>
+        </select>
+      </label>
+
+      <details class="optional-section">
+
+        <summary>
+          Do you want to add your salary breakdown?
+          <span class="optional-tag">Optional</span>
+        </summary>
+
+        <p class="hint">
+          Add items such as Basic Salary, Housing Allowance and
+          Transport Allowance. We'll use recognised components
+          to estimate your pension automatically.
+        </p>
+
+        <label>
+          How would you like to enter your salary?
+          <select id="structureMode">
+            <option value="gross">Use my gross salary only</option>
+            <option value="custom">I want to add salary components</option>
+          </select>
+        </label>
+
+        <div id="componentsWrap" class="hidden">
+
+          <div class="section-head">
+            <h3>Your salary components</h3>
+            <button type="button" id="addComponent" class="small">
+              + Add item
+            </button>
+          </div>
+
+          <div id="components"></div>
+
+          <p class="hint">
+            Enter fixed amounts or percentages. All items together
+            must add up to your gross salary.
+          </p>
+
+        </div>
+
+      </details>
+
+      <section class="simple-section">
+
+        <h3>Pension</h3>
+
+        <label class="check">
+          <input id="pensionEnabled" type="checkbox">
+          Include pension contributions in my estimate
+        </label>
+
+        <p class="hint">
+          Your contribution reduces take-home pay. Your employer's
+          contribution is shown separately.
+        </p>
+
+        <div id="pensionFields" class="subfields hidden">
+
+          <div id="pensionAutoMessage" class="info hidden">
+            We'll identify Basic, Housing and Transport from your
+            salary breakdown and calculate the pension automatically.
+          </div>
+
+          <div id="pensionBaseChoice">
+
+            <label>
+              How should we estimate the salary used for pension?
+
+              <select id="pensionBaseMode">
+                <option value="">Choose an option</option>
+                <option value="full_gross_estimate">
+                  Use my full gross salary as an estimate
+                </option>
+                <option value="manual">I'll enter the amount</option>
+                <option value="exclude_unknown">
+                  I don't know — calculate without pension for now
+                </option>
+              </select>
+            </label>
+
+            <p class="hint">
+              If you use your full gross salary, the pension estimate
+              may differ from the amount your employer actually uses.
+            </p>
+
+          </div>
+
+          <label id="pensionManualWrap" class="hidden">
+            Monthly salary used for pension (₦)
+            <input
+              id="pensionBase"
+              type="number"
+              min="0"
+              placeholder="Enter amount"
+            >
+          </label>
+
+          <details class="advanced">
+
+            <summary>Advanced pension settings</summary>
+
+            <div class="component-grid">
+
+              <label>
+                Employee contribution (%)
+                <input
+                  id="employeeRate"
+                  type="number"
+                  value="8"
+                  min="0"
+                  max="100"
+                  step="0.01"
+                >
+              </label>
+
+              <label>
+                Employer contribution (%)
+                <input
+                  id="employerRate"
+                  type="number"
+                  value="10"
+                  min="0"
+                  max="100"
+                  step="0.01"
+                >
+              </label>
+
+            </div>
+
+            <label>
+              Override the calculated pension salary (monthly, optional)
+              <input
+                id="pensionBaseOverride"
+                type="number"
+                min="0"
+                placeholder="Only if you know your employer uses a different amount"
+              >
+            </label>
+
+            <p class="hint">
+              Leave blank to use the automatic estimate.
+            </p>
+
+          </details>
+
+        </div>
+
+      </section>
+
+      <details class="optional-section">
+
+        <summary>
+          Other deductions and tax details
+          <span class="optional-tag">Optional</span>
+        </summary>
+
+        <label class="check">
+          <input id="nhfEnabled" type="checkbox">
+          Include my actual NHF contribution
+        </label>
+
+        <label id="nhfAmountWrap" class="hidden">
+          Monthly NHF contribution (₦)
+          <input
+            id="nhfAmount"
+            type="number"
+            min="0"
+            value="0"
+          >
+        </label>
+
+        <label class="check">
+          <input id="nhiaEnabled" type="checkbox">
+          Include my actual qualifying health insurance contribution
+        </label>
+
+        <label id="nhiaAmountWrap" class="hidden">
+          Monthly health insurance contribution (₦)
+          <input
+            id="nhiaAmount"
+            type="number"
+            min="0"
+            value="0"
+          >
+        </label>
+
+        <label>
+          How much rent do you pay in a year? (₦)
+          <input
+            id="rent"
+            type="number"
+            min="0"
+            value="0"
+          >
+        </label>
+
+        <p class="hint">
+          Rent relief is calculated from qualifying rent paid,
+          subject to the applicable legal limit. It is not deducted
+          from your cash salary.
+        </p>
+
+        <label>
+          Other monthly deductions (₦)
+          <input
+            id="otherDeductions"
+            type="number"
+            min="0"
+            value="0"
+            placeholder="e.g. loan or cooperative"
+          >
+        </label>
+
+      </details>
+
+      <button class="primary" type="submit">
+        Calculate my take-home pay
+      </button>
+
+      <p id="error" class="error" role="alert"></p>
+
+    </form>
+
+    <section class="panel results">
+
+      <p class="eyebrow">YOUR ESTIMATE</p>
+
+      <h2>What you may take home</h2>
+
+      <div class="net" id="net">₦—</div>
+
+      <p class="hint">
+        Estimated amount after the deductions included in your calculation.
+      </p>
+
+      <div id="breakdown" class="breakdown">
+        <p>
+          Enter your salary details and select Calculate to see your result.
+        </p>
+      </div>
+
+      <details id="calculationNotes" class="calculation-notes hidden">
+
+        <summary>How was this calculated?</summary>
+
+        <ul id="notesList"></ul>
+
+      </details>
+
+      <div class="ai-box">
+
+        <h3>Ask SalarySense AI</h3>
+
+        <p class="hint">
+          Need something explained? Ask in everyday language.
+        </p>
+
+        <textarea
+          id="question"
+          rows="3"
+          placeholder="e.g. Why is PAYE deducted from my salary?"
+        ></textarea>
+
+        <button id="askAI" type="button" class="secondary">
+          Explain my result
+        </button>
+
+        <p id="aiAnswer" class="hint" aria-live="polite"></p>
+
+      </div>
+
+      <p class="disclaimer">
+        This is an estimate based on the information provided and
+        the tax rules configured for the selected year. Actual payroll
+        may differ based on your employer's arrangements and individual
+        circumstances.
+      </p>
+
+    </section>
+
+  </section>
+
+</main>
+
+<footer>
+  <p>© <span id="currentYear"></span> AgileTalent Associates Limited.</p>
+  <p>
+    <a href="/">AgileTalent Associates</a>
+    <span aria-hidden="true"> · </span>
+    <a href="mailto:agiletalents@outlook.com">Contact Us</a>
+  </p>
+</footer>
+
+<script>
+  window.SALARYSENSE_API_BASE =
+    "https://agiletalent-salarysense-ai.onrender.com";
+
+  document.getElementById("currentYear").textContent =
+    new Date().getFullYear();
+</script>
+
+<script src="salarysense.js"></script>
+
+</body>
+</html>
