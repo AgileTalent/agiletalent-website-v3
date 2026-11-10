@@ -1,11 +1,5 @@
 "use strict";
 
-/* =========================================================
-   SALARYSENSE AI
-   AgileTalent Associates Limited
-   Frontend integration with the SalarySense FastAPI backend
-   ========================================================= */
-
 const API = (
   window.SALARYSENSE_API_BASE ||
   "https://agiletalent-salarysense-ai.onrender.com"
@@ -15,16 +9,13 @@ let lastResult = null;
 
 const $ = id => document.getElementById(id);
 
-const money = value => {
-  const amount = Number(value);
-
-  return new Intl.NumberFormat("en-NG", {
+const money = value =>
+  new Intl.NumberFormat("en-NG", {
     style: "currency",
     currency: "NGN",
     minimumFractionDigits: 2,
     maximumFractionDigits: 2
-  }).format(Number.isFinite(amount) ? amount : 0);
-};
+  }).format(Number(value) || 0);
 
 const pensionNames = new Set([
   "basic",
@@ -41,10 +32,20 @@ const pensionNames = new Set([
 
 function toggle(id, show) {
   const element = $(id);
+  if (element) element.classList.toggle("hidden", !show);
+}
 
-  if (element) {
-    element.classList.toggle("hidden", !show);
-  }
+function monthlyGross() {
+  const amount = Number($("gross")?.value || 0);
+  return $("frequency")?.value === "annual" ? amount / 12 : amount;
+}
+
+function normaliseName(value) {
+  return String(value || "")
+    .trim()
+    .toLowerCase()
+    .replace(/[_-]/g, " ")
+    .replace(/\s+/g, " ");
 }
 
 function escapeHTML(value) {
@@ -57,95 +58,79 @@ function escapeHTML(value) {
   })[character]);
 }
 
-function monthlyGross() {
-  const amount = Number($("gross").value || 0);
-
-  return $("frequency").value === "annual"
-    ? amount / 12
-    : amount;
-}
-
-/* =========================================================
-   SALARY COMPONENTS
-   ========================================================= */
-
 function addComponent(data = {}) {
   const div = document.createElement("div");
+  div.className = "component";
 
-  div.className = "component-row";
+  const name = document.createElement("input");
+  name.className = "c-name";
+  name.placeholder = "e.g. Basic Salary";
+  name.value = data.name || "";
 
-  const componentName = escapeHTML(data.name || "");
-  const fixedAmount = Number(data.fixed_amount || 0);
-  const percentage = Number(data.percentage || 0);
+  const type = document.createElement("select");
+  type.className = "c-type";
+  type.innerHTML = `
+    <option value="cash">Cash paid to me</option>
+    <option value="benefit_in_kind">Benefit provided to me</option>
+    <option value="reimbursement">Work expense reimbursement</option>
+  `;
+  type.value = data.type || "cash";
+
+  const fixed = document.createElement("input");
+  fixed.className = "c-fixed";
+  fixed.type = "number";
+  fixed.min = "0";
+  fixed.step = "0.01";
+  fixed.value = data.fixed_amount || 0;
+
+  const percentage = document.createElement("input");
+  percentage.className = "c-pct";
+  percentage.type = "number";
+  percentage.min = "0";
+  percentage.max = "100";
+  percentage.step = "0.01";
+  percentage.value = data.percentage || 0;
+
+  const taxable = document.createElement("input");
+  taxable.className = "c-tax";
+  taxable.type = "checkbox";
+  taxable.checked = data.taxable !== false;
+
+  const pensionable = document.createElement("input");
+  pensionable.className = "c-pensionable";
+  pensionable.type = "checkbox";
+  pensionable.checked = Boolean(data.pensionable);
 
   div.innerHTML = `
-    <div class="component-fields">
-      <div class="component-grid">
-
-        <label>
-          Component name
-          <input
-            class="c-name"
-            value="${componentName}"
-            placeholder="e.g. Basic Salary"
-          >
-        </label>
-
-        <label>
-          Component type
-          <select class="c-type">
-            <option value="cash">Cash paid to me</option>
-            <option value="benefit_in_kind">Benefit in kind</option>
-            <option value="reimbursement">Expense reimbursement</option>
-          </select>
-        </label>
-
-        <label>
-          Fixed amount (₦)
-          <input
-            class="c-fixed"
-            type="number"
-            min="0"
-            step="0.01"
-            value="${fixedAmount}"
-          >
-        </label>
-
-        <label>
-          Percentage (%)
-          <input
-            class="c-pct"
-            type="number"
-            min="0"
-            max="100"
-            step="0.01"
-            value="${percentage}"
-          >
-        </label>
-
-      </div>
-
-      <label class="check">
-        <input class="c-tax" type="checkbox" checked>
-        Include as taxable income
-      </label>
+    <button type="button" class="remove">Remove</button>
+    <div class="component-grid">
+      <label>Salary component name</label>
+      <label>Component type</label>
+      <label>Fixed amount (₦)</label>
+      <label>Percentage of remaining salary (%)</label>
     </div>
-
-    <button
-      type="button"
-      class="remove-component"
-      aria-label="Remove salary component"
-      title="Remove component"
-    >
-      ×
-    </button>
+    <div class="component-grid component-inputs">
+      <div class="component-name-slot"></div>
+      <div class="component-type-slot"></div>
+      <div class="component-fixed-slot"></div>
+      <div class="component-pct-slot"></div>
+    </div>
+    <label class="check taxable-check">
+      <span>Include as taxable income</span>
+    </label>
+    <label class="check pensionable-check">
+      <span>Include as pensionable salary</span>
+    </label>
   `;
 
-  div.querySelector(".c-type").value = data.type || "cash";
+  div.querySelector(".component-name-slot").appendChild(name);
+  div.querySelector(".component-type-slot").appendChild(type);
+  div.querySelector(".component-fixed-slot").appendChild(fixed);
+  div.querySelector(".component-pct-slot").appendChild(percentage);
+  div.querySelector(".taxable-check").prepend(taxable);
+  div.querySelector(".pensionable-check").prepend(pensionable);
 
-  div.querySelector(".c-tax").checked = data.taxable !== false;
-
-  div.querySelector(".remove-component").addEventListener("click", () => {
+  div.querySelector(".remove").addEventListener("click", () => {
     div.remove();
     refreshPensionGuidance();
   });
@@ -156,70 +141,67 @@ function addComponent(data = {}) {
   });
 
   $("components").appendChild(div);
-
   refreshPensionGuidance();
 }
 
 function collectComponents() {
-  return [...document.querySelectorAll(".component-row")].map(element => ({
-    name:
-      element.querySelector(".c-name").value.trim() ||
-      "Unnamed component",
-
+  return [...document.querySelectorAll(".component")].map(element => ({
+    name: element.querySelector(".c-name").value.trim() || "Unnamed component",
     type: element.querySelector(".c-type").value,
-
-    fixed_amount: Number(
-      element.querySelector(".c-fixed").value || 0
-    ),
-
-    percentage: Number(
-      element.querySelector(".c-pct").value || 0
-    ),
-
-    taxable: element.querySelector(".c-tax").checked
+    fixed_amount: Number(element.querySelector(".c-fixed").value || 0),
+    percentage: Number(element.querySelector(".c-pct").value || 0),
+    taxable: element.querySelector(".c-tax").checked,
+    pensionable:
+      element.querySelector(".c-pensionable").checked ||
+      (
+        element.querySelector(".c-type").value === "cash" &&
+        pensionNames.has(normaliseName(element.querySelector(".c-name").value))
+      )
   }));
 }
 
-function componentPensionBase() {
-  if ($("structureMode").value !== "custom") {
-    return 0;
-  }
-
-  const components = collectComponents();
+function allocatedComponents() {
   const gross = monthlyGross();
+  const rows = collectComponents();
 
-  const fixedTotal = components.reduce(
+  const fixedTotal = rows.reduce(
     (sum, component) => sum + component.fixed_amount,
     0
   );
 
-  const remaining = Math.max(0, gross - fixedTotal);
+  const percentageTotal = rows.reduce(
+    (sum, component) => sum + component.percentage,
+    0
+  );
 
-  return components.reduce((sum, component) => {
-    const name = component.name
-      .trim()
-      .toLowerCase()
-      .replace(/[_-]/g, " ")
-      .replace(/\s+/g, " ");
+  const remaining = gross - fixedTotal;
 
-    const isPensionable =
-      component.type === "cash" &&
-      pensionNames.has(name);
+  if (remaining < -0.01 || percentageTotal > 100.0001) {
+    return [];
+  }
 
-    if (!isPensionable) {
-      return sum;
-    }
-
-    return sum +
+  return rows.map(component => ({
+    ...component,
+    amount:
       component.fixed_amount +
-      remaining * component.percentage / 100;
-
-  }, 0);
+      remaining * component.percentage / 100
+  }));
 }
 
-/* =========================================================
-   FORM GUIDANCE
-   ========================================================= */
+function componentPensionBase() {
+  if ($("structureMode").value !== "custom") return 0;
+
+  return allocatedComponents().reduce((sum, component) => {
+    if (
+      component.type === "cash" &&
+      component.pensionable
+    ) {
+      return sum + component.amount;
+    }
+
+    return sum;
+  }, 0);
+}
 
 function refreshPensionGuidance() {
   if (!$("pensionEnabled").checked) {
@@ -229,16 +211,13 @@ function refreshPensionGuidance() {
 
   toggle("pensionFields", true);
 
-  const autoBase = componentPensionBase();
-  const hasAutomaticBase = autoBase > 0;
+  const automaticBase = componentPensionBase();
+  const hasAutomaticBase = automaticBase > 0;
 
   toggle("pensionAutoMessage", hasAutomaticBase);
   toggle("pensionBaseChoice", !hasAutomaticBase);
 
-  if (
-    hasAutomaticBase &&
-    $("pensionBaseMode").value !== "manual"
-  ) {
+  if (hasAutomaticBase && $("pensionBaseMode").value !== "manual") {
     $("pensionBaseMode").value = "";
   }
 
@@ -248,59 +227,17 @@ function refreshPensionGuidance() {
   );
 }
 
-$("addComponent").addEventListener("click", () => {
-  addComponent();
-});
-
-$("structureMode").addEventListener("change", event => {
-  toggle("componentsWrap", event.target.value === "custom");
-  refreshPensionGuidance();
-});
-
-$("pensionEnabled").addEventListener(
-  "change",
-  refreshPensionGuidance
-);
-
-$("pensionBaseMode").addEventListener("change", () => {
-  toggle(
-    "pensionManualWrap",
-    $("pensionBaseMode").value === "manual"
-  );
-});
-
-$("gross").addEventListener("input", refreshPensionGuidance);
-
-$("frequency").addEventListener("change", refreshPensionGuidance);
-
-$("nhfEnabled").addEventListener("change", event => {
-  toggle("nhfAmountWrap", event.target.checked);
-});
-
-$("nhiaEnabled").addEventListener("change", event => {
-  toggle("nhiaAmountWrap", event.target.checked);
-});
-
-/* =========================================================
-   API HELPERS
-   ========================================================= */
-
-async function apiRequest(endpoint, payload) {
-  const response = await fetch(`${API}${endpoint}`, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify(payload)
-  });
+async function readAPIResponse(response) {
+  const contentType = response.headers.get("content-type") || "";
 
   let data;
 
-  try {
+  if (contentType.includes("application/json")) {
     data = await response.json();
-  } catch {
+  } else {
+    const message = await response.text();
     throw new Error(
-      "The server returned an unexpected response. Please try again."
+      message || `The server returned an unexpected response (${response.status}).`
     );
   }
 
@@ -308,101 +245,225 @@ async function apiRequest(endpoint, payload) {
     const detail = data.detail;
 
     throw new Error(
-      typeof detail === "string"
-        ? detail
-        : "We couldn't complete your request. Please check your entries."
+      Array.isArray(detail)
+        ? detail.map(item => item.msg).join("; ")
+        : detail || `Request failed (${response.status}).`
     );
   }
 
   return data;
 }
 
-/* =========================================================
-   BUILD PAYROLL REQUEST
-   ========================================================= */
+function setCalculationError(message) {
+  $("net").textContent = "₦—";
+  $("error").textContent = message;
+}
 
-function buildPayrollPayload() {
+function renderResults(data) {
+  lastResult = data;
+
+  $("net").textContent = money(data.monthly_net_cash_estimate);
+
+  const rows = [
+    ["Monthly gross salary", data.monthly_gross],
+    ["Estimated monthly PAYE", data.monthly_paye_estimate],
+    ["Employee pension contribution", data.employee_pension_monthly],
+    ["NHF contribution", data.nhf_monthly],
+    ["Health insurance contribution", data.nhia_monthly],
+    ["Other deductions", data.other_deductions_monthly],
+    ["Estimated annual take-home", data.annual_net_cash_estimate]
+  ];
+
+  if (Number(data.monthly_pensionable_emoluments) > 0) {
+    rows.splice(3, 0, [
+      "Salary used for pension",
+      data.monthly_pensionable_emoluments
+    ]);
+  }
+
+  const breakdown = $("breakdown");
+
+  breakdown.replaceChildren();
+
+  rows.forEach(([label, value]) => {
+    const line = document.createElement("div");
+    line.className = "line";
+
+    const title = document.createElement("span");
+    title.textContent = label;
+
+    const amount = document.createElement("strong");
+    amount.textContent = money(value);
+
+    line.append(title, amount);
+    breakdown.appendChild(line);
+  });
+
+  const employerLine = document.createElement("div");
+  employerLine.className = "line employer-line";
+
+  const employerLabel = document.createElement("span");
+  employerLabel.textContent = "Employer pension contribution (additional)";
+
+  const employerAmount = document.createElement("strong");
+  employerAmount.textContent = money(
+    data.employer_pension_monthly_separate
+  );
+
+  employerLine.append(employerLabel, employerAmount);
+  breakdown.appendChild(employerLine);
+
+  const heading = document.createElement("h3");
+  heading.textContent = "Salary components";
+  breakdown.appendChild(heading);
+
+  (data.monthly_components || []).forEach(component => {
+    const line = document.createElement("div");
+    line.className = "line";
+
+    const label = document.createElement("span");
+    label.textContent = component.name || "Salary component";
+
+    const amount = document.createElement("strong");
+    amount.textContent = money(component.amount);
+
+    line.append(label, amount);
+    breakdown.appendChild(line);
+  });
+
+  const notesList = $("notesList");
+  notesList.replaceChildren();
+
+  (data.notes || []).forEach(note => {
+    const item = document.createElement("li");
+    item.textContent = note;
+    notesList.appendChild(item);
+  });
+
+  toggle("calculationNotes", true);
+}
+
+async function calculateSalary(event) {
+  event.preventDefault();
+
+  $("error").textContent = "";
+  $("net").textContent = "Calculating…";
+  $("breakdown").innerHTML = "<p>Processing your payroll estimate…</p>";
+
+  const gross = Number($("gross").value);
+
+  if (!Number.isFinite(gross) || gross <= 0) {
+    setCalculationError("Please enter a valid gross salary greater than zero.");
+    return;
+  }
+
   const custom = $("structureMode").value === "custom";
+  const components = custom ? collectComponents() : [];
 
-  const automaticBase = componentPensionBase();
+  if (custom) {
+    const fixedTotal = components.reduce(
+      (sum, component) => sum + component.fixed_amount,
+      0
+    );
+
+    const percentageTotal = components.reduce(
+      (sum, component) => sum + component.percentage,
+      0
+    );
+
+    if (fixedTotal > monthlyGross() + 0.01) {
+      setCalculationError("Your fixed component amounts exceed your gross salary.");
+      return;
+    }
+
+    if (percentageTotal > 100.0001) {
+      setCalculationError("Your percentage allocations cannot exceed 100%.");
+      return;
+    }
+
+    const allocatedTotal = allocatedComponents().reduce(
+      (sum, component) => sum + component.amount,
+      0
+    );
+
+    if (Math.abs(allocatedTotal - monthlyGross()) > 0.02) {
+      setCalculationError(
+        "Your salary components must add up to your gross salary. Please review the fixed amounts and percentages."
+      );
+      return;
+    }
+  }
+
+  const automaticPensionBase = componentPensionBase();
 
   let baseMode = "";
   let manualBase = null;
 
-  if ($("pensionEnabled").checked && automaticBase <= 0) {
+  if ($("pensionEnabled").checked && automaticPensionBase <= 0) {
     baseMode = $("pensionBaseMode").value;
 
     if (!baseMode) {
-      throw new Error(
-        "Please select how your pensionable salary should be estimated. " +
-        "If you don't know the amount, you can choose to continue without estimating pension."
+      setCalculationError(
+        "Please choose how to estimate your pensionable salary."
       );
+      return;
     }
 
     if (baseMode === "manual") {
       manualBase = Number($("pensionBase").value);
 
       if (!Number.isFinite(manualBase) || manualBase <= 0) {
-        throw new Error(
+        setCalculationError(
           "Please enter the monthly salary amount used for pension."
         );
+        return;
       }
     }
   }
 
   if (
     $("pensionEnabled").checked &&
-    automaticBase > 0 &&
     $("pensionBaseMode").value === "manual"
   ) {
     manualBase = Number($("pensionBase").value);
+    baseMode = "manual";
 
     if (!Number.isFinite(manualBase) || manualBase <= 0) {
-      throw new Error(
+      setCalculationError(
         "Please enter the monthly salary amount used for pension."
       );
+      return;
     }
-
-    baseMode = "manual";
   }
 
-  const overrideValue = Number(
-    $("pensionBaseOverride").value || 0
-  );
+  const overrideValue = Number($("pensionBaseOverride").value || 0);
 
   if ($("pensionEnabled").checked && overrideValue > 0) {
     manualBase = overrideValue;
     baseMode = "manual";
   }
 
-  return {
-    gross_salary: Number($("gross").value),
-
+  const payload = {
+    gross_salary: gross,
     frequency: $("frequency").value,
 
-    components: custom ? collectComponents() : [],
+    components,
 
     pension: {
       enabled: $("pensionEnabled").checked,
-
-      employee_rate: Number($("employeeRate").value),
-
-      employer_rate: Number($("employerRate").value),
-
+      employee_rate: Number($("employeeRate").value || 8),
+      employer_rate: Number($("employerRate").value || 10),
       pensionable_emoluments_monthly: manualBase,
-
       base_mode: baseMode
     },
 
     nhf: {
       enabled: $("nhfEnabled").checked,
-
       monthly_amount: Number($("nhfAmount").value || 0)
     },
 
     nhia: {
       enabled: $("nhiaEnabled").checked,
-
       monthly_amount: Number($("nhiaAmount").value || 0)
     },
 
@@ -411,166 +472,41 @@ function buildPayrollPayload() {
     },
 
     other_deductions: {
-      monthly_amount: Number(
-        $("otherDeductions").value || 0
-      )
+      monthly_amount: Number($("otherDeductions").value || 0)
     }
   };
-}
-
-/* =========================================================
-   DISPLAY PAYROLL RESULT
-   ========================================================= */
-
-function renderBreakdown(data) {
-  const rows = [
-    ["Monthly gross salary", data.monthly_gross],
-    ["Estimated monthly PAYE", data.monthly_paye_estimate],
-    ["Employee pension contribution", data.employee_pension_monthly],
-    ["NHF contribution", data.nhf_monthly],
-    ["Health insurance contribution", data.nhia_monthly],
-    ["Other deductions", data.other_deductions_monthly]
-  ];
-
-  if (
-    Number(data.employee_pension_monthly) > 0 ||
-    Number(data.monthly_pensionable_emoluments) > 0
-  ) {
-    rows.splice(2, 0, [
-      "Salary used for pension",
-      data.monthly_pensionable_emoluments
-    ]);
-  }
-
-  const breakdownRows = rows.map(([label, value]) => `
-    <div class="breakdown-row">
-      <span>${escapeHTML(label)}</span>
-      <strong>${money(value)}</strong>
-    </div>
-  `).join("");
-
-  const components = Array.isArray(data.monthly_components)
-    ? data.monthly_components
-    : [];
-
-  const componentRows = components.map(component => `
-    <div class="breakdown-row">
-      <span>${escapeHTML(component.name)}</span>
-      <strong>${money(component.amount)}</strong>
-    </div>
-  `).join("");
-
-  $("breakdown").innerHTML = `
-    ${breakdownRows}
-
-    <div class="breakdown-row total">
-      <span>Estimated monthly take-home</span>
-      <strong>${money(data.monthly_net_cash_estimate)}</strong>
-    </div>
-
-    <div class="breakdown-row">
-      <span>Estimated annual take-home</span>
-      <strong>${money(data.annual_net_cash_estimate)}</strong>
-    </div>
-
-    <div class="breakdown-row">
-      <span>Employer pension contribution (additional)</span>
-      <strong>${money(data.employer_pension_monthly_separate)}</strong>
-    </div>
-
-    <h3>Salary components</h3>
-
-    ${componentRows || "<p>No individual salary components were supplied.</p>"}
-  `;
-
-  const notes = Array.isArray(data.notes) ? data.notes : [];
-
-  $("notesList").innerHTML = notes.map(note => `
-    <li>${escapeHTML(note)}</li>
-  `).join("");
-
-  toggle("calculationNotes", notes.length > 0);
-}
-
-/* =========================================================
-   CALCULATE SALARY
-   ========================================================= */
-
-$("salaryForm").addEventListener("submit", async event => {
-  event.preventDefault();
-
-  $("error").textContent = "";
-  $("net").textContent = "Calculating…";
-
-  $("breakdown").innerHTML = `
-    <p>Processing your payroll calculation. Please wait.</p>
-  `;
-
-  $("aiAnswer").textContent = "";
-
-  lastResult = null;
-
-  const calculateButton = $("salaryForm").querySelector(
-    'button[type="submit"]'
-  );
-
-  calculateButton.disabled = true;
-  calculateButton.textContent = "Calculating…";
 
   try {
-    const payload = buildPayrollPayload();
-
-    if (
-      !Number.isFinite(payload.gross_salary) ||
-      payload.gross_salary <= 0
-    ) {
-      throw new Error("Please enter a valid gross salary.");
-    }
-
-    const data = await apiRequest(
-      "/api/payroll/calculate",
-      payload
-    );
-
-    lastResult = data;
-
-    $("net").textContent = money(
-      data.monthly_net_cash_estimate
-    );
-
-    renderBreakdown(data);
-
-    $("breakdown").scrollIntoView({
-      behavior: "smooth",
-      block: "nearest"
+    const response = await fetch(`${API}/api/payroll/calculate`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Accept": "application/json"
+      },
+      body: JSON.stringify(payload)
     });
 
+    const data = await readAPIResponse(response);
+    renderResults(data);
+
   } catch (error) {
-    $("net").textContent = "₦—";
+    console.error("SalarySense calculation error:", error);
 
-    $("breakdown").innerHTML = `
-      <p>Your result could not be displayed.</p>
-    `;
-
-    $("error").textContent =
-      error.message ||
-      "We couldn't complete the calculation. Please try again.";
-
-  } finally {
-    calculateButton.disabled = false;
-    calculateButton.textContent = "Calculate my take-home pay";
+    if (error instanceof TypeError) {
+      setCalculationError(
+        "We could not connect to SalarySense. Please refresh the page and try again. If the problem continues, the website's API access configuration needs attention."
+      );
+    } else {
+      setCalculationError(
+        error.message || "We could not complete the calculation. Please try again."
+      );
+    }
   }
-});
+}
 
-/* =========================================================
-   AI EXPLANATION
-   ========================================================= */
-
-$("askAI").addEventListener("click", async () => {
+async function askSalarySense() {
   if (!lastResult) {
-    $("aiAnswer").textContent =
-      "Please calculate your salary first before requesting an explanation.";
-
+    $("aiAnswer").textContent = "Please calculate your salary first.";
     return;
   }
 
@@ -578,44 +514,77 @@ $("askAI").addEventListener("click", async () => {
     $("question").value.trim() ||
     "Explain my salary result in simple terms.";
 
-  const button = $("askAI");
-
-  button.disabled = true;
-  button.textContent = "Preparing explanation…";
-
-  $("aiAnswer").textContent =
-    "SalarySense AI is reviewing your completed calculation.";
+  $("askAI").disabled = true;
+  $("aiAnswer").textContent = "Preparing your explanation…";
 
   try {
-    const data = await apiRequest(
-      "/api/assistant/explain",
-      {
+    const response = await fetch(`${API}/api/assistant/explain`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Accept": "application/json"
+      },
+      body: JSON.stringify({
         question,
         result: lastResult
-      }
-    );
+      })
+    });
+
+    const data = await readAPIResponse(response);
 
     $("aiAnswer").textContent =
-      data.answer ||
-      "No explanation was returned. Please try again.";
+      data.answer || "No explanation was returned.";
 
   } catch (error) {
+    console.error("SalarySense AI explanation error:", error);
+
     $("aiAnswer").textContent =
-      "Your salary calculation is still available, but the AI explanation service is temporarily unavailable.";
+      "Your calculation is available, but the AI explanation service could not be reached. Please try again later.";
+
   } finally {
-    button.disabled = false;
-    button.textContent = "Explain my result";
+    $("askAI").disabled = false;
   }
-});
+}
 
-/* =========================================================
-   INITIALISE
-   ========================================================= */
+function initialiseSalarySense() {
+  if (!$("salaryForm")) return;
 
-toggle("componentsWrap", false);
-toggle("pensionFields", false);
-toggle("nhfAmountWrap", false);
-toggle("nhiaAmountWrap", false);
-toggle("pensionManualWrap", false);
+  $("addComponent").addEventListener("click", () => addComponent());
 
-refreshPensionGuidance();
+  $("salaryForm").addEventListener("submit", calculateSalary);
+
+  $("askAI").addEventListener("click", askSalarySense);
+
+  $("structureMode").addEventListener("change", event => {
+    toggle("componentsWrap", event.target.value === "custom");
+    refreshPensionGuidance();
+  });
+
+  $("pensionEnabled").addEventListener("change", refreshPensionGuidance);
+
+  $("pensionBaseMode").addEventListener("change", () => {
+    toggle(
+      "pensionManualWrap",
+      $("pensionBaseMode").value === "manual"
+    );
+  });
+
+  $("gross").addEventListener("input", refreshPensionGuidance);
+  $("frequency").addEventListener("change", refreshPensionGuidance);
+
+  $("nhfEnabled").addEventListener("change", event => {
+    toggle("nhfAmountWrap", event.target.checked);
+  });
+
+  $("nhiaEnabled").addEventListener("change", event => {
+    toggle("nhiaAmountWrap", event.target.checked);
+  });
+
+  refreshPensionGuidance();
+}
+
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", initialiseSalarySense);
+} else {
+  initialiseSalarySense();
+}
