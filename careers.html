@@ -5,13 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 
   <title>Careers and Job Vacancies in Nigeria | AgileTalent Associates</title>
-  <meta name="description" content="Explore current job vacancies, improve your CV with AgileTalent Career Studio, and register for future career opportunities.">
+  <meta name="description" content="Explore current job vacancies, improve your CV with AgileTalent Career Studio, use SalarySense AI and register for future career opportunities.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://agiletalentassociates.com/careers.html">
   <link rel="icon" type="image/png" href="favicon.png">
 
   <meta property="og:title" content="Careers and Job Vacancies | AgileTalent Associates">
-  <meta property="og:description" content="Explore job opportunities, improve your CV and register your profile with AgileTalent Associates.">
+  <meta property="og:description" content="Explore job opportunities, improve your CV, use SalarySense AI and register your profile with AgileTalent Associates.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://agiletalentassociates.com/careers.html">
   <meta property="og:site_name" content="AgileTalent Associates Limited">
@@ -29,12 +29,24 @@
       --career-paper: #FAF8F3;
     }
 
+    /* BRANDING */
+
     header .brand {
       display: inline-flex;
       align-items: center;
       gap: 12px;
       text-decoration: none;
       flex-shrink: 0;
+    }
+
+    header .brand .mark {
+      display: block;
+      width: 170px;
+      height: auto;
+      max-height: 78px;
+      object-fit: contain;
+      background: #000;
+      border-radius: 3px;
     }
 
     header .brand-descriptor {
@@ -77,7 +89,7 @@
       font-weight: 700;
     }
 
-    /* Vacancy cards */
+    /* VACANCY CARDS */
 
     .vacancy-section {
       min-height: 240px;
@@ -161,7 +173,7 @@
       display: none !important;
     }
 
-    /* Career Studio promotion */
+    /* CAREER STUDIO */
 
     .career-studio-section {
       background: var(--career-paper);
@@ -317,7 +329,225 @@
       font-weight: 800;
     }
 
-    /* Talent registration */
+    /* CAREER TOOLS / SALARYSENSE */
+
+    .career-tools-section {
+      background: #fff;
+    }
+
+    .career-tools-intro {
+      max-width: 760px;
+      margin-bottom: 30px;
+      color: #535b68;
+      line-height: 1.8;
+    }
+
+    .salarysense-card {
+      display: grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap: 35px;
+      align-items: center;
+      padding: 42px;
+      border: 1px solid rgba(242,183,5,.45);
+      border-radius: 16px;
+      background: var(--career-navy);
+      color: #fff;
+    }
+
+    .salarysense-label {
+      display: inline-block;
+      padding: 7px 12px;
+      margin-bottom: 18px;
+      border-radius: 5px;
+      background: rgba(242,183,5,.14);
+      color: var(--career-gold);
+      font-size: .75rem;
+      font-weight: 800;
+      letter-spacing: .09em;
+      text-transform: uppercase;
+    }
+
+    .salarysense-copy h2 {
+      margin: 0 0 16px;
+      color: #fff;
+      font-size: clamp(1.8rem, 3vw, 2.5rem);
+      line-height: 1.25;
+    }
+
+    .salarysense-copy p {
+      max-width: 650px;
+      color: #d5dbe5;
+      line-height: 1.8;
+    }
+
+    .salarysense-benefits {
+      display: grid;
+      gap: 11px;
+      margin: 22px 0 26px;
+      padding: 0;
+      list-style: none;
+    }
+
+    .salarysense-benefits li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      color: #edf0f5;
+      line-height: 1.6;
+    }
+
+    .salarysense-benefits li::before {
+      content: "✓";
+      color: var(--career-gold);
+      font-weight: 800;
+    }
+
+    .salarysense-card .btn {
+      display: inline-block;
+      background: var(--career-gold);
+      color: var(--career-navy);
+      border: 1px solid var(--career-gold);
+      cursor: pointer;
+    }
+
+    .salarysense-card .btn:hover {
+      background: #ffd34d;
+      color: var(--career-navy);
+    }
+
+    .salarysense-visual {
+      padding: 28px;
+      border: 1px solid rgba(255,255,255,.16);
+      border-radius: 12px;
+      background: rgba(255,255,255,.06);
+    }
+
+    .salarysense-visual .visual-kicker {
+      margin: 0 0 18px;
+      color: var(--career-gold);
+      font-size: .75rem;
+      font-weight: 800;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+
+    .salarysense-visual h3 {
+      margin: 0 0 10px;
+      color: #fff;
+      font-size: 1.5rem;
+    }
+
+    .salarysense-visual p {
+      color: #d5dbe5;
+      line-height: 1.7;
+    }
+
+    .salarysense-visual .salary-example {
+      padding: 15px;
+      margin-top: 20px;
+      border-radius: 8px;
+      background: rgba(0,0,0,.22);
+    }
+
+    .salary-example span {
+      display: block;
+      color: #c8cfda;
+      font-size: .8rem;
+    }
+
+    .salary-example strong {
+      display: block;
+      margin-top: 5px;
+      color: var(--career-gold);
+      font-size: 1.55rem;
+    }
+
+    /* EMBEDDED SALARYSENSE WORKSPACE */
+
+    .salarysense-workspace {
+      margin-top: 30px;
+      padding: 18px;
+      border: 1px solid var(--career-line);
+      border-radius: 14px;
+      background: var(--career-paper);
+    }
+
+    .salarysense-workspace[hidden] {
+      display: none !important;
+    }
+
+    .salarysense-workspace-header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 15px;
+      padding: 5px 5px 18px;
+    }
+
+    .salarysense-workspace-header h3 {
+      margin: 0;
+      color: var(--career-navy);
+      font-size: 1.2rem;
+    }
+
+    .salarysense-workspace-header p {
+      margin: 5px 0 0;
+      color: #687080;
+      font-size: .85rem;
+    }
+
+    .salarysense-close {
+      padding: 10px 16px;
+      border: 1px solid var(--career-navy);
+      border-radius: 6px;
+      background: #fff;
+      color: var(--career-navy);
+      font: inherit;
+      font-size: .85rem;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .salarysense-close:hover {
+      background: var(--career-navy);
+      color: #fff;
+    }
+
+    .salarysense-frame-wrap {
+      position: relative;
+      width: 100%;
+      min-height: 900px;
+      overflow: hidden;
+      border: 1px solid #e2e2e2;
+      border-radius: 10px;
+      background: #fff;
+    }
+
+    .salarysense-frame {
+      display: block;
+      width: 100%;
+      height: 1200px;
+      border: 0;
+      background: #fff;
+    }
+
+    .salarysense-open-link {
+      display: inline-block;
+      margin: 14px 4px 3px;
+      color: var(--career-navy);
+      font-size: .88rem;
+      font-weight: 700;
+    }
+
+    .salarysense-disclaimer {
+      margin: 12px 4px 2px;
+      color: #687080;
+      font-size: .78rem;
+      line-height: 1.6;
+    }
+
+    /* TALENT REGISTRATION */
 
     .careers-cta {
       padding: 28px;
@@ -338,8 +568,21 @@
       line-height: 1.7;
     }
 
+    /* FOOTER BRAND */
+
+    .footer-brand-logo {
+      display: block;
+      width: 220px;
+      max-width: 100%;
+      height: auto;
+      margin-bottom: 18px;
+      background: #000;
+      border-radius: 3px;
+    }
+
     @media (max-width: 900px) {
-      .career-studio-panel {
+      .career-studio-panel,
+      .salarysense-card {
         grid-template-columns: 1fr;
         gap: 30px;
         padding: 34px;
@@ -363,14 +606,14 @@
       }
 
       header .brand .mark {
-        max-width: 145px;
-        height: auto;
+        width: 125px;
+        max-height: 58px;
       }
 
       header .brand-descriptor {
-        max-width: 125px;
+        max-width: 115px;
         padding-left: 8px;
-        font-size: 10px;
+        font-size: 9px;
       }
 
       .vacancy-card,
@@ -378,13 +621,18 @@
         padding: 22px;
       }
 
-      .career-studio-panel {
+      .career-studio-panel,
+      .salarysense-card {
         padding: 24px;
         gap: 24px;
       }
 
       .career-studio-visual {
         min-height: 230px;
+        padding: 22px;
+      }
+
+      .salarysense-visual {
         padding: 22px;
       }
 
@@ -395,8 +643,25 @@
       }
 
       .career-studio-action .btn,
-      .careers-actions .btn {
+      .careers-actions .btn,
+      .salarysense-card .btn {
         text-align: center;
+      }
+
+      .salarysense-workspace {
+        padding: 10px;
+      }
+
+      .salarysense-frame-wrap {
+        min-height: 1100px;
+      }
+
+      .salarysense-frame {
+        height: 1450px;
+      }
+
+      .salarysense-workspace-header {
+        align-items: flex-start;
       }
     }
 
@@ -418,8 +683,13 @@
 <header>
   <div class="wrap bar">
     <a class="brand" href="index.html" aria-label="AgileTalent Associates home">
-      <img class="mark" src="Artboard 4@4x.png" alt="AgileTalent Associates"
-           onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'wm',textContent:'AgileTalent Associates'}))">
+      <img
+        class="mark"
+        src="Artboard%204%404x.png"
+        alt="AgileTalent Associates"
+        width="170"
+        onerror="this.onerror=null;this.alt='AgileTalent Associates';this.style.display='none';"
+      >
       <span class="brand-descriptor">Recruitment &amp; HR Consulting Firm in Nigeria</span>
     </a>
 
@@ -433,6 +703,7 @@
         <li><a href="recruitment.html">Recruitment</a></li>
         <li><a href="industries.html">Who We Serve</a></li>
         <li><a href="insights.html">Insights</a></li>
+        <li><a href="#career-tools">Career Tools</a></li>
         <li><a href="careers.html" aria-current="page">Careers</a></li>
         <li><a href="contact.html">Contact</a></li>
         <li><a class="btn" href="contact.html">Let’s Talk</a></li>
@@ -442,6 +713,8 @@
 </header>
 
 <main id="main" tabindex="-1">
+
+  <!-- CAREERS HERO -->
 
   <section class="sec dark careers-hero">
     <div class="wrap">
@@ -460,6 +733,7 @@
       <div class="careers-actions">
         <a class="btn" href="#current-vacancies">View Current Vacancies</a>
         <a class="careers-secondary-link" href="#talent-registration">Register Your CV →</a>
+        <a class="careers-secondary-link" href="#career-tools">Explore Career Tools →</a>
       </div>
     </div>
   </section>
@@ -490,7 +764,7 @@
     </div>
   </section>
 
-  <!-- CAREER STUDIO PROMOTION -->
+  <!-- CAREER STUDIO -->
 
   <section class="sec career-studio-section" id="career-studio">
     <div class="wrap">
@@ -550,6 +824,127 @@
         </div>
 
       </div>
+    </div>
+  </section>
+
+  <!-- CAREER TOOLS: SALARYSENSE AI -->
+
+  <section class="sec career-tools-section" id="career-tools">
+    <div class="wrap">
+
+      <p class="lab">AgileTalent career tools</p>
+      <h2>Tools to Help You Make Better Career Decisions</h2>
+
+      <p class="career-tools-intro">
+        Your career decisions should be informed by more than job titles.
+        Explore practical digital tools from AgileTalent Associates designed
+        to help you present your professional value and better understand
+        your earnings.
+      </p>
+
+      <div class="salarysense-card">
+
+        <div class="salarysense-copy">
+          <span class="salarysense-label">Powered by AgileTalent</span>
+
+          <h2>SalarySense AI</h2>
+
+          <p>
+            Understand what your salary really means. SalarySense AI helps
+            you estimate your Nigerian PAYE tax, pension contributions,
+            applicable deductions and take-home pay using your salary
+            structure.
+          </p>
+
+          <ul class="salarysense-benefits">
+            <li>Calculate salary using monthly or annual gross pay.</li>
+            <li>Configure salary components and pension arrangements.</li>
+            <li>Estimate PAYE, pension and other applicable deductions.</li>
+            <li>Understand your estimated monthly and annual take-home pay.</li>
+            <li>Get AI-powered explanations of your calculation.</li>
+          </ul>
+
+          <button
+            class="btn"
+            id="launch-salarysense"
+            type="button"
+            aria-expanded="false"
+            aria-controls="salarysense-workspace"
+          >
+            Launch SalarySense AI →
+          </button>
+        </div>
+
+        <div class="salarysense-visual">
+          <p class="visual-kicker">Know your numbers</p>
+
+          <h3>Your salary. Your deductions. Your take-home pay.</h3>
+
+          <p>
+            Get a clearer picture of how your earnings translate into
+            take-home pay under your selected salary and deduction settings.
+          </p>
+
+          <div class="salary-example">
+            <span>Salary intelligence, made simpler</span>
+            <strong>SalarySense AI</strong>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- THE CALCULATOR LOADS HERE WHEN LAUNCHED -->
+
+      <div
+        class="salarysense-workspace"
+        id="salarysense-workspace"
+        hidden
+        aria-label="SalarySense AI calculator workspace"
+      >
+
+        <div class="salarysense-workspace-header">
+          <div>
+            <h3>SalarySense AI Calculator</h3>
+            <p>Use the calculator below without leaving the Careers platform.</p>
+          </div>
+
+          <button
+            class="salarysense-close"
+            id="close-salarysense"
+            type="button"
+          >
+            Close Calculator
+          </button>
+        </div>
+
+        <div class="salarysense-frame-wrap">
+          <iframe
+            class="salarysense-frame"
+            id="salarysense-frame"
+            title="AgileTalent SalarySense AI Nigerian Salary Calculator"
+            loading="lazy"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allow="clipboard-read; clipboard-write"
+          ></iframe>
+        </div>
+
+        <a
+          class="salarysense-open-link"
+          href="salarysense.html"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Open SalarySense AI in a separate tab →
+        </a>
+
+        <p class="salarysense-disclaimer">
+          SalarySense AI provides estimates based on the information entered
+          and the calculation settings selected. Results should be reviewed
+          against applicable payroll rules and individual circumstances.
+        </p>
+
+      </div>
+
     </div>
   </section>
 
@@ -623,9 +1018,12 @@
   <div class="wrap cols">
 
     <div>
-      <p style="color:#fff;font:700 1.2rem var(--f-head);margin-bottom:.4em">
-        AgileTalent Associates Limited
-      </p>
+      <img
+        class="footer-brand-logo"
+        src="Artboard%204%404x.png"
+        alt="AgileTalent Associates Limited"
+        loading="lazy"
+      >
 
       <p>
         Human resources consulting, recruitment and workforce solutions
@@ -661,6 +1059,7 @@
         <li><a href="industries.html">Who we serve</a></li>
         <li><a href="insights.html">Insights</a></li>
         <li><a href="careers.html">Careers</a></li>
+        <li><a href="#career-tools">Career Tools</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </div>
@@ -733,6 +1132,53 @@
 <a class="btn sticky" id="sticky" href="contact.html">Let’s Talk</a>
 
 <script src="main.js"></script>
+
+<!-- SALARYSENSE AI EMBED CONTROLS -->
+
+<script>
+(function () {
+  "use strict";
+
+  const launchButton = document.getElementById("launch-salarysense");
+  const closeButton = document.getElementById("close-salarysense");
+  const workspace = document.getElementById("salarysense-workspace");
+  const frame = document.getElementById("salarysense-frame");
+
+  if (!launchButton || !closeButton || !workspace || !frame) return;
+
+  const calculatorUrl = "salarysense.html";
+
+  function openSalarySense() {
+    workspace.hidden = false;
+    launchButton.setAttribute("aria-expanded", "true");
+    launchButton.textContent = "SalarySense AI Launched";
+
+    if (!frame.getAttribute("src")) {
+      frame.setAttribute("src", calculatorUrl);
+    }
+
+    workspace.scrollIntoView({
+      behavior: "smooth",
+      block: "start"
+    });
+  }
+
+  function closeSalarySense() {
+    workspace.hidden = true;
+    launchButton.setAttribute("aria-expanded", "false");
+    launchButton.textContent = "Launch SalarySense AI →";
+
+    launchButton.scrollIntoView({
+      behavior: "smooth",
+      block: "center"
+    });
+  }
+
+  launchButton.addEventListener("click", openSalarySense);
+  closeButton.addEventListener("click", closeSalarySense);
+
+})();
+</script>
 
 <!-- VACANCY FEED: EXISTING GOOGLE APPS SCRIPT INTEGRATION -->
 
@@ -809,26 +1255,9 @@
     const details = document.createElement("div");
     details.className = "vacancy-details";
 
-    addDetail(
-      details,
-      "Pay",
-      vacancy.salary || vacancy.pay,
-      "Not disclosed"
-    );
-
-    addDetail(
-      details,
-      "Location",
-      vacancy.location,
-      "Not specified"
-    );
-
-    addDetail(
-      details,
-      "Industry",
-      vacancy.industry,
-      "Not specified"
-    );
+    addDetail(details, "Pay", vacancy.salary || vacancy.pay, "Not disclosed");
+    addDetail(details, "Location", vacancy.location, "Not specified");
+    addDetail(details, "Industry", vacancy.industry, "Not specified");
 
     card.appendChild(details);
 
@@ -921,7 +1350,6 @@
     }
 
     vacancies.forEach(addVacancy);
-
     statusBox.hidden = true;
   };
 
