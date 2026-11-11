@@ -28,35 +28,7 @@
   --career-paper:#FAF8F3;
 }
 
-header .brand {
-  display:inline-flex;
-  align-items:center;
-  gap:12px;
-  text-decoration:none;
-  flex-shrink:0;
-}
-
-header .brand .mark {
-  display:block;
-  width:155px;
-  height:auto;
-  object-fit:contain;
-}
-
-header .brand-descriptor {
-  display:inline-block;
-  max-width:190px;
-  padding-left:12px;
-  border-left:1px solid #d6d6d6;
-  color:#6b7280;
-  font-family:Inter,sans-serif;
-  font-size:12px;
-  font-weight:500;
-  line-height:1.5;
-}
-
 .careers-hero .lead {max-width:760px}
-
 .careers-kicker {
   color:var(--career-gold);
   font-size:.8rem;
@@ -64,7 +36,6 @@ header .brand-descriptor {
   letter-spacing:.1em;
   text-transform:uppercase;
 }
-
 .careers-actions {
   display:flex;
   flex-wrap:wrap;
@@ -72,18 +43,15 @@ header .brand-descriptor {
   align-items:center;
   margin-top:20px;
 }
-
 .careers-secondary-link {font-weight:700}
 
 .vacancy-section {min-height:240px}
-
 .vacancy-list {
   display:grid;
   grid-template-columns:repeat(2,minmax(0,1fr));
   gap:22px;
   margin-top:30px;
 }
-
 .vacancy-card {
   display:flex;
   flex-direction:column;
@@ -95,26 +63,18 @@ header .brand-descriptor {
   overflow-wrap:anywhere;
   transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease;
 }
-
 .vacancy-card:hover {
   transform:translateY(-3px);
   border-color:rgba(242,183,5,.8);
   box-shadow:0 12px 28px rgba(11,20,38,.06);
 }
-
 .vacancy-card h3 {
   margin:0 0 18px;
   color:var(--career-navy);
   font-size:1.25rem;
   line-height:1.4;
 }
-
-.vacancy-details {
-  display:grid;
-  gap:11px;
-  margin-bottom:22px;
-}
-
+.vacancy-details {display:grid;gap:11px;margin-bottom:22px}
 .vacancy-detail {
   display:flex;
   flex-wrap:wrap;
@@ -123,39 +83,23 @@ header .brand-descriptor {
   font-size:.9rem;
   line-height:1.5;
 }
-
 .vacancy-detail strong {color:var(--career-navy)}
-
-.vacancy-apply {
-  display:inline-block;
-  align-self:flex-start;
-  margin-top:auto;
-}
-
+.vacancy-apply {display:inline-block;align-self:flex-start;margin-top:auto}
 .vacancy-status {
   padding:24px;
   margin-top:24px;
   border-radius:10px;
   background:var(--career-paper);
 }
-
 .vacancy-status[hidden] {display:none!important}
 
-/* CAREER TOOLS */
-
 .career-tools-section {background:var(--career-paper)}
-
-.career-tools-intro {
-  max-width:720px;
-  margin-bottom:28px;
-}
-
+.career-tools-intro {max-width:720px;margin-bottom:28px}
 .career-tools-grid {
   display:grid;
   grid-template-columns:repeat(2,minmax(0,1fr));
   gap:20px;
 }
-
 .career-tool-card {
   display:flex;
   flex-direction:column;
@@ -166,7 +110,6 @@ header .brand-descriptor {
   background:#fff;
   box-shadow:0 5px 18px rgba(11,20,38,.035);
 }
-
 .career-tool-label {
   display:inline-block;
   align-self:flex-start;
@@ -180,32 +123,19 @@ header .brand-descriptor {
   letter-spacing:.07em;
   text-transform:uppercase;
 }
-
 .career-tool-card h3 {
   margin:0 0 10px;
   color:var(--career-navy);
   font-size:1.35rem;
   line-height:1.35;
 }
-
 .career-tool-card p {
   margin:0 0 20px;
   color:#535b68;
   line-height:1.7;
 }
-
-.career-tool-card .btn {
-  align-self:flex-start;
-  margin-top:auto;
-}
-
-.career-tool-note {
-  margin-top:10px;
-  color:#687080;
-  font-size:.82rem;
-  line-height:1.5;
-}
-
+.career-tool-card .btn {align-self:flex-start;margin-top:auto}
+.career-tool-note {margin-top:10px;color:#687080;font-size:.82rem;line-height:1.5}
 .careers-cta {
   padding:28px;
   margin-top:40px;
@@ -213,57 +143,22 @@ header .brand-descriptor {
   border-radius:8px;
   background:var(--career-paper);
 }
-
-.careers-note {
-  margin-top:18px;
-  color:#535b68;
-  font-size:.9rem;
-  line-height:1.7;
-}
+.careers-note {margin-top:18px;color:#535b68;font-size:.9rem;line-height:1.7}
 
 @media(max-width:900px) {
   .career-tools-grid {grid-template-columns:1fr}
   .career-tool-card {padding:26px}
 }
-
 @media(max-width:800px) {
   .vacancy-list {grid-template-columns:1fr}
 }
-
 @media(max-width:600px) {
-  header .brand {
-    gap:8px;
-    min-width:0;
-  }
-
-  header .brand .mark {
-    width:120px;
-    height:auto;
-  }
-
-  header .brand-descriptor {
-    max-width:115px;
-    padding-left:8px;
-    font-size:9px;
-  }
-
   .vacancy-card,.careers-cta {padding:22px}
-
   .career-tool-card {padding:22px}
-
-  .career-tool-card .btn {
-    width:100%;
-    text-align:center;
-  }
-
-  .careers-actions {
-    align-items:stretch;
-    flex-direction:column;
-  }
-
+  .career-tool-card .btn {width:100%;text-align:center}
+  .careers-actions {align-items:stretch;flex-direction:column}
   .careers-actions .btn {text-align:center}
 }
-
 @media(prefers-reduced-motion:reduce) {
   .vacancy-card {transition:none}
   .vacancy-card:hover {transform:none}
@@ -278,7 +173,6 @@ header .brand-descriptor {
   <div class="wrap bar">
     <a class="brand" href="index.html" aria-label="AgileTalent Associates home">
       <img class="mark" src="Artboard%204%404x.png" alt="AgileTalent Associates">
-      <span class="brand-descriptor">Recruitment &amp; HR Consulting Firm in Nigeria</span>
     </a>
 
     <button class="menu" id="menu" aria-expanded="false" aria-controls="nav" type="button">Menu</button>
@@ -318,21 +212,15 @@ header .brand-descriptor {
     <p class="lab">Career opportunities</p>
     <h2>Current Job Vacancies</h2>
     <p style="max-width:760px">Explore available opportunities and apply for roles that match your career interests.</p>
-
     <div id="vacancy-status" class="vacancy-status" role="status" aria-live="polite">
       <p>Loading current vacancies. Please wait…</p>
     </div>
-
     <div id="vacancy-list" class="vacancy-list"></div>
-
-    <noscript>
-      <div class="vacancy-status">JavaScript must be enabled to display current vacancies. You can still register your CV using the talent registration link below.</div>
-    </noscript>
+    <noscript><div class="vacancy-status">JavaScript must be enabled to display current vacancies. You can still register your CV using the talent registration link below.</div></noscript>
   </div>
 </section>
 
 <!-- CAREER TOOLS -->
-
 <section class="sec career-tools-section" id="career-tools">
   <div class="wrap">
     <div class="career-tools-intro">
@@ -342,7 +230,6 @@ header .brand-descriptor {
     </div>
 
     <div class="career-tools-grid">
-
       <article class="career-tool-card">
         <span class="career-tool-label">AI-powered CV support</span>
         <h3>AgileTalent Career Studio</h3>
@@ -358,25 +245,21 @@ header .brand-descriptor {
         <a class="btn" href="salarysense.html">Launch SalarySense AI →</a>
         <p class="career-tool-note">Free to use. Estimates are for guidance and should be validated against applicable payroll rules.</p>
       </article>
-
     </div>
   </div>
 </section>
 
 <!-- TALENT REGISTRATION -->
-
 <section class="sec" id="talent-registration">
   <div class="wrap">
     <div class="careers-cta">
       <p class="lab">Join our talent network</p>
       <h2>Don't See a Suitable Vacancy?</h2>
       <p>Register your profile and upload your CV even if there is no suitable vacancy listed today. Our recruitment team can consider your information for relevant opportunities as they become available.</p>
-
       <div class="careers-actions">
         <a class="btn" href="https://script.google.com/macros/s/AKfycbwfdsY72BZPa74n3_HI6MWe9KqGfMp50cT7Jzfw1wRtYhu3QxsVO3hRZSAV49ABZ4Eu/exec?view=general" target="_blank" rel="noopener noreferrer">Register Your CV</a>
         <a class="careers-secondary-link" href="#current-vacancies">View Current Vacancies</a>
       </div>
-
       <p class="careers-note">Your information will be collected for recruitment-related purposes. Please provide accurate details and review the consent statement before submitting your registration.</p>
     </div>
   </div>
@@ -402,7 +285,6 @@ header .brand-descriptor {
       <p><a href="tel:+2347036783875">+234 703 678 3875</a></p>
       <p><a href="https://wa.me/2348152866467" target="_blank" rel="noopener noreferrer">Chat with us on WhatsApp</a></p>
     </div>
-
     <div>
       <h2>Explore</h2>
       <ul>
@@ -416,7 +298,6 @@ header .brand-descriptor {
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </div>
-
     <div>
       <h2>Connect</h2>
       <ul>
@@ -431,25 +312,20 @@ header .brand-descriptor {
   <div class="wrap social-area">
     <h2 class="social-heading">Connect with AgileTalent</h2>
     <div class="social-links">
-
       <a href="https://x.com/agiletalents_ng" target="_blank" rel="noopener noreferrer" aria-label="Follow AgileTalent Associates on X">
         <svg class="social-icon" viewBox="0 0 64 64" aria-hidden="true">
           <circle cx="32" cy="32" r="32" fill="#000"/>
           <path d="M18.9 15h8.2l7.4 10 8.8-10h3.1L36 27.1 47.5 49h-8.2l-8.1-11.7L20.9 49h-3.2l12-13.8L18.9 15zm4.5 2.7 17.2 28.6h3.1L26.5 17.7h-3.1z" fill="#fff"/>
-        </svg>
-        <span>X</span>
+        </svg><span>X</span>
       </a>
-
       <a href="https://www.linkedin.com/company/agiletalent-associates" target="_blank" rel="noopener noreferrer" aria-label="Follow AgileTalent Associates on LinkedIn">
         <svg class="social-icon" viewBox="0 0 64 64" aria-hidden="true">
           <circle cx="32" cy="32" r="32" fill="#0A66C2"/>
           <g fill="#fff" transform="translate(14 14) scale(1.55)">
             <path d="M3.5 6.5A2.25 2.25 0 1 0 3.5 2a2.25 2.25 0 0 0 0 4.5zM1.5 8h4v14h-4zM8 8h3.8v1.9h.1C12.4 8.8 13.8 7.6 16 7.6c4.1 0 4.9 2.7 4.9 6.2V22h-4v-7.3c0-1.8 0-4-2.4-4s-2.8 1.9-2.8 3.9V22H8z"/>
           </g>
-        </svg>
-        <span>LinkedIn</span>
+        </svg><span>LinkedIn</span>
       </a>
-
     </div>
   </div>
 
@@ -463,7 +339,6 @@ header .brand-descriptor {
 <script src="main.js"></script>
 
 <!-- VACANCY FEED -->
-
 <script>
 (function () {
   "use strict";
@@ -475,12 +350,9 @@ header .brand-descriptor {
 
   function addText(parent, tag, value, className) {
     if (value === null || value === undefined || String(value).trim() === "") return null;
-
     const element = document.createElement(tag);
     element.textContent = String(value).trim();
-
     if (className) element.className = className;
-
     parent.appendChild(element);
     return element;
   }
@@ -488,30 +360,21 @@ header .brand-descriptor {
   function createApplicationUrl(vacancy) {
     const vacancyId = String(vacancy.id || "").trim();
     const title = String(vacancy.title || "").trim();
-
     if (!vacancyId || !title) return "";
-
     const url = new URL(APPS_SCRIPT_URL);
     url.searchParams.set("view", "job");
     url.searchParams.set("vacancyId", vacancyId);
     url.searchParams.set("title", title);
-
     return url.toString();
   }
 
   function addDetail(parent, label, value, fallback) {
     const row = document.createElement("div");
     row.className = "vacancy-detail";
-
     const heading = document.createElement("strong");
     heading.textContent = label + ":";
-
     const content = document.createElement("span");
-    content.textContent =
-      value !== null && value !== undefined && String(value).trim()
-        ? String(value).trim()
-        : fallback;
-
+    content.textContent = value !== null && value !== undefined && String(value).trim() ? String(value).trim() : fallback;
     row.append(heading, content);
     parent.appendChild(row);
   }
@@ -519,35 +382,27 @@ header .brand-descriptor {
   function addVacancy(vacancy) {
     const card = document.createElement("article");
     card.className = "vacancy-card";
-
     addText(card, "h3", vacancy.title || "Vacancy");
-
     const details = document.createElement("div");
     details.className = "vacancy-details";
-
     addDetail(details, "Pay", vacancy.salary || vacancy.pay, "Not disclosed");
     addDetail(details, "Location", vacancy.location, "Not specified");
     addDetail(details, "Industry", vacancy.industry, "Not specified");
-
     card.appendChild(details);
 
     const applicationUrl = createApplicationUrl(vacancy);
-
     if (applicationUrl) {
       const action = document.createElement("div");
       action.className = "vacancy-apply";
-
       const link = document.createElement("a");
       link.className = "btn";
       link.href = applicationUrl;
       link.target = "_blank";
       link.rel = "noopener noreferrer";
       link.textContent = "Apply Now";
-
       action.appendChild(link);
       card.appendChild(action);
     }
-
     vacancyList.appendChild(card);
   }
 
@@ -558,33 +413,27 @@ header .brand-descriptor {
     link.target = "_blank";
     link.rel = "noopener noreferrer";
     link.textContent = "Register Your CV";
-
     return link;
   }
 
   function showNoVacancies() {
     statusBox.hidden = false;
     statusBox.replaceChildren();
-
     addText(statusBox, "h3", "No current vacancies are listed.");
     addText(statusBox, "p", "You can register your CV with AgileTalent Associates for consideration for relevant future opportunities.");
-
     statusBox.appendChild(createRegistrationLink());
   }
 
   function showFeedError() {
     statusBox.hidden = false;
     statusBox.replaceChildren();
-
     addText(statusBox, "h3", "Vacancies could not be loaded.");
     addText(statusBox, "p", "Please try again later. You can still register your CV for future opportunities.");
-
     statusBox.appendChild(createRegistrationLink());
   }
 
   window.agileTalentVacanciesLoaded = function (response) {
     if (feedLoaded) return;
-
     feedLoaded = true;
     vacancyList.replaceChildren();
     statusBox.replaceChildren();
@@ -610,14 +459,11 @@ header .brand-descriptor {
   const script = document.createElement("script");
   script.src = APPS_SCRIPT_URL + "?callback=" + encodeURIComponent("agileTalentVacanciesLoaded");
   script.async = true;
-
   script.onerror = function () {
     if (feedLoaded) return;
-
     feedLoaded = true;
     showFeedError();
   };
-
   document.head.appendChild(script);
 
   window.setTimeout(function () {
@@ -626,7 +472,6 @@ header .brand-descriptor {
       showFeedError();
     }
   }, 15000);
-
 })();
 </script>
 
