@@ -9,13 +9,20 @@
   <title>SalarySense AI | AgileTalent Associates Limited</title>
 
   <link rel="stylesheet" href="salarysense.css">
-
   <style>
-    /* Brand logo and home navigation */
+    /* Match the compact 72px navigation height used across the AgileTalent website. */
+    .topbar {
+      height: 72px;
+      min-height: 72px;
+      padding: 0 24px;
+      gap: 20px;
+    }
+
     .topbar .brand {
       display: inline-flex;
       align-items: center;
-      flex-shrink: 0;
+      flex: 0 1 auto;
+      min-width: 0;
       text-decoration: none;
     }
 
@@ -23,47 +30,65 @@
       display: block;
       width: 190px;
       max-width: 100%;
-      height: auto;
+      max-height: 54px;
       object-fit: contain;
+    }
+
+    .topbar .header-right {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 18px;
+      min-width: 0;
     }
 
     .topbar .back-link {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 9px;
-      padding: 10px 17px;
-      border: 1px solid rgba(212, 175, 55, 0.55);
-      border-radius: 999px;
-      background: linear-gradient(135deg, #172744, #101d35);
-      color: #f2c75c;
+      gap: 8px;
+      min-height: 38px;
+      padding: 8px 14px;
+      border: 1px solid rgba(215, 173, 67, .65);
+      border-radius: 5px;
+      background: transparent;
+      color: #f0cf7b;
       font-size: 13px;
       font-weight: 700;
-      letter-spacing: 0.01em;
+      line-height: 1.2;
       text-decoration: none;
       white-space: nowrap;
-      transition: background .2s ease, border-color .2s ease, transform .2s ease;
-    }
-
-    .topbar .back-link span:first-child {
-      font-size: 17px;
-      line-height: 1;
+      transition: background .2s ease, border-color .2s ease;
     }
 
     .topbar .back-link:hover {
-      background: #24385c;
-      border-color: #f2c75c;
-      transform: translateY(-1px);
+      background: rgba(255, 255, 255, .08);
+      border-color: #d7ad43;
+    }
+
+    .topbar .product {
+      white-space: nowrap;
     }
 
     @media (max-width: 600px) {
+      .topbar {
+        padding: 0 16px;
+        gap: 10px;
+      }
+
       .topbar .brand-logo {
         width: 145px;
+        max-height: 46px;
+      }
+
+      .topbar .header-right {
+        gap: 8px;
       }
 
       .topbar .back-link {
-        padding: 8px 11px;
-        gap: 6px;
+        min-height: 34px;
+        padding: 7px 9px;
+        gap: 5px;
         font-size: 11px;
       }
 
@@ -83,7 +108,8 @@
 
   <div class="header-right">
     <a href="https://agiletalentassociates.com/" class="back-link">
-      <span aria-hidden="true">←</span> <span>Back to AgileTalent</span>
+      <span aria-hidden="true">←</span>
+      <span>Back to AgileTalent</span>
     </a>
     <span class="product">SALARYSENSE AI</span>
   </div>
