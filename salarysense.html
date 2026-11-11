@@ -9,18 +9,82 @@
   <title>SalarySense AI | AgileTalent Associates Limited</title>
 
   <link rel="stylesheet" href="salarysense.css">
+
+  <style>
+    /* Brand logo and home navigation */
+    .topbar .brand {
+      display: inline-flex;
+      align-items: center;
+      flex-shrink: 0;
+      text-decoration: none;
+    }
+
+    .topbar .brand-logo {
+      display: block;
+      width: 190px;
+      max-width: 100%;
+      height: auto;
+      object-fit: contain;
+    }
+
+    .topbar .back-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      padding: 10px 17px;
+      border: 1px solid rgba(212, 175, 55, 0.55);
+      border-radius: 999px;
+      background: linear-gradient(135deg, #172744, #101d35);
+      color: #f2c75c;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.01em;
+      text-decoration: none;
+      white-space: nowrap;
+      transition: background .2s ease, border-color .2s ease, transform .2s ease;
+    }
+
+    .topbar .back-link span:first-child {
+      font-size: 17px;
+      line-height: 1;
+    }
+
+    .topbar .back-link:hover {
+      background: #24385c;
+      border-color: #f2c75c;
+      transform: translateY(-1px);
+    }
+
+    @media (max-width: 600px) {
+      .topbar .brand-logo {
+        width: 145px;
+      }
+
+      .topbar .back-link {
+        padding: 8px 11px;
+        gap: 6px;
+        font-size: 11px;
+      }
+
+      .topbar .product {
+        display: none;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
 <header class="topbar">
-  <a class="brand" href="/" aria-label="AgileTalent Associates homepage">
-    <span class="brand-mark">A</span>
-    <span>AgileTalent <b>Associates</b></span>
+  <a class="brand" href="https://agiletalentassociates.com/" aria-label="AgileTalent Associates homepage">
+    <img class="brand-logo" src="Artboard%204%404x.png" alt="AgileTalent Associates">
   </a>
 
   <div class="header-right">
-    <a href="/" class="back-link">AgileTalent Home</a>
+    <a href="https://agiletalentassociates.com/" class="back-link">
+      <span aria-hidden="true">←</span> <span>Back to AgileTalent</span>
+    </a>
     <span class="product">SALARYSENSE AI</span>
   </div>
 </header>
